@@ -45,7 +45,7 @@ const Navbar = ({ COLORS }) => {
     >
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3">
         <a
-          href="/dhiaspire-ai.github.io"
+          href="/"
           className="flex items-center gap-2 rounded-sm"
           style={{ color: COLORS.ACCENT_GREEN }}
         >
