@@ -1,0 +1,97 @@
+@use '../../styles/variables.scss' as *;
+
+.custom-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    min-width: 380px;
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    overflow: hidden;
+    animation: toastSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+    .toast-content {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        .toast-icon {
+            color: #52B7FF; // Matching the gradient end color
+        }
+
+        .toast-message {
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+    }
+
+    .toast-close {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+    }
+
+    .toast-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+        width: 100%;
+        animation: toastProgress 5s linear forwards;
+    }
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastProgress {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-toast {
+        inset-inline: 20px;
+        min-width: auto;
+        top: 20px;
+        right: 20px;
+    }
+}
