@@ -5,22 +5,22 @@ const features = [
   {
     title: 'Skill-Gap Analysis',
     desc: 'Comprehensive analysis for entire batches.',
-    iconUrl: '/assets/Home/CollegeSolutionsSection/icons/Skill-Gap-Analysis.svg',
+    iconUrl: '/assets/home-assets/CollegeSolutionsSectionAssets/icons/Skill-Gap-Analysis.svg',
   },
   {
     title: 'Real-Time Tracking',
     desc: 'Monitor student process continuously',
-    iconUrl: '/assets/Home/CollegeSolutionsSection/icons/Real-Time-Tracking.svg',
+    iconUrl: '/assets/home-assets/CollegeSolutionsSectionAssets/icons/Real-Time-Tracking.svg',
   },
   {
     title: 'Placement Data Automation',
     desc: 'Automate, organize, and track placement records',
-    iconUrl: '/assets/Home/CollegeSolutionsSection/icons/Placement-Data-Automation.svg',
+    iconUrl: '/assets/home-assets/CollegeSolutionsSectionAssets/icons/Placement-Data-Automation.svg',
   },
   {
     title: 'Employability Intelligence',
     desc: 'Data-driven insights to improve student career outcomes',
-    iconUrl: '/assets/Home/CollegeSolutionsSection/icons/Employability-Intelligence.svg',
+    iconUrl: '/assets/home-assets/CollegeSolutionsSectionAssets/icons/Employability-Intelligence.svg',
   },
 ];
 
@@ -39,11 +39,11 @@ const CollegeSolutionsSection = () => {
         <div className="solutions-grid">
           <div className="illustration">
             <img
-              src="/assets/Home/CollegeSolutionsSection/college-illustration.png"
+              src="/assets/home-assets/CollegeSolutionsSectionAssets/college-illustration.png"
               alt="Analytics Illustration"
               onError={(e) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = '/assets/Home/CollegeSolutionsSection/student-solution-home.webp';
+                e.currentTarget.src = '/assets/home-assets/CollegeSolutionsSectionAssets/student-solution-home.webp';
               }}
             />
           </div>

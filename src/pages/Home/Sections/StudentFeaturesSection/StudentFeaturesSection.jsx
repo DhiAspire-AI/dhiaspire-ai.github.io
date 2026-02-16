@@ -5,22 +5,22 @@ const features = [
   {
     title: 'AI Career Assessment Test',
     description: 'Discover your strengths, interests, and ideal career roles.',
-    iconUrl: '/assets/Home/StudentFeaturesSection/icons/AI-Career-Assessment-Test.svg'
+    iconUrl: '/assets/home-assets/StudentFeaturesSectionAssets/icons/AI-Career-Assessment-Test.svg'
   },
   {
     title: 'Personalized Learning Path',
     description: 'A customized roadmap with courses, projects, exercises & quizzes.',
-    iconUrl: '/assets/Home/StudentFeaturesSection/icons/Personalized-Learning-Path.svg'
+    iconUrl: '/assets/home-assets/StudentFeaturesSectionAssets/icons/Personalized-Learning-Path.svg'
   },
   {
     title: 'Hands-on Projects & Internships',
     description: 'Gain real-world experience through curated projects and internships.',
-    iconUrl: '/assets/Home/StudentFeaturesSection/icons/Hands-on-Projects&Internships.svg'
+    iconUrl: '/assets/home-assets/StudentFeaturesSectionAssets/icons/Hands-on-Projects&Internships.svg'
   },
   {
     title: 'Placement Preparation & Mock Interviews',
     description: 'AI-based evaluation for communication, aptitude, coding & domain knowledge.',
-    iconUrl: '/assets/Home/StudentFeaturesSection/icons/Placement-Preparation&Mock-Interviews.svg'
+    iconUrl: '/assets/home-assets/StudentFeaturesSectionAssets/icons/Placement-Preparation&Mock-Interviews.svg'
   }
 ];
 
@@ -60,7 +60,7 @@ const StudentFeaturesSection = () => {
             <div className="student-features-panel__right">
               <div className="student-features-media">
                 <img
-                  src="/assets/Home/StudentFeaturesSection/students-features.webp"
+                  src="/assets/home-assets/StudentFeaturesSectionAssets/students-features.webp"
                   alt="Student learning dashboard and personalized skill insights"
                   className="student-features-image"
                   loading="lazy"

@@ -6,27 +6,27 @@ const IntelligenceSection = () => {
     {
       title: 'AI Career Assessment',
       description: 'Identify strengths, skills, and ideal career paths',
-      iconUrl: '/assets/Home/IntelligenceSection/icons/ai-career-assessment.svg'
+      iconUrl: '/assets/home-assets/IntelligenceSectionAssets/icons/ai-career-assessment.svg'
     },
     {
       title: 'Personalized Learning Paths',
       description: "Dynamic content mapped to the student's performance",
-      iconUrl: '/assets/Home/IntelligenceSection/icons/personalized-learning-path.svg'
+      iconUrl: '/assets/home-assets/IntelligenceSectionAssets/icons/personalized-learning-path.svg'
     },
     {
       title: 'AI Mentor',
       description: 'Your always-on personal career guide',
-      iconUrl: '/assets/Home/IntelligenceSection/icons/ai-mentor.svg'
+      iconUrl: '/assets/home-assets/IntelligenceSectionAssets/icons/ai-mentor.svg'
     },
     {
       title: 'Predictive Skill Analytics',
       description: 'Forecast readiness for job roles',
-      iconUrl: '/assets/Home/IntelligenceSection/icons/predective-skills-analytics.svg'
+      iconUrl: '/assets/home-assets/IntelligenceSectionAssets/icons/predective-skills-analytics.svg'
     },
     {
       title: 'Placement Matching',
       description: 'AI-driven job and internship recommendations',
-      iconUrl: '/assets/Home/IntelligenceSection/icons/placement-matchihng.svg'
+      iconUrl: '/assets/home-assets/IntelligenceSectionAssets/icons/placement-matchihng.svg'
     }
   ];
 
@@ -46,7 +46,7 @@ const IntelligenceSection = () => {
         <div className="intelligence-content">
           <div className="intelligence-left">
             <img
-              src="/assets/Home/IntelligenceSection/ai-bot-image.webp"
+              src="/assets/home-assets/IntelligenceSectionAssets/ai-bot-image.webp"
               alt="AI assistant with connected learning dashboards"
               className="intelligence-image"
               loading="lazy"

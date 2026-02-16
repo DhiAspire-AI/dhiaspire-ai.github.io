@@ -1,0 +1,117 @@
+@use '../../../../../styles/variables.scss' as *;
+
+.college-cta {
+    padding: 120px 0;
+    background: #040626;
+    background: radial-gradient(circle at center, #0a163a 0%, #040626 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    .cta-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cta-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #ffffff;
+        margin-bottom: 24px;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+    }
+
+    .cta-description {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        max-width: 850px;
+        margin: 0 auto 48px;
+    }
+
+    .cta-actions {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    .btn-schedule {
+        width: 336px;
+        height: 80px;
+        padding: 16px 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #ffffff;
+        background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        white-space: nowrap;
+
+        @media (max-width: 600px) {
+            width: 100%;
+            height: auto;
+            font-size: 24px;
+            padding: 16px 20px;
+        }
+    }
+
+    .btn-view-features {
+        width: 509px;
+        height: 80px;
+        padding: 16px 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #ffffff;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        white-space: nowrap;
+
+        background: linear-gradient(#040626, #040626) padding-box,
+                    linear-gradient(90deg, #232A86 0%, #52B7FF 100%) border-box;
+        border: 3px solid transparent;
+        border-radius: 25px;
+        
+        cursor: pointer;
+
+        @media (max-width: 600px) {
+            width: 100%;
+            height: auto;
+            padding: 16px 20px;
+            font-size: 24px;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -40,14 +40,30 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link
-              to="/solutions"
-              className={isActive('/solutions')}
-              onClick={() => setIsMenuOpen(false)}
+          <li className="dropdown">
+            <div
+              className={`dropdown-trigger ${isActive('/solutions')}`}
             >
-              Solutions
-            </Link>
+              Solutions <ChevronDown size={16} />
+            </div>
+            <ul className="dropdown-menu">
+              <li>
+                <Link
+                  to="/solutions/student"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  For Students
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/solutions/college"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  For College
+                </Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link

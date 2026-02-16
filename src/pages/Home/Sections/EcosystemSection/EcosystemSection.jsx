@@ -12,7 +12,7 @@ const EcosystemSection = () => {
         'Placement assistance',
       ],
       type: 'students',
-      illustration: '/assets/Home/EcosystemSection/student-home.svg',
+      illustration: '/assets/home-assets/EcosystemSectionAssets/student-home.svg',
     },
     {
       title: 'Colleges',
@@ -23,7 +23,7 @@ const EcosystemSection = () => {
         'Placement automation',
       ],
       type: 'colleges',
-      illustration: '/assets/Home/EcosystemSection/collage-home.svg',
+      illustration: '/assets/home-assets/EcosystemSectionAssets/collage-home.svg',
     },
     {
       title: 'Employers',
@@ -32,7 +32,7 @@ const EcosystemSection = () => {
         'Job-ready talent pool with AI-driven matching',
       ],
       type: 'employers',
-      illustration: '/assets/Home/EcosystemSection/employers-home.svg',
+      illustration: '/assets/home-assets/EcosystemSectionAssets/employers-home.svg',
     },
   ];
 

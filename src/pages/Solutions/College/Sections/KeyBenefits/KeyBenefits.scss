@@ -1,0 +1,89 @@
+@use '../../../../../styles/variables.scss' as *;
+
+.key-benefits {
+    padding: 100px 0;
+    background: #040626;
+    background: radial-gradient(circle at top right, rgba(27, 50, 90, 0.2) 0%, #040626 70%);
+    color: #ffffff;
+    position: relative;
+
+    .benefits-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .benefits-title {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #FFFFFF;
+        margin-bottom: 80px;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 100px;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: #ffffff;
+            flex-shrink: 0;
+            
+            .check-icon {
+                width: 22px;
+                height: 22px;
+                stroke-width: 2.5px;
+            }
+        }
+
+        .benefit-content {
+            h3 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 24px;
+                font-weight: 600;
+                margin: 0;
+                color: #ffffff;
+            }
+
+            p {
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.7);
+                margin: 4px 0 0 0;
+                line-height: 1.4;
+            }
+        }
+    }
+}

@@ -5,15 +5,15 @@ import './TrustSecuritySection.scss';
 const features = [
   {
     title: 'End-to-end encryption',
-    iconUrl: '/assets/Home/TrustSecuritySection/icons/encryption.svg'
+    iconUrl: '/assets/home-assets/TrustSecuritySectionAssets/icons/encryption.svg'
   },
   {
     title: 'FERPA-grade data protection',
-    iconUrl: '/assets/Home/TrustSecuritySection/icons/protection.svg'
+    iconUrl: '/assets/home-assets/TrustSecuritySectionAssets/icons/protection.svg'
   },
   {
     title: 'Transparent privacy policy',
-    iconUrl: '/assets/Home/TrustSecuritySection/icons/privacy.svg'
+    iconUrl: '/assets/home-assets/TrustSecuritySectionAssets/icons/privacy.svg'
   }
 ];
 

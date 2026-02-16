@@ -14,13 +14,13 @@ const testimonials = [
       'The AI career assessment and personalized roadmap helped our students gain clarity and confidence.',
     author: 'Dr. Divya Peachi',
     role: 'Placement Head, Dhi Engineering College',
-    avatar: '/assets/Home/TrustedBySection/author-home.svg',
+    avatar: '/assets/home-assets/TrustedBySectionAssets/author-home.svg',
   },
   {
     quote: 'DhiAspire helped me understand my strengths and secure my first internship.',
     author: 'Jhon Pandian',
     role: 'Student, CSE Dept.',
-    avatar: '/assets/Home/TrustedBySection/author-home.svg',
+    avatar: '/assets/home-assets/TrustedBySectionAssets/author-home.svg',
   },
 ];
 

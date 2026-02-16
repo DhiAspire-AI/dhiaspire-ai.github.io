@@ -1,0 +1,74 @@
+@use '../../../../../styles/variables.scss' as *;
+
+.student-challenges {
+    padding: 120px 0;
+    background: #060819;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 70px;
+
+        h2 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            color: #ffffff;
+            font-family: $font-ui;
+            margin-bottom: 15px;
+
+            .highlight {
+                color: #52B7FF;
+            }
+        }
+
+        p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .challenges-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .challenge-item {
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(82, 183, 255, 0.03);
+            border-color: rgba(82, 183, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .challenge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-family: $font-ui;
+        }
+
+        p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+}

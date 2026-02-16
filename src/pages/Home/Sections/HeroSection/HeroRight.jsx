@@ -6,10 +6,10 @@ const TRANSITION_DURATION_MS = 960;
 const BOOT_DURATION_MS = 920;
 
 const HERO_IMAGES = [
-  { src: '/assets/Home/HeroSection/Ai-mock-interview-hero.svg', alt: 'AI Mock Interview' },
-  { src: '/assets/Home/HeroSection/Resume-review-hero.svg', alt: 'Resume Reviewer' },
-  { src: '/assets/Home/HeroSection/AI-feedback-service-hero.svg', alt: 'AI Feedback Service' },
-  { src: '/assets/Home/HeroSection/Ai-coading-service-hero.svg', alt: 'AI Coding Service' },
+  { src: '/assets/home-assets/HeroSectionAssets/Ai-mock-interview-hero.svg', alt: 'AI Mock Interview' },
+  { src: '/assets/home-assets/HeroSectionAssets/Resume-review-hero.svg', alt: 'Resume Reviewer' },
+  { src: '/assets/home-assets/HeroSectionAssets/AI-feedback-service-hero.svg', alt: 'AI Feedback Service' },
+  { src: '/assets/home-assets/HeroSectionAssets/Ai-coading-service-hero.svg', alt: 'AI Coding Service' },
 ];
 
 const HeroRight = ({ images = HERO_IMAGES }) => {

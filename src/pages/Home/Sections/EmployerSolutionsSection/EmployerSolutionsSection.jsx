@@ -5,22 +5,22 @@ const features = [
   {
     title: 'AI Skill Matching',
     description: 'AI-based candidate-job matching',
-    iconUrl: '/assets/Home/EmployerSolutionsSection/icons/Personalized-Learning-Path.svg',
+    iconUrl: '/assets/home-assets/EmployerSolutionsSectionAssets/icons/Personalized-Learning-Path.svg',
   },
   {
     title: 'Verified Skill Assessments',
     description: 'Aptitude, coding & communication tests',
-    iconUrl: '/assets/Home/EmployerSolutionsSection/icons/AI-Career-Assessment-Test.svg',
+    iconUrl: '/assets/home-assets/EmployerSolutionsSectionAssets/icons/AI-Career-Assessment-Test.svg',
   },
   {
     title: 'Internship Access',
     description: 'Direct access to internship pipelines',
-    iconUrl: '/assets/Home/EmployerSolutionsSection/icons/Hands-on-Projects&Internships.svg',
+    iconUrl: '/assets/home-assets/EmployerSolutionsSectionAssets/icons/Hands-on-Projects&Internships.svg',
   },
   {
     title: 'Faster, Accurate Hiring',
     description: 'Reduced hiring time with precision',
-    iconUrl: '/assets/Home/EmployerSolutionsSection/icons/Placement-Preparation&Mock-Interviews.svg',
+    iconUrl: '/assets/home-assets/EmployerSolutionsSectionAssets/icons/Placement-Preparation&Mock-Interviews.svg',
   },
 ];
 
@@ -62,13 +62,13 @@ const EmployerSolutionsSection = () => {
             <div className="employer-solutions-panel__right">
               <div className="employer-solutions-media">
                 <img
-                  src="/assets/Home/EmployerSolutionsSection/employ-solution-home.webp"
+                  src="/assets/home-assets/EmployerSolutionsSectionAssets/employ-solution-home.webp"
                   alt="Employer talent matching dashboard with verified candidate insights"
                   className="employer-solutions-image"
                   loading="lazy"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = '/assets/Home/EcosystemSection/employers-home.svg';
+                    e.currentTarget.src = '/assets/home-assets/EcosystemSectionAssets/employers-home.svg';
                   }}
                 />
               </div>
