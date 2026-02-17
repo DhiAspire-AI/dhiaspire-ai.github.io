@@ -1,50 +1,35 @@
 import React from 'react';
 import './StudentHero.scss';
 
-const StudentHero = () => {
+const StudentHero = ({ onBookDemo, onGetStarted }) => {
     return (
         <section className="student-hero">
-            <div className="hero-grid-pattern"></div>
+            <div className="hero-background">
+                <div className="blob blob-left"></div>
+                <div className="blob blob-right"></div>
+                <div className="blob blob-bottom-right"></div>
+            </div>
             
-            <div className="student-hero-container">
-                <div className="hero-label">
-                    <span>FOR STUDENTS</span>
-                </div>
-                
-                <h1 className="hero-title">
-                    Bridge the <span className="highlight-gradient">Skill Gap</span> & <br />
-                    Launch Your <span className="highlight-blue">Dream Career</span>
-                </h1>
-                
-                <p className="hero-description">
-                    Join the AI-powered ecosystem that personalizes your learning journey, 
-                    builds industry-ready projects, and connects you with top employers.
-                </p>
-                
-                <div className="hero-cta-group">
-                    <button className="btn-primary-glow">Get Started Free</button>
-                    <button className="btn-secondary-outline">Explore Features</button>
-                </div>
-
-                <div className="hero-stats">
-                    <div className="stat-item">
-                        <span className="stat-number">500+</span>
-                        <span className="stat-text">Partner Companies</span>
-                    </div>
-                    <div className="stat-divider"></div>
-                    <div className="stat-item">
-                        <span className="stat-number">AI-Driven</span>
-                        <span className="stat-text">Career Pathing</span>
-                    </div>
-                    <div className="stat-divider"></div>
-                    <div className="stat-item">
-                        <span className="stat-number">Industry</span>
-                        <span className="stat-text">Real Projects</span>
+            <div className="hero-container">
+                <div className="hero-content">
+                    <h1 className="hero-title">
+                        <span className="title-line">
+                            <span className="highlight-blue">AI Career Guidance</span> & Employability
+                        </span>
+                        <span className="title-line">Platform for Students</span>
+                    </h1>
+                    
+                    <p className="hero-description">
+                        Confused about which career path suits you best? DhiAspire is your AI-powered 
+                        platform to build job-ready skills and accelerate career success.
+                    </p>
+                    
+                    <div className="hero-actions">
+                        <button className="btn btn-primary" onClick={onGetStarted}>Get Started</button>
+                        <button className="btn btn-outline" onClick={onBookDemo}>Book a demo</button>
                     </div>
                 </div>
             </div>
-            
-            <div className="hero-visual-gradient"></div>
         </section>
     );
 };

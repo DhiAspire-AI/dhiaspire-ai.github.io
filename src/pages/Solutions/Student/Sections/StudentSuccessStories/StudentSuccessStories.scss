@@ -1,0 +1,153 @@
+@use '../../../../../styles/variables.scss' as *;
+
+.student-success-stories {
+    padding: 100px 0;
+    background: radial-gradient(circle at 10% 20%, rgba(4, 6, 38, 1) 0%, rgba(13, 17, 51, 1) 45%, rgba(10, 15, 45, 1) 90%);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(82, 183, 255, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 1620px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 80px;
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.2;
+        }
+    }
+
+    .stories-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 80px;
+
+        @media (max-width: 1200px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .story-card {
+        background: #FFFFFF33;
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; // Ensures content fits and spaces out like image
+        width: 758px;
+        height: 296px;
+        transition: all 0.3s ease;
+        opacity: 1;
+
+        .story-content {
+            p {
+                font-family: 'Poppins', sans-serif;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1.4; // Slightly more than 100% to ensure readability like image
+                color: #FFFFFF;
+                letter-spacing: 0%;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        .story-footer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: none;
+            }
+
+            .user-info {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                h4 {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: #FFFFFF;
+                    line-height: 1;
+                    letter-spacing: 0%;
+                    margin: 0;
+                }
+
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 22px;
+                    font-weight: 400;
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 1;
+                    letter-spacing: 0%;
+                    margin: 0;
+                }
+            }
+        }
+
+        @media (max-width: 1600px) {
+            width: 100%;
+            max-width: 758px;
+            height: auto;
+            min-height: 296px;
+        }
+    }
+
+    .pagination-dots {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active {
+                background: #ffffff;
+                transform: scale(1.2);
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+}

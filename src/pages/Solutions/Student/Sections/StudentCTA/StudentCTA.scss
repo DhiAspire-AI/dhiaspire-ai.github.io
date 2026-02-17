@@ -1,0 +1,130 @@
+@use '../../../../../styles/variables.scss' as *;
+
+.student-cta {
+    padding: 120px 0;
+    background: #040626;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cta-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .cta-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 56px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #ffffff;
+        margin: 0;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #52B7FF 0%, #2979FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+    .cta-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 24px;
+        width: 100%;
+
+        @media (max-width: 1024px) {
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 100%;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 10px;
+
+            &.btn-primary {
+                width: 711px;
+                padding: 16px 76px;
+                background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+                color: #FFFFFF;
+                border: none;
+                box-shadow: 0 10px 20px rgba(82, 183, 255, 0.2);
+
+               
+            }
+
+            &.btn-outline {
+                background: transparent;
+                position: relative;
+                color: #fff;
+                border: none;
+                background: #040626;
+                padding: 16px 40px;
+                width: auto;
+                min-width: 300px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 25px;
+                    padding: 2px;
+                    background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                }
+
+               
+            }
+
+            @media (max-width: 1024px) {
+                width: 100%;
+                max-width: 100%;
+                font-size: 24px;
+                height: 70px;
+                padding: 0 20px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 18px;
+                height: 60px;
+                border-radius: 15px;
+
+                &::before {
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+}

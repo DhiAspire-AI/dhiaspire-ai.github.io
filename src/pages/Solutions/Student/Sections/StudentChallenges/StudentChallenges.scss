@@ -1,8 +1,10 @@
 @use '../../../../../styles/variables.scss' as *;
 
 .student-challenges {
-    padding: 120px 0;
-    background: #060819;
+    padding: 100px 0;
+    background: #040626;
+    position: relative;
+    overflow: hidden;
 
     .container {
         max-width: 1200px;
@@ -12,29 +14,41 @@
 
     .header {
         text-align: center;
-        margin-bottom: 70px;
+        margin-bottom: 80px;
 
         h2 {
-            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-family: 'Poppins', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 100%;
             color: #ffffff;
-            font-family: $font-ui;
-            margin-bottom: 15px;
+            margin-bottom: 24px;
 
             .highlight {
-                color: #52B7FF;
+                background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: inline-block;
             }
         }
 
         p {
-            font-size: 1.15rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
             color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
         }
     }
 
     .challenges-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .challenge-item {
@@ -43,32 +57,33 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: 24px;
         transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
         &:hover {
-            background: rgba(82, 183, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             border-color: rgba(82, 183, 255, 0.2);
             transform: translateY(-5px);
         }
 
         .challenge-icon {
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            display: inline-block;
+            font-size: 40px;
+            margin-bottom: 10px;
         }
 
         h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
             color: #ffffff;
-            margin-bottom: 15px;
-            font-family: $font-ui;
         }
 
         p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
             line-height: 1.6;
-            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
         }
     }
 }

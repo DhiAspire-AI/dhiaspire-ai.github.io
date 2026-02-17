@@ -1,0 +1,143 @@
+@use '../../../../../styles/variables.scss' as *;
+
+.student-how-it-works {
+    padding: 120px 0;
+    background: #040626;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+
+    .how-it-works-background {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+
+        .blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(35, 42, 134, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+
+        .blob-left {
+            top: 20%;
+            left: -300px;
+        }
+
+        .blob-right {
+            bottom: 20%;
+            right: -300px;
+            background: radial-gradient(circle, rgba(82, 183, 255, 0.1) 0%, transparent 70%);
+        }
+    }
+
+    .how-it-works-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .how-it-works-header {
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 32px;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            width: fit-content;
+            max-width: 800px; // Removed the restrictive 339px width
+            opacity: 1;
+
+            .highlight-blue {
+                background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: inline-block;
+            }
+        }
+
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #FFFFFFCC;
+            width: 100%;
+            max-width: 700px; // Increased width to accommodate longer descriptions in 2 lines
+            margin: 0 auto;
+            text-align: center;
+            opacity: 1;
+        }
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 100px;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+    }
+
+    .step-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .step-number-wrapper {
+        margin-bottom: 24px;
+        
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+            border-radius: 50px;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            position: relative;
+            opacity: 1;
+        }
+    }
+
+    .step-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #ffffff;
+    }
+
+    .step-description {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 320px;
+    }
+}
