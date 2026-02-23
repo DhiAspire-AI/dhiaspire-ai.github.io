@@ -1,21 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import './Navbar.scss';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > lastScrollY && currentScrollY > 100) { 
+          // Scrolling down - hide navbar
+          setIsVisible(false);
+          setIsMenuOpen(false); // Also close mobile menu if open
+        } else { 
+          // Scrolling up - show navbar
+          setIsVisible(true);
+        }
+        
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const isActive = (path) => {
-    return location.pathname === path ? 'active' : '';
+    if (path === '/') return location.pathname === '/' ? 'active' : '';
+    return (location.pathname === path || location.pathname.startsWith(path + '/')) ? 'active' : '';
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${!isVisible ? 'navbar--hidden' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="logo">
           <img
@@ -50,6 +77,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/solutions/student"
+                  className={isActive('/solutions/student')}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   For Students
@@ -58,6 +86,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/solutions/college"
+                  className={isActive('/solutions/college')}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   For College

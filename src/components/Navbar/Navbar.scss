@@ -7,9 +7,17 @@
     left: 0;
     width: 100%;
     z-index: 2000;
-    background: transparent;
-    padding-top: 24px;
+    background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+    padding-top: 15px;
+    padding-bottom: 15px;
     pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.navbar--hidden {
+        transform: translateY(-100%);
+    }
 
     .navbar-container {
         display: flex;
@@ -40,7 +48,7 @@
             flex: 0 0 auto;
             z-index: 1001;
             min-width: fit-content;
-
+            
             .logo-img {
                 height: 48px;
                 width: auto;
@@ -161,6 +169,11 @@
 
                                 &:hover {
                                     background: rgba(255, 255, 255, 0.05);
+                                    color: #ffffff;
+                                }
+
+                                &.active {
+                                    background: rgba(255, 255, 255, 0.08);
                                     color: #ffffff;
                                 }
                             }
@@ -355,6 +368,9 @@
         }
     }
 }
+
+
+
 
 // Mobile landscape (768px and below)
 @media (max-width: 768px) {

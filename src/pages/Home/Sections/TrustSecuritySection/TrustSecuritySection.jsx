@@ -25,8 +25,9 @@ const TrustSecuritySection = () => {
           <h2>
             Trust, Security & <span>Compliance</span>
           </h2>
-          <p className="description">
+          <p className="lead">
             We follow industry-standard data protection practices to secure personal, academic,
+            <br className="desktop-br" />
             and performance information.
           </p>
           <p className="highlight-text">Your Data. Protected. Always.</p>

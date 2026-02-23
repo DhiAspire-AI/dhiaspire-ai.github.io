@@ -2,23 +2,66 @@
 
 .student-features-section {
   width: 100%;
-  padding: 100px 0 120px;
+  padding: 40px 0 60px;
   background: $color-bg;
   color: $color-white;
   position: relative;
   overflow: hidden;
 
+  @media (min-width: 480px) {
+    padding: 50px 0 70px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 60px 0 80px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 70px 0 90px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 80px 0 100px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 100px 0 120px;
+  }
+
+  // ─── Inner container ─────────────────────────────────────────────
   .student-features__inner {
-    max-width: 1732px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 42px;
+    gap: 32px;
+
+    @media (min-width: 480px) {
+      padding: 0 20px;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 24px;
+      gap: 36px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 0 32px;
+      gap: 42px;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 1800px;
+      padding: 0 60px;
+      gap: 60px;
+    }
   }
 
+  // ─── Section header ──────────────────────────────────────────────
+  // Matches IntelligenceSection header exactly
   .section-header {
     width: 100%;
     display: flex;
@@ -26,184 +69,432 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 10px;
 
     h2 {
       font-family: $font-sans;
       font-weight: 700;
-      font-size: clamp(32px, 3.4vw, 64px);
-      line-height: 1.06;
+      font-size: 26px;
+      line-height: 1.25;
+      letter-spacing: 0;
       color: $color-white;
-      margin: 0 0 12px 0;
-      white-space: nowrap;
+      margin: 0 0 12px;
+      white-space: normal;
+      max-width: 100%;
+
+      @media (min-width: 480px) {
+        font-size: 30px;
+      }
+
+      @media (min-width: 640px) {
+        font-size: 34px;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 38px;
+        line-height: 1.15;
+        max-width: 700px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 42px;
+      }
+
+      @media (min-width: 1280px) {
+        // "Build Job-Ready Skills with Personalized Learning" fits on one line
+        font-size: clamp(32px, 3.4vw, 64px);
+        line-height: 1.06;
+        margin: 0 0 24px;
+        white-space: nowrap;
+        max-width: none;
+      }
     }
 
+    .highlight {
+      background: linear-gradient(90deg, #232A86 46.63%, #52B7FF 84.62%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    // Section subtitle — matches IntelligenceSection .section-header p
     p.lead {
-      font-family: $font-sans;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 1.6;
-      color: $color-muted-2;
+      font-family: $font-ui;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: #FFFFFFCC;
       margin: 0 auto;
-      max-width: 1200px;
+      max-width: 100%;
+
+      @media (min-width: 480px) {
+        font-size: 15px;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+        max-width: 680px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 18px;
+        max-width: 820px;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 24px;
+        line-height: 1.4;
+        max-width: none;
+        white-space: nowrap;
+      }
     }
   }
 
-  .section-header .highlight {
-    background: linear-gradient(90deg, #232A86 46.63%, #52B7FF 84.62%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+  // ─── Main panel ──────────────────────────────────────────────────
+  // Mobile: stacked column. Desktop: 55% features / 45% image (features left, image right)
   .student-features-panel {
     width: 100%;
-    border-radius: 22px;
-    overflow: hidden;
 
     &__grid {
       width: 100%;
-      display: grid;
-      grid-template-columns: minmax(420px, 680px) 1fr;
-      align-items: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        gap: 40px;
+      }
+
+      @media (min-width: 1024px) {
+        // Full width stacked layout until 1280px
+      }
+
+      @media (min-width: 1280px) {
+        max-width: 100%;
+        display: grid;
+        // 45% features / 55% image — balanced for fluid layout
+        grid-template-columns: 45fr 55fr;
+        align-items: center;
+        column-gap: clamp(40px, 6vw, 120px);
+      }
     }
 
     &__left {
-      padding: 142px 36px 42px 32px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (min-width: 1280px) {
+        padding-left: clamp(20px, 4vw, 80px);
+      }
     }
 
     &__right {
-      padding: 34px 22px 34px 28px;
+      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
+
+      @media (min-width: 1280px) {
+        justify-content: flex-end;
+      }
     }
   }
 
+  // ─── Feature list ─────────────────────────────────────────────────
   .student-feature-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      gap: 24px;
+    }
+
+    @media (min-width: 1280px) {
+      gap: 34px;
+    }
   }
 
   .student-feature-item {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
+    gap: 12px;
+
+    @media (min-width: 480px) {
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      gap: 18px;
+    }
+
+    @media (min-width: 1280px) {
+      gap: 22px;
+    }
   }
 
+  // ─── Icon box — matches IntelligenceSection .feature-icon ─────────
   .icon-box {
-    width: $icon-box-size;
-    height: $icon-box-size;
-    flex: 0 0 $icon-box-size;
-    border-radius: $radius-md;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 10px;
     background: $gradient-cta;
-    border: 1px solid transparent;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: $color-white;
+    box-shadow: 0 4px 12px rgba(35, 42, 134, 0.2);
 
-    .custom-icon {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
+    @media (min-width: 480px) {
+      width: 50px;
+      height: 50px;
+      flex: 0 0 50px;
+      border-radius: 12px;
     }
 
-    svg { display: block; }
+    @media (min-width: 768px) {
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 64px;
+      height: 64px;
+      flex: 0 0 64px;
+      border-radius: $radius-md;
+    }
+
+    @media (min-width: 1280px) {
+      width: $icon-box-size;
+      height: $icon-box-size;
+      flex: 0 0 $icon-box-size;
+    }
+
+    .custom-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+
+      @media (min-width: 480px) {
+        width: 27px;
+        height: 27px;
+      }
+
+      @media (min-width: 768px) {
+        width: 32px;
+        height: 32px;
+      }
+
+      @media (min-width: 1024px) {
+        width: 36px;
+        height: 36px;
+      }
+
+      @media (min-width: 1280px) {
+        width: 44px;
+        height: 44px;
+      }
+    }
   }
 
+  // ─── Feature copy — matches IntelligenceSection .feature-copy ─────
   .feature-copy {
-    flex: 1;
+    flex: 1 1 auto;
     min-width: 0;
 
     h3 {
       font-family: $font-sans;
-      font-size: 28px;
-      line-height: 1.1;
-      font-weight: 700;
-      margin: 0 0 8px 0;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
       color: $color-white;
-      white-space: nowrap;
+      margin: 0 0 4px 0;
+      white-space: normal;
+      word-break: break-word;
+
+      @media (min-width: 480px) {
+        font-size: 18px;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 20px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 22px;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 26px;
+        line-height: 1.2;
+        margin: 0 0 6px 0;
+      }
     }
 
     p {
       margin: 0;
       font-family: $font-sans;
-      font-size: 18px;
-      line-height: 1.6;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.5;
       color: $color-muted-2;
+      white-space: normal;
+      word-break: break-word;
+
+      @media (min-width: 480px) {
+        font-size: 14px;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 15px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 16px;
+      }
+
+      @media (min-width: 1280px) {
+        // Matches IntelligenceSection feature description at desktop
+        font-size: 24px;
+        line-height: 1.4;
+      }
     }
   }
 
-  .student-features-media { width: 100%; max-width: 850px; border-radius: 18px; padding: 16px; }
+  // ─── Image ────────────────────────────────────────────────────────
+  .student-features-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  .student-features-image { width: 100%; height: auto; display: block; border-radius: $radius-md; object-fit: cover; }
+    @media (min-width: 1280px) {
+      justify-content: flex-start;
+    }
+  }
 
-  .student-features-footer { width: 100%; display:flex; justify-content:center; margin-top:10px; }
+  .student-features-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+    // box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    max-width: 560px;
+
+    @media (min-width: 768px) {
+      border-radius: 24px;
+      max-width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      border-radius: 28px;
+    }
+
+    @media (min-width: 1280px) {
+      // Design spec: 850 × 567px, angle: 0deg, opacity: 1
+      width: 850px;
+      height: 567px;
+      max-width: 100%;
+      aspect-ratio: 850 / 567;
+      object-fit: cover;
+      border-radius: 36px;
+      // box-shadow: 0 22px 44px rgba(0, 0, 0, 0.38);
+      opacity: 1;
+    }
+  }
+
+  // ─── CTA footer — matches IntelligenceSection .section-footer ─────
+  .student-features-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+
+    @media (min-width: 1280px) {
+      margin-top: 40px;
+    }
+  }
 
   .cta-button {
-    width: 528px;
-    height: $cta-height-lg;
-    padding: 16px 30px;
-    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    min-height: 52px;
+    height: auto;
+    padding: 12px 28px;
     background: $gradient-cta;
     border: none;
-    border-radius: $radius-lg;
+    border-radius: 12px;
     color: $color-white;
     font-family: $font-ui;
-    font-size: 32px;
+    font-size: 16px;
     font-weight: 500;
-    display: flex;
+    line-height: 100%;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: $shadow-lg;
 
-    &:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(35,42,134,0.4); }
-    svg { transition: transform 0.3s ease; }
-    &:hover svg { transform: translateX(5px); }
+    @media (min-width: 480px) {
+      font-size: 18px;
+      min-height: 56px;
+      max-width: 380px;
+    }
+
+    @media (min-width: 768px) {
+      min-height: 60px;
+      border-radius: 16px;
+      max-width: 420px;
+    }
+
+    @media (min-width: 1280px) {
+      // Centered label + icon — no space-between
+      width: auto;
+      min-width: 420px;
+      max-width: 560px;
+      height: $cta-height-lg;
+      border-radius: $radius-lg;
+      padding: 16px 40px;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(35, 42, 134, 0.4);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      transition: transform 0.3s ease;
+
+      @media (min-width: 1280px) {
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
+      }
+    }
+
+    &:hover svg {
+      transform: translateX(5px);
+    }
   }
-
-}
-
-@media (max-width: 1200px) {
-  .student-features-section {
-    padding: 80px 0 100px;
-
-    .student-features__inner { padding: 0 30px; }
-
-    .section-header { p.lead { font-size: 16px; line-height: 1.6; } }
-
-    .feature-copy { h3 { font-size: 24px; } }
-  }
-}
-
-@media (max-width: 1024px) {
-  .student-features-section {
-    padding: 70px 0 90px;
-    .student-features__inner { padding: 0 24px; gap: 34px; }
-    .section-header { h2 { font-size: 42px; white-space: normal; } p.lead { font-size: 16px; } }
-    .student-features-panel__grid { grid-template-columns: 1fr; }
-    .student-features-panel__left { padding: 34px 28px; }
-    .student-features-panel__right { padding: 28px 28px 32px; }
-    .student-features-media { max-width: 980px; padding: 14px; }
-    .icon-box { width: 50px; height: 50px; flex-basis: 50px; }
-  }
-}
-
-@media (max-width: 768px) {
-  .student-features-section {
-    padding: 60px 0 80px;
-    .student-features__inner { padding: 0 20px; gap: 28px; }
-    .feature-copy { h3 { font-size: 20px; white-space: normal; } p { font-size: 15px; } }
-    .cta-button { width: 100%; max-width: 360px; justify-content: center; }
-  }
-}
-
-@media (max-width: 1400px) {
-  .student-features-section { .section-header { h2 { white-space: normal; } } }
 }

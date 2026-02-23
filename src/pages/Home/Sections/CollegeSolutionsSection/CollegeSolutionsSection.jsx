@@ -28,12 +28,13 @@ const CollegeSolutionsSection = () => {
   return (
     <section className="college-solutions">
       <div className="college-solutions__inner">
-        <div className="header">
-          <h1>
-            Boost Student Employability & Accreditation Outcomes With{' '}
-            <span className="highlight">Data-Driven Insights</span>
-          </h1>
-          <p className="sub">DhiAspire empowers institutions to create measurable impact using deep analytics.</p>
+        <div className="section-header">
+          <h2>
+            Boost Student Employability & Accreditation
+            <br className="desktop-br" />
+            Outcomes With <span className="highlight">Data-Driven Insights</span>
+          </h2>
+          <p className="lead">DhiAspire empowers institutions to create measurable impact using deep analytics.</p>
         </div>
 
         <div className="solutions-grid">
@@ -56,7 +57,7 @@ const CollegeSolutionsSection = () => {
                     <img src={f.iconUrl} alt="" className="custom-icon" />
                   </div>
                   <div className="text">
-                    <h4>{f.title}</h4>
+                    <h3>{f.title}</h3>
                     <p>{f.desc}</p>
                   </div>
                 </li>

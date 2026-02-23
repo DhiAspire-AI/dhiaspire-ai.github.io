@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
           <h2>
             How it <span>Works</span>
           </h2>
-          <p>Getting Started is Simple</p>
+          <p className="lead">Getting Started is Simple</p>
         </header>
 
         <div className="how-it-works__steps">

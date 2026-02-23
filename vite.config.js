@@ -4,4 +4,19 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  // TODO: Remove in production
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    allowedHosts: ['.ngrok-free.dev'],
+  },
 });
+
+// import { defineConfig } from 'vite';
+// import react from '@vitejs/plugin-react';
+
+// export default defineConfig({
+//   plugins: [react()],
+//   base: '/',
+// });

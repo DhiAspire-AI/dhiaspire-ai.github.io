@@ -30,11 +30,12 @@ const EmployerSolutionsSection = () => {
       <div className="employer-solutions__inner">
         <div className="section-header">
           <h2>
-            Hire Faster. Hire Better. With Skill-Based
-            <br />
-            <span className="highlight">AI Talent Matching</span>
+            Hire Faster. Hire Better.
+            <br className="desktop-br" />
+            With Skill-Based
+            <span className="highlight"> AI Talent Matching</span>
           </h2>
-          <p>
+          <p className="lead">
             DhiAspire connects employers with a pre-skilled, assessed, and
             job-ready talent pool.
           </p>

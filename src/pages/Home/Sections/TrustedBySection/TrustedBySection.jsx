@@ -46,10 +46,10 @@ const TrustedBySection = () => {
   return (
     <section id="trusted-by" className="trusted-by">
       <div className="trusted-by__inner container">
-        <header className="trusted-header">
+        <div className="section-header">
           <h2>Trusted by Colleges, Students & Hiring Partners</h2>
-          <p className="sub">Real Impact Across the Ecosystem</p>
-        </header>
+          <p className="lead">Real Impact Across the Ecosystem</p>
+        </div>
 
         <div className="trusted-stats">
           {stats.map((s) => (

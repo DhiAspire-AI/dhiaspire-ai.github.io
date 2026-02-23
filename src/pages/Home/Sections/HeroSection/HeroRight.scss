@@ -1,37 +1,129 @@
 .hero-right {
-  flex: 0 1 44%;
-  width: min(100%, 560px);
-  min-height: 470px;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 320px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transform: translate3d(120px, 0, 0);
-  animation: heroRightEnter 0.8s ease-out forwards;
+  transform: translate3d(0, 40px, 0);
+  animation: heroRightEnterMobile 0.8s ease-out forwards;
   will-change: transform, opacity;
+  margin-top: 10px;
+
+  @media (min-width: 480px) {
+    max-width: 350px;
+    min-height: 320px;
+  }
+
+  @media (min-width: 640px) {
+    min-height: 324px;
+    max-width: 400px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 480px;
+    min-height: 350px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 520px;
+    min-height: 388px;
+    margin-top: 8px;
+  }
+
+  @media (min-width: 1280px) {
+    flex: 0 1 44%;
+    width: min(100%, 520px);
+    min-height: 438px;
+    margin-top: 0;
+    transform: translate3d(120px, 0, 0);
+    animation: heroRightEnter 0.8s ease-out forwards;
+  }
+
+  @media (min-width: 1400px) {
+    width: min(100%, 560px);
+    min-height: 470px;
+  }
+
+  @media (min-width: 1536px) {
+    width: min(100%, 660px);
+    min-height: 540px;
+  }
 }
 
 .hero-right__stage {
-  --queue-x: 176px;
-  --queue-y: 128px;
+  --queue-x: 80px;
+  --queue-y: 60px;
   --queue-scale: 0.34;
   position: relative;
-  width: min(100%, 520px);
-  height: 460px;
+  width: 100%;
+  max-width: 280px;
+  height: 240px;
   transform: translateZ(0);
   animation: heroStageFloat 4s ease-in-out infinite;
-}
 
-.hero-right__stage.is-transitioning {
-  animation-play-state: paused;
+  @media (min-width: 480px) {
+    max-width: 310px;
+    height: 270px;
+  }
+
+  @media (min-width: 640px) {
+    --queue-x: 104px;
+    --queue-y: 76px;
+    max-width: 350px;
+    height: 300px;
+  }
+
+  @media (min-width: 768px) {
+    --queue-x: 116px;
+    --queue-y: 84px;
+    max-width: 400px;
+    height: 330px;
+  }
+
+  @media (min-width: 1024px) {
+    --queue-x: 128px;
+    --queue-y: 94px;
+    max-width: 450px;
+    height: 370px;
+  }
+
+  @media (min-width: 1280px) {
+    --queue-x: 152px;
+    --queue-y: 114px;
+    max-width: 490px;
+    height: 430px;
+  }
+
+  @media (min-width: 1400px) {
+    --queue-x: 176px;
+    --queue-y: 128px;
+    max-width: 520px;
+    height: 460px;
+  }
+
+  @media (min-width: 1536px) {
+    --queue-x: 196px;
+    --queue-y: 142px;
+    --queue-scale: 0.32;
+    max-width: 610px;
+    height: 520px;
+  }
+
+  &.is-transitioning {
+    animation-play-state: paused;
+  }
 }
 
 .hero-right__card {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(100%, 430px);
+  width: 100%;
+  max-width: 240px;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: flex-end;
@@ -41,6 +133,34 @@
   pointer-events: none;
   will-change: transform, opacity;
   backface-visibility: hidden;
+
+  @media (min-width: 480px) {
+    max-width: 270px;
+  }
+
+  @media (min-width: 640px) {
+    max-width: 300px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 320px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 340px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 430px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 500px;
+  }
 }
 
 .hero-right__card--center {
@@ -74,9 +194,9 @@
 
 .hero-right__ghost {
   position: absolute;
-  width: 102px;
-  height: 102px;
-  display: flex;
+  width: 64px;
+  height: 64px;
+  display: none; // hidden on mobile
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -84,16 +204,66 @@
   transition: opacity 0.28s ease;
   z-index: 1;
 
+  @media (min-width: 640px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    width: 74px;
+    height: 74px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 84px;
+    height: 84px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 94px;
+    height: 94px;
+  }
+
+  @media (min-width: 1400px) {
+    width: 102px;
+    height: 102px;
+  }
+
+  @media (min-width: 1536px) {
+    width: 110px;
+    height: 110px;
+  }
+
   &.hero-right__ghost--top {
     top: 10px;
     right: 10px;
     opacity: 0.24;
+
+    @media (min-width: 1024px) {
+      top: -2px;
+      right: 16px;
+    }
+
+    @media (min-width: 1400px) {
+      top: 10px;
+      right: 10px;
+    }
   }
 
   &.hero-right__ghost--bottom {
     right: 12px;
     bottom: 22px;
     opacity: 0.18;
+
+    @media (min-width: 1024px) {
+      right: 16px;
+      bottom: 8px;
+    }
+
+    @media (min-width: 1400px) {
+      right: 12px;
+      bottom: 22px;
+    }
   }
 
   &.is-hidden {
@@ -110,44 +280,31 @@
 }
 
 .hero-right__title {
-  margin-top: 10px;
+  margin-top: 6px;
   color: rgba(255, 255, 255, 0.898);
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 100%;
-  leading-trim: none;
   letter-spacing: 0;
   text-align: center;
   -webkit-font-smoothing: antialiased;
-}
 
-/* Ultra-wide screens: scale illustration so hero fill feels balanced */
-@media (min-width: 1600px) {
-  .hero-right {
-    width: min(100%, 660px);
-    min-height: 540px;
+  @media (min-width: 640px) {
+    font-size: 20px;
   }
 
-  .hero-right__stage {
-    --queue-x: 196px;
-    --queue-y: 142px;
-    --queue-scale: 0.32;
-    width: min(100%, 610px);
-    height: 520px;
+  @media (min-width: 1280px) {
+    margin-top: 10px;
+    font-size: 22px;
   }
 
-  .hero-right__card {
-    width: min(100%, 500px);
+  @media (min-width: 1400px) {
+    font-size: 24px;
   }
 
-  .hero-right__ghost {
-    width: 110px;
-    height: 110px;
-  }
-
-  .hero-right__title {
+  @media (min-width: 1536px) {
     margin-top: 12px;
     font-size: 26px;
   }
@@ -165,7 +322,20 @@
   }
 }
 
+@keyframes heroRightEnterMobile {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes heroStageFloat {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0);
@@ -205,91 +375,6 @@
   }
 }
 
-@media (max-width: 1400px) {
-  .hero-right {
-    width: min(100%, 520px);
-    min-height: 438px;
-  }
-
-  .hero-right__stage {
-    --queue-x: 152px;
-    --queue-y: 114px;
-    width: min(100%, 490px);
-    height: 430px;
-  }
-
-  .hero-right__card {
-    width: min(100%, 400px);
-  }
-
-  .hero-right__ghost {
-    width: 94px;
-    height: 94px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-right {
-    flex-basis: auto;
-    width: min(100%, 520px);
-    min-height: 388px;
-    margin-top: 8px;
-  }
-
-  .hero-right__stage {
-    --queue-x: 128px;
-    --queue-y: 94px;
-    width: min(100%, 450px);
-    height: 370px;
-  }
-
-  .hero-right__card {
-    width: min(100%, 340px);
-  }
-
-  .hero-right__ghost {
-    width: 84px;
-    height: 84px;
-
-    &.hero-right__ghost--top {
-      top: -2px;
-      right: 16px;
-    }
-
-    &.hero-right__ghost--bottom {
-      right: 16px;
-      bottom: 8px;
-    }
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-right {
-    min-height: 324px;
-  }
-
-  .hero-right__stage {
-    --queue-x: 104px;
-    --queue-y: 76px;
-    width: min(100%, 350px);
-    height: 300px;
-  }
-
-  .hero-right__card {
-    width: min(100%, 300px);
-  }
-
-  .hero-right__ghost {
-    display: none;
-  }
-
-  .hero-right__title {
-    margin-top: 6px;
-    font-size: 20px;
-    line-height: 100%;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-right {
     animation: none;
@@ -310,37 +395,5 @@
   .hero-right__card--incoming,
   .hero-right__ghost {
     display: none;
-  }
-}
-
-/* Get Started button styles */
-.get-started-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 336px;
-  height: 80px;
-  gap: 10px;
-  border-radius: 25px;
-  padding: 16px 76px;
-  background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
-  color: #ffffff;
-  opacity: 1;
-  transform: rotate(0deg);
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(35, 42, 134, 0.18);
-}
-
-@media (max-width: 640px) {
-  .get-started-btn {
-    width: 100%;
-    max-width: 320px;
-    padding: 12px 40px;
-    height: 64px;
   }
 }

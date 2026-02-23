@@ -40,12 +40,12 @@ const EcosystemSection = () => {
     <section className="ecosystem-section">
       <div className="ecosystem-section__inner">
         <div className="section-header">
-          <h1>
+          <h2>
             Bridging the{' '}
             <span className="highlight">Education - Employment</span> Gap Using
             AI
-          </h1>
-          <p>
+          </h2>
+          <p className="lead">
             An AI-powered ecosystem that aligns students, colleges, and
             employers through skill assessment, gap analysis, and intelligent
             matching.
