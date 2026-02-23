@@ -35,29 +35,37 @@
     }
 
     .how-it-works-container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 64px;
         text-align: center;
         position: relative;
         z-index: 1;
+
+        @media (max-width: 768px) {
+            padding: 0 24px;
+        }
     }
 
     .how-it-works-header {
-        margin-bottom: 80px;
+        margin-bottom: 72px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
+        @media (max-width: 768px) {
+            margin-bottom: 48px;
+        }
+
         h2 {
             font-family: 'Inter', sans-serif;
-            font-size: 40px;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             font-weight: 700;
-            line-height: 32px;
+            line-height: 1.25;
             margin-bottom: 24px;
             color: #FFFFFF;
             width: fit-content;
-            max-width: 800px; // Removed the restrictive 339px width
+            max-width: 1000px;
             opacity: 1;
 
             .highlight-blue {

@@ -35,11 +35,15 @@
 
     .cta-description {
         font-family: 'Inter', sans-serif;
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
         color: rgba(255, 255, 255, 0.8);
         line-height: 1.6;
         max-width: 850px;
         margin: 0 auto 48px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 32px;
+        }
     }
 
     .cta-actions {
@@ -47,10 +51,14 @@
         gap: 24px;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             flex-direction: column;
             gap: 16px;
+            padding: 0 20px;
         }
     }
 
@@ -61,57 +69,123 @@
         font-family: 'Poppins', sans-serif;
         font-size: 32px;
         font-weight: 500;
-        line-height: 100%;
-        letter-spacing: 0%;
+        line-height: 1;
         color: #ffffff;
         background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
         border: none;
         border-radius: 25px;
         cursor: pointer;
-        
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         white-space: nowrap;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(82, 183, 255, 0.2);
 
-        @media (max-width: 600px) {
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(82, 183, 255, 0.34);
+        }
+
+        @media (max-width: 1400px) {
+            width: 310px;
+        }
+
+        @media (max-width: 1280px) {
+            width: 300px;
+            height: 72px;
+            font-size: 26px;
+        }
+
+        @media (max-width: 768px) {
             width: 100%;
-            height: auto;
-            font-size: 24px;
-            padding: 16px 20px;
+            max-width: 336px;
+            height: 64px;
+            font-size: 22px;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 480px) {
+            height: 60px;
+            font-size: 20px;
+            border-radius: 18px;
         }
     }
 
     .btn-view-features {
-        width: 509px;
+        width: 420px;
         height: 80px;
         padding: 16px 20px;
         font-family: 'Poppins', sans-serif;
         font-size: 32px;
         font-weight: 500;
-        line-height: 100%;
-        letter-spacing: 0%;
+        line-height: 1;
         color: #ffffff;
-        
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         white-space: nowrap;
-
-        background: linear-gradient(#040626, #040626) padding-box,
-                    linear-gradient(90deg, #232A86 0%, #52B7FF 100%) border-box;
+        background: transparent;
         border: 3px solid transparent;
         border-radius: 25px;
-        
+        position: relative;
+        z-index: 1;
         cursor: pointer;
+        transition: all 0.3s ease;
 
-        @media (max-width: 600px) {
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            border-radius: 25px;
+            padding: 3px;
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            background: rgba(82, 183, 255, 0.1);
+        }
+
+        @media (max-width: 1400px) {
+            width: 380px;
+        }
+
+        @media (max-width: 1280px) {
+            width: 340px;
+            height: 72px;
+            font-size: 26px;
+        }
+
+        @media (max-width: 768px) {
             width: 100%;
-            height: auto;
-            padding: 16px 20px;
-            font-size: 24px;
+            max-width: 336px;
+            height: 64px;
+            font-size: 22px;
+            border-radius: 20px;
+
+            &::before {
+                border-radius: 20px;
+                padding: 2px;
+                inset: -2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            height: 60px;
+            font-size: 20px;
+            border-radius: 18px;
+
+            &::before {
+                border-radius: 18px;
+            }
         }
     }
 }

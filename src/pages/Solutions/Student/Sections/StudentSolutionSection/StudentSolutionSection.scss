@@ -15,62 +15,84 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 32px;
+    padding: 0 24px;
 
     h2 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 40px;
-      line-height: 100%;
+      font-family: $font-sans;
+      font-weight: 700;
+      font-size: clamp(32px, 5vw, 64px);
+      line-height: 1.06;
       color: $color-white;
       margin: 0;
       white-space: nowrap;
+
+      @media (max-width: 1280px) {
+        white-space: normal;
+      }
     }
 
     .highlight {
-      background: linear-gradient(90deg, #232A86 100%, #52B7FF 0%);
-      background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+      background: linear-gradient(90deg, #232A86 46.63%, #52B7FF 84.62%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
       display: inline-block;
     }
   }
 
   .student-solution-panel {
-    max-width: 1732px;
+    max-width: 1800px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 64px;
+
+    @media (max-width: 1024px) {
+      padding: 0 32px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 24px;
+    }
 
     &__grid {
       width: 100%;
       display: grid;
-      grid-template-columns: minmax(420px, 680px) 1fr;
-      align-items: stretch;
+      grid-template-columns: 45fr 55fr;
+      align-items: center;
+      gap: clamp(40px, 6vw, 120px);
 
-      @media (max-width: 1100px) {
+      @media (max-width: 1280px) {
         grid-template-columns: 1fr;
         gap: 60px;
+      }
+
+      @media (max-width: 768px) {
+        gap: 48px;
       }
     }
 
     &__left {
-      padding: 142px 36px 42px 32px;
+      padding: 40px 0;
 
-      @media (max-width: 1100px) {
-        padding: 40px 0;
+      @media (max-width: 1280px) {
+        order: 2;
+        padding: 0;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
       }
     }
 
     &__right {
-      padding: 34px 22px 34px 28px;
+      padding: 0;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
 
-      @media (max-width: 1100px) {
-        padding: 0;
-        justify-content: center;
+      @media (max-width: 1280px) {
+        order: 1;
+        width: 100%;
       }
     }
   }
@@ -81,30 +103,74 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 34px;
+
+    @media (max-width: 768px) {
+      gap: 24px;
+    }
   }
 
   .student-solution-item {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
+    gap: 22px;
+
+    @media (max-width: 768px) {
+      gap: 16px;
+    }
   }
 
   .icon-box {
-    width: $icon-box-size;
-    height: $icon-box-size;
-    flex: 0 0 $icon-box-size;
+    width: 80px;
+    height: 80px;
+    flex: 0 0 80px;
     border-radius: $radius-md;
     background: $gradient-cta;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     color: $color-white;
+    box-shadow: 0 4px 12px rgba(35, 42, 134, 0.2);
+    transition: transform 0.3s ease;
+
+    @media (max-width: 1024px) {
+      width: 64px;
+      height: 64px;
+      flex: 0 0 64px;
+    }
+
+    @media (max-width: 768px) {
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 480px) {
+      width: 50px;
+      height: 50px;
+      flex: 0 0 50px;
+    }
 
     .custom-icon {
       width: 44px;
       height: 44px;
       object-fit: contain;
+
+      @media (max-width: 1024px) {
+        width: 36px;
+        height: 36px;
+      }
+
+      @media (max-width: 768px) {
+        width: 32px;
+        height: 32px;
+      }
+
+      @media (max-width: 480px) {
+        width: 27px;
+        height: 27px;
+      }
     }
   }
 
@@ -114,43 +180,67 @@
 
     h3 {
       font-family: $font-sans;
-      font-size: 28px;
-      line-height: 1.1;
-      font-weight: 700;
-      margin: 0 0 8px 0;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.2;
       color: $color-white;
+      margin: 0 0 6px 0;
+
+      @media (max-width: 1024px) {
+        font-size: 22px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
     }
 
     p {
       margin: 0;
       font-family: $font-sans;
-      font-size: 18px;
-      line-height: 1.6;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.4;
       color: $color-muted-2;
+
+      @media (max-width: 1024px) {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 14px;
+      }
     }
   }
 
   .student-solution-media {
-    width: 865px;
-    height: 480px;
-    margin-top: 104px;
-    border-radius: 18px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+    border-radius: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
     background: rgba(255, 255, 255, 0.05);
-    
-    @media (max-width: 1400px) {
-        width: 100%;
-        height: auto;
-        max-width: 865px;
-    }
 
     @media (max-width: 1100px) {
-        max-width: 100%;
-        padding: 0;
+        border-radius: 24px;
+    }
+
+    @media (max-width: 768px) {
+        border-radius: 20px;
     }
   }
 
@@ -166,35 +256,71 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 64px;
+
+    @media (max-width: 768px) {
+        margin-top: 48px;
+        padding: 0 24px;
+    }
   }
 
   .cta-button {
-    width: 528px;
-    height: $cta-height-lg;
-    padding: 16px 30px;
+    width: 100%;
+    max-width: 336px;
+    height: 60px;
+    padding: 12px 24px;
+    background: $gradient-cta;
+    border: none;
+    border-radius: 18px;
+    color: $color-white;
+    font-family: $font-ui;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: $gradient-cta;
-    border: none;
-    border-radius: 50px;
-    color: $color-white;
-    font-family: $font-ui;
-    font-size: 24px;
-    font-weight: 600;
+    gap: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(82, 183, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(82, 183, 255, 0.2);
+    white-space: nowrap;
 
-    @media (max-width: 600px) {
+    @media (min-width: 768px) {
       width: 100%;
-      height: 70px;
-      font-size: 20px;
+      max-width: 400px;
+      height: 72px;
+      font-size: 26px;
+      border-radius: 22px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 600px;
+      max-width: none;
+      height: 80px;
+      border-radius: 25px;
+      padding: 16px 60px;
+      font-size: 32px;
+      gap: 24px;
+      letter-spacing: 0.01em;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(82, 183, 255, 0.34);
     }
 
     svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
       transition: transform 0.3s ease;
+
+      @media (min-width: 1280px) {
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
+      }
     }
 
     &:hover svg {

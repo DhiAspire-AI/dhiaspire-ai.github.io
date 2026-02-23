@@ -2,26 +2,15 @@
 
 .empower-section {
   width: 100%;
-  padding: 60px 0 80px;
-  background: $color-bg;
+  padding: 80px 0 120px;
+  background: #040626;
+  background: radial-gradient(circle at center, #0a163a 0%, #040626 100%);
   color: $color-white;
   position: relative;
   overflow: hidden;
 
-  @media (min-width: 480px) {
-    padding: 70px 0 90px;
-  }
-
-  @media (min-width: 768px) {
-    padding: 80px 0 100px;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 90px 0 110px;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 100px 0 120px;
+  @media (max-width: 768px) {
+    padding: 60px 0 80px;
   }
 
   .empower-section__inner {
@@ -163,67 +152,81 @@
 
     .btn {
       width: 100%;
-      max-width: 320px;
-      height: 52px;
-      padding: 0 24px;
-      border-radius: 12px;
-      font-family: $font-sans;
-      font-size: 16px;
-      font-weight: 600;
+      max-width: 336px;
+      height: 60px;
+      padding: 12px 24px;
+      border-radius: 18px;
+      font-family: $font-ui;
+      font-size: 20px;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       white-space: nowrap;
-
-      @media (min-width: 480px) {
-        height: 56px;
-        font-size: 18px;
-        border-radius: 16px;
-      }
+      gap: 10px;
 
       @media (min-width: 768px) {
-        height: 60px;
-        max-width: 240px;
+        height: 72px;
+        font-size: 26px;
+        border-radius: 22px;
       }
 
       @media (min-width: 1280px) {
-        // Centered label — no space-between
-        width: auto;
-        min-width: 420px;
-        max-width: 560px;
-        height: $cta-height-lg;
-        border-radius: $radius-lg;
-        padding: 16px 40px;
+        width: 336px;
+        max-width: none;
+        height: 80px;
+        border-radius: 25px;
+        padding: 16px 40px; // Adjusted from 76px to ensure "Book a demo" fits perfectly without wrapping
         font-size: 32px;
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: 0;
-        justify-content: center;
-        font-family: $font-ui;
+        line-height: 1;
       }
 
       &--primary {
-        background: linear-gradient(90deg, #232A86 0%, #2064D6 50%, #52B7FF 100%);
+        background: linear-gradient(90deg, #232A86 100%, #52B7FF 0%);
+        background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
         border: none;
         color: $color-white;
-        box-shadow: 0 8px 30px rgba(35, 42, 134, 0.4);
+        box-shadow: 0 8px 30px rgba(82, 183, 255, 0.2);
 
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 12px 40px rgba(35, 42, 134, 0.5);
+          box-shadow: 0 12px 40px rgba(82, 183, 255, 0.4);
         }
       }
 
       &--secondary {
         background: transparent;
-        border: 2px solid #2064d6;
+        border: 3px solid transparent;
         color: $color-white;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -3px;
+          border-radius: 25px;
+          padding: 3px;
+          background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          z-index: -1;
+          pointer-events: none;
+
+          @media (max-width: 768px) {
+            inset: -2px;
+            padding: 2px;
+            border-radius: 18px;
+          }
+        }
 
         &:hover {
-          background: rgba(32, 100, 214, 0.1);
+          background: rgba(82, 183, 255, 0.1);
           transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(82, 183, 255, 0.1);
         }
       }
     }

@@ -33,7 +33,7 @@ const KeyBenefits = () => {
                     {benefits.map((benefit, index) => (
                         <div key={index} className="benefit-item">
                             <div className="icon-wrapper">
-                                <Check size={20} className="check-icon" />
+                                <Check size={28} className="check-icon" />
                             </div>
                             <div className="benefit-content">
                                 <h3>{benefit.title}</h3>

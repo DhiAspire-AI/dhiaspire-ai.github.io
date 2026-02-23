@@ -68,7 +68,7 @@ const StudentSolutionSection = () => {
                 </div>
             </div>
 
-            {/* <div className="student-solution-footer">
+            <div className="student-solution-footer">
                 <button type="button" className="cta-button">
                     Explore Student Features
                     <svg
@@ -88,7 +88,7 @@ const StudentSolutionSection = () => {
                         />
                     </svg>
                 </button>
-            </div> */}
+            </div>
         </section>
     );
 };

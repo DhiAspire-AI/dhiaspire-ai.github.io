@@ -1,25 +1,38 @@
 @use '../../../../../styles/variables.scss' as *;
 
 .solution-section {
-    padding: 100px 0;
+    padding: clamp(60px, 10vw, 120px) 0;
     background: #060819;
     color: #ffffff;
     position: relative;
     overflow: hidden;
 
     .solution-container {
-        max-width: 1650px;
+        max-width: 1720px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 64px;
+
+        @media (max-width: 1024px) {
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 0 24px;
+        }
     }
 
     .solution-title {
         text-align: center;
-        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-size: clamp(2rem, 5vw, 4rem);
         font-weight: 700;
-        margin-bottom: 80px;
+        line-height: 1.2;
+        margin-bottom: clamp(40px, 6vw, 80px);
         font-family: $font-ui;
         color: #ffffff;
+
+        @media (max-width: 768px) {
+            margin-bottom: 48px;
+        }
 
         .highlight-blue {
             background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
@@ -38,18 +51,32 @@
     .solution-content {
         display: flex;
         align-items: center;
-        gap: 80px;
+        gap: clamp(40px, 6vw, 100px);
 
         @media (max-width: 1100px) {
             flex-direction: column;
             gap: 60px;
+        }
+
+        @media (max-width: 768px) {
+            gap: 48px;
         }
     }
 
     .solution-image-container {
         flex: 1.2;
         position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
         
+        @media (max-width: 1100px) {
+            order: 2; // Move image below features on tablet/mobile if preferred, or keep as is. Let's keep features first for mobile? 
+            // Actually, usually image-then-text or text-then-image. The current is image-then-text.
+            // Let's keep features first on mobile for better reading.
+            order: 2;
+        }
+
         &::after {
             content: '';
             position: absolute;
@@ -57,24 +84,27 @@
             left: 50%;
             width: 120%;
             height: 120%;
-            background: radial-gradient(circle, rgba(82, 183, 255, 0.1) 0%, transparent 70%);
             transform: translate(-50%, -50%);
             z-index: 1;
             pointer-events: none;
         }
 
         .solution-main-image {
-            width: 900px ;
-            height: 450px;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            aspect-ratio: 16 / 10;
             object-fit: cover;
             border-radius: 20px;
             position: relative;
             z-index: 2;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 
-            @media (max-width: 850px) {
-                width: 100%;
-                height: auto;
+            @media (max-width: 1100px) {
+                max-width: 700px;
+            }
+
+            @media (max-width: 768px) {
+                border-radius: 12px;
             }
         }
     }
@@ -84,27 +114,65 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+
+        @media (max-width: 1100px) {
+            order: 1;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            gap: 32px;
+        }
     }
 
     .feature-item {
         display: flex;
         align-items: flex-start;
-        gap: 18px;
+        gap: 24px;
+
+        @media (max-width: 768px) {
+            gap: 16px;
+        }
 
         .feature-icon-box {
             width: 80px;
             height: 80px;
             flex: 0 0 80px;
             background: $gradient-cta;
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s ease;
+
+            @media (max-width: 1024px) {
+                width: 72px;
+                height: 72px;
+                flex: 0 0 72px;
+            }
+
+            @media (max-width: 768px) {
+                width: 60px;
+                height: 60px;
+                flex: 0 0 60px;
+                border-radius: 12px;
+            }
 
             .feature-icon-img {
                 width: 44px;
                 height: 44px;
                 object-fit: contain;
+
+                @media (max-width: 1024px) {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                @media (max-width: 768px) {
+                    width: 32px;
+                    height: 32px;
+                }
             }
         }
 
@@ -112,18 +180,18 @@
             flex: 1;
 
             h3 {
-                font-family: $font-sans;
-                font-size: 24px;
+                font-family: 'Poppins', sans-serif;
+                font-size: clamp(1.25rem, 2vw, 1.5rem);
                 font-weight: 700;
-                line-height: 1.1;
+                line-height: 1.25;
                 margin-bottom: 8px;
                 color: #ffffff;
             }
 
             p {
                 font-family: $font-sans;
-                font-size: 18px;
-                color: $color-muted-2;
+                font-size: clamp(0.95rem, 1vw, 1.15rem);
+                color: rgba(255, 255, 255, 0.7);
                 line-height: 1.6;
                 margin: 0;
             }
@@ -135,26 +203,4 @@
     0% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    .solution-section {
-        padding: 60px 0;
-        
-        .solution-container {
-            padding: 0 24px;
-        }
-
-        .feature-item {
-            .feature-icon-box {
-                min-width: 48px;
-                height: 48px;
-            }
-
-            .feature-text {
-                h3 { font-size: 1.2rem; }
-                p { font-size: 0.95rem; }
-            }
-        }
-    }
 }

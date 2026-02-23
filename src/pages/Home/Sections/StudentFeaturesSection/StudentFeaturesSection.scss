@@ -427,57 +427,48 @@
 
   .cta-button {
     width: 100%;
-    max-width: 320px;
-    min-height: 52px;
-    height: auto;
-    padding: 12px 28px;
+    max-width: 336px;
+    height: 60px;
+    padding: 12px 24px;
     background: $gradient-cta;
     border: none;
-    border-radius: 12px;
+    border-radius: 18px;
     color: $color-white;
     font-family: $font-ui;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
-    line-height: 100%;
-    display: inline-flex;
+    line-height: 1;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: $shadow-lg;
-
-    @media (min-width: 480px) {
-      font-size: 18px;
-      min-height: 56px;
-      max-width: 380px;
-    }
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(82, 183, 255, 0.2);
+    white-space: nowrap;
 
     @media (min-width: 768px) {
-      min-height: 60px;
-      border-radius: 16px;
-      max-width: 420px;
+      width: 100%;
+      max-width: 400px;
+      height: 72px;
+      font-size: 26px;
+      border-radius: 22px;
     }
 
     @media (min-width: 1280px) {
-      // Centered label + icon — no space-between
-      width: auto;
-      min-width: 420px;
-      max-width: 560px;
-      height: $cta-height-lg;
-      border-radius: $radius-lg;
-      padding: 16px 40px;
+      width: 600px;
+      max-width: none;
+      height: 80px;
+      border-radius: 25px;
+      padding: 16px 60px;
       font-size: 32px;
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: 0;
-      gap: 16px;
-      justify-content: center;
+      gap: 24px;
+      letter-spacing: 0.01em;
     }
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 15px 40px rgba(35, 42, 134, 0.4);
+      box-shadow: 0 15px 35px rgba(82, 183, 255, 0.34);
     }
 
     svg {

@@ -18,37 +18,46 @@
     }
 
     .container {
-        max-width: 1620px;
+        max-width: 1720px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 64px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media (max-width: 768px) {
+            padding: 0 24px;
+        }
     }
 
     .header {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 72px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 48px;
+        }
 
         h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 64px;
-            font-weight: 600;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
             color: #ffffff;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1.25;
         }
     }
 
     .stories-grid {
         display: flex;
         justify-content: center;
-        gap: 30px;
+        gap: 32px;
         width: 100%;
-        margin-bottom: 80px;
+        margin-bottom: 64px;
 
         @media (max-width: 1200px) {
             flex-wrap: wrap;
+            gap: 24px;
         }
     }
 
@@ -56,25 +65,31 @@
         background: #FFFFFF33;
         backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 50px;
+        border-radius: 20px;
+        padding: 48px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; // Ensures content fits and spaces out like image
-        width: 758px;
-        height: 296px;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 760px;
+        min-height: 320px;
         transition: all 0.3s ease;
         opacity: 1;
+
+        @media (max-width: 768px) {
+            padding: 32px;
+            min-height: auto;
+        }
 
         .story-content {
             p {
                 font-family: 'Poppins', sans-serif;
-                font-size: 24px;
+                font-size: clamp(1.1rem, 2vw, 1.5rem);
                 font-weight: 400;
-                line-height: 1.4; // Slightly more than 100% to ensure readability like image
+                line-height: 1.5;
                 color: #FFFFFF;
                 letter-spacing: 0%;
-                margin: 0;
+                margin: 0 0 32px 0;
                 max-width: 100%;
             }
         }
@@ -85,45 +100,36 @@
             gap: 20px;
 
             img {
-                width: 60px;
-                height: 60px;
+                width: 64px;
+                height: 64px;
                 border-radius: 50%;
                 object-fit: cover;
-                border: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
             }
 
             .user-info {
                 display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 4px;
 
                 h4 {
                     font-family: 'Poppins', sans-serif;
-                    font-size: 24px;
+                    font-size: 20px;
                     font-weight: 600;
                     color: #FFFFFF;
-                    line-height: 1;
-                    letter-spacing: 0%;
+                    line-height: 1.2;
                     margin: 0;
                 }
 
                 p {
                     font-family: 'Poppins', sans-serif;
-                    font-size: 22px;
+                    font-size: 16px;
                     font-weight: 400;
                     color: rgba(255, 255, 255, 0.8);
-                    line-height: 1;
-                    letter-spacing: 0%;
+                    line-height: 1.2;
                     margin: 0;
                 }
             }
-        }
-
-        @media (max-width: 1600px) {
-            width: 100%;
-            max-width: 758px;
-            height: auto;
-            min-height: 296px;
         }
     }
 

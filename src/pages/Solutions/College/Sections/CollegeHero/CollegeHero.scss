@@ -102,15 +102,29 @@
       }
     }
 
-    .hero-intro,
-    .hero-outro {
-      margin: 0;
-      font-family: $font-sans;
-      font-size: clamp(1.05rem, 1.55vw, 1.62rem);
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.9);
+    .hero-intro {
+      font-family: $font-ui;
       font-weight: 500;
-      max-width: 1020px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 auto;
+      max-width: 100%;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+        max-width: 800px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 20px;
+        max-width: 1000px;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 24px;
+        max-width: 1150px;
+      }
     }
 
     .pill-container {
@@ -140,9 +154,23 @@
     }
 
     .hero-outro {
-      margin-bottom: 60px;
-      font-size: 1.15rem;
-      opacity: 0.9;
+      font-family: $font-ui;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 auto 48px;
+      max-width: 100%;
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+        margin-bottom: 56px;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 20px;
+        margin-bottom: 64px;
+      }
     }
 
     .hero-actions {
@@ -150,44 +178,56 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 24px;
       width: 100%;
+      margin-top: 8px;
 
       .btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        max-width: 300px;
-        height: 72px;
-        padding: 12px 34px;
-        border-radius: 50px;
-        font-family: $font-ui;
-        font-size: clamp(1.1rem, 1.8vw, 1.6rem);
-        font-weight: 600;
+        width: 336px;
+        height: 80px;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 500;
         line-height: 1;
         cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
 
         &.btn-primary {
           background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
           color: #fff;
-          border: none;
+          
           box-shadow: 0 4px 15px rgba(35, 42, 134, 0.3);
 
-          &:hover {
-            box-shadow: 0 8px 25px rgba(35, 42, 134, 0.45);
-          }
+         
         }
 
         &.btn-outline {
-          background: transparent;
-          border: 2px solid #52B7FF;
           color: #fff;
+          background: transparent;
+          border: 3px solid transparent;
+          position: relative;
+          z-index: 1;
 
-          &:hover {
-            background: rgba(82, 183, 255, 0.1);
-            box-shadow: 0 8px 25px rgba(82, 183, 255, 0.2);
+          &::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            border-radius: 25px;
+            padding: 3px;
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+            pointer-events: none;
           }
+
+         
         }
 
         &:focus-visible {
@@ -244,27 +284,29 @@
 @media (max-width: 1024px) {
   .college-hero {
     min-height: auto;
-    padding: calc(var(--navbar-height) + 34px) 0 64px;
+    padding: calc(var(--navbar-height) + 48px) 0 80px;
 
     .hero-content {
       .hero-title {
-        margin-bottom: 22px;
+        margin-bottom: 24px;
+        line-height: 1.2;
       }
 
       .hero-intro,
       .hero-outro {
-        font-size: clamp(1rem, 2.3vw, 1.28rem);
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       }
 
       .hero-outro {
-        margin-bottom: 34px;
+        margin-bottom: 40px;
       }
 
       .hero-actions {
         .btn {
-          max-width: 300px;
-          height: 70px;
-          font-size: clamp(1.12rem, 2.6vw, 1.55rem);
+          width: 320px;
+          height: 72px;
+          font-size: 26px;
+          border-radius: 25px;
         }
       }
     }
@@ -273,48 +315,66 @@
 
 @media (max-width: 768px) {
   .college-hero {
-    padding: calc(var(--navbar-height) + 26px) 0 52px;
+    padding: calc(var(--navbar-height) + 40px) 0 64px;
 
     .hero-container {
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     .hero-content {
       .hero-title {
-        font-size: clamp(1.65rem, 7.1vw, 2.35rem);
-        margin-bottom: 18px;
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+        margin-bottom: 24px;
+        line-height: 1.2;
+        text-align: center;
+
+        .title-line {
+          width: 100%;
+          text-wrap: balance;
+        }
       }
 
-      .hero-intro,
-      .hero-outro {
-        font-size: 1rem;
-        line-height: 1.5;
+      .hero-intro {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.9);
       }
 
       .pill-container {
-        gap: 10px;
-        margin: 16px 0 14px;
+        gap: 12px;
+        margin: 24px 0 20px;
 
         .pill {
-          min-height: 42px;
-          padding: 8px 16px;
-          border-radius: 10px;
-          font-size: 0.95rem;
+          min-height: 44px;
+          padding: 10px 20px;
+          border-radius: 12px;
+          font-size: 1rem;
         }
       }
 
       .hero-outro {
-        margin-bottom: 28px;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 32px;
       }
 
       .hero-actions {
         flex-direction: column;
-        gap: 14px;
+        gap: 16px;
+        width: 100%;
+        max-width: 400px;
 
         .btn {
-          max-width: 100%;
-          height: 62px;
-          font-size: 1.2rem;
+          width: 100%;
+          max-width: none;
+          height: 64px;
+          font-size: 22px;
+          border-radius: 20px;
+
+          &::before {
+            border-radius: 20px;
+          }
         }
       }
     }
@@ -323,26 +383,37 @@
 
 @media (max-width: 480px) {
   .college-hero {
+    padding: calc(var(--navbar-height) + 32px) 0 56px;
+
     .hero-content {
       .hero-title {
-        font-size: clamp(1.5rem, 8vw, 2.1rem);
+        font-size: clamp(1.6rem, 9vw, 2.2rem);
+        margin-bottom: 20px;
+      }
+
+      .hero-intro {
+        font-size: 1rem;
       }
 
       .pill-container {
-        gap: 8px;
+        gap: 10px;
 
         .pill {
-          min-height: 38px;
-          padding: 8px 12px;
-          font-size: 0.86rem;
+          min-height: 40px;
+          padding: 8px 16px;
+          font-size: 0.9rem;
         }
       }
 
       .hero-actions {
         .btn {
-          height: 56px;
-          font-size: 1.05rem;
+          height: 60px;
+          font-size: 20px;
           border-radius: 18px;
+
+          &::before {
+            border-radius: 18px;
+          }
         }
       }
     }

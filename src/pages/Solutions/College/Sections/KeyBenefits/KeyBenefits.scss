@@ -8,20 +8,32 @@
     position: relative;
 
     .benefits-container {
-        max-width: 1200px;
+        max-width: 1720px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 64px;
+
+        @media (max-width: 1024px) {
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 0 24px;
+        }
     }
 
     .benefits-title {
         text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 40px;
-        line-height: 100%;
-        letter-spacing: 0%;
+        font-family: $font-ui;
+        font-weight: 700;
+        font-size: clamp(2.2rem, 5vw, 4.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
         color: #FFFFFF;
-        margin-bottom: 80px;
+        margin-bottom: clamp(60px, 8vw, 100px);
+
+        @media (max-width: 768px) {
+            margin-bottom: 48px;
+        }
 
         .highlight-blue {
             background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
@@ -35,54 +47,112 @@
     .benefits-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 60px 100px;
-        max-width: 1000px;
+        gap: 80px 100px;
+        width: 100%;
         margin: 0 auto;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
+            gap: 60px 80px;
+        }
+
+        @media (max-width: 1200px) {
             grid-template-columns: 1fr;
+            max-width: 900px;
+            gap: 48px;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 100%;
             gap: 40px;
         }
     }
 
     .benefit-item {
         display: flex;
-        align-items: center;
-        gap: 24px;
+        align-items: flex-start;
+        gap: 32px;
+        width: 100%;
+
+        @media (max-width: 1400px) {
+            gap: 24px;
+        }
+
+        @media (max-width: 480px) {
+            gap: 16px;
+        }
 
         .icon-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 34px;
-            height: 34px;
+            width: 54px;
+            height: 54px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             color: #ffffff;
             flex-shrink: 0;
+            margin-top: 4px;
+
+            @media (max-width: 1400px) {
+                width: 46px;
+                height: 46px;
+            }
             
+            @media (max-width: 480px) {
+                width: 36px;
+                height: 36px;
+                margin-top: 2px;
+            }
+
             .check-icon {
-                width: 22px;
-                height: 22px;
+                width: 30px;
+                height: 30px;
                 stroke-width: 2.5px;
+
+                @media (max-width: 1400px) {
+                    width: 26px;
+                    height: 26px;
+                }
+
+                @media (max-width: 480px) {
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
 
         .benefit-content {
+            flex: 1;
+            
             h3 {
                 font-family: 'Poppins', sans-serif;
-                font-size: 24px;
+                font-size: clamp(24px, 3.5vw, 40px);
                 font-weight: 600;
                 margin: 0;
                 color: #ffffff;
+                line-height: 1;
+                letter-spacing: 0%;
+                white-space: nowrap;
+
+                @media (max-width: 1300px) {
+                    white-space: normal;
+                }
             }
 
             p {
                 font-family: 'Poppins', sans-serif;
-                font-size: 16px;
+                font-size: clamp(18px, 2.8vw, 32px);
+                font-weight: 400;
                 color: rgba(255, 255, 255, 0.7);
-                margin: 4px 0 0 0;
-                line-height: 1.4;
+                margin: 16px 0 0 0;
+                line-height: 1.1; // Slightly more than 1 to prevent clipping of descenders
+                letter-spacing: 0%;
+                white-space: nowrap;
+
+                @media (max-width: 1300px) {
+                    white-space: normal;
+                    line-height: 1.2;
+                }
             }
         }
     }
