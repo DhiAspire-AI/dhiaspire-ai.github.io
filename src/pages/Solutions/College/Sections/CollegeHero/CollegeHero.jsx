@@ -34,7 +34,7 @@ const CollegeHero = ({ onBookDemo }) => {
               className="btn btn-outline"
               onClick={onBookDemo}
             >
-              Book a Demo
+              Book a demo
             </button>
           </div>
         </div>
