@@ -22,19 +22,10 @@ const CollegeHero = ({ onBookDemo }) => {
           </h1>
 
           <p className="hero-intro">
-            DhiAspire empowers colleges with comprehensive AI-driven tools to 
-            improve student outcomes and demonstrate placement excellence.
+            DhiAspire empowers colleges with comprehensive AI-driven tools to Measure, Improve and 
+            Demonstrate student employability outcomes.
           </p>
 
-          <div className="pill-container" aria-label="College outcomes focus">
-            {keyPillars.map((pillar) => (
-              <span key={pillar} className="pill">
-                {pillar}
-              </span>
-            ))}
-          </div>
-
-          <p className="hero-outro">Measure and boost student employability outcomes effortlessly.</p>
 
           <div className="hero-actions">
             <button type="button" className="btn btn-primary">Get Started</button>
