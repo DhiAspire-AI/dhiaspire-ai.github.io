@@ -1,202 +1,90 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './HeroRight.scss';
 
-const ROTATION_INTERVAL_MS = 3500;
-const TRANSITION_DURATION_MS = 960;
-const BOOT_DURATION_MS = 920;
-
 const HERO_IMAGES = [
-  { src: '/assets/home-assets/HeroSectionAssets/Ai-mock-interview-hero.svg', alt: 'AI Mock Interview' },
-  { src: '/assets/home-assets/HeroSectionAssets/Resume-review-hero.svg', alt: 'Resume Reviewer' },
-  { src: '/assets/home-assets/HeroSectionAssets/AI-feedback-service-hero.svg', alt: 'AI Feedback Service' },
-  { src: '/assets/home-assets/HeroSectionAssets/Ai-coading-service-hero.svg', alt: 'AI Coding Service' },
+  { 
+    src: '/assets/home-assets/HeroSectionAssets/Ai-mock-interview-hero.svg', 
+    alt: 'AI Mock Interview',
+    tags: [
+      { text: 'Placement Boost', position: 'top-right' },
+      { text: 'Talent Filtering', position: 'left' },
+      { text: 'Builds Confidence', position: 'bottom' }
+    ]
+  },
+  { 
+    src: '/assets/home-assets/HeroSectionAssets/Resume-review-hero.svg', 
+    alt: 'Resume Reviewer',
+    tags: [
+      { text: 'Resume Auditing', position: 'top' },
+      { text: 'Coursework Simulation', position: 'bottom-left' },
+      { text: 'Placement Readiness', position: 'right' }
+    ]
+  },
+  { 
+    src: '/assets/home-assets/HeroSectionAssets/AI-feedback-service-hero.svg', 
+    alt: 'AI Feedback Service',
+    tags: [
+      { text: 'Performance Levels', position: 'top' },
+      { text: 'Self-Assessments', position: 'left' },
+      { text: 'Face/Coding Efficiency', position: 'bottom' }
+    ]
+  },
+  { 
+    src: '/assets/home-assets/HeroSectionAssets/Ai-coading-service-hero.svg', 
+    alt: 'AI Coding Service',
+    tags: [
+      { text: 'Job Readiness', position: 'top' },
+      { text: 'Advanced Insights', position: 'right' },
+      { text: 'Efficient Coaching', position: 'bottom' }
+    ]
+  },
 ];
 
-const HeroRight = ({ images = HERO_IMAGES }) => {
-  const safeImages = images.length > 0 ? images : HERO_IMAGES;
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isBooting, setIsBooting] = useState(true);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return undefined;
-    }
-
-    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const syncMotionPreference = () => setPrefersReducedMotion(motionPreference.matches);
-    syncMotionPreference();
-
-    if (typeof motionPreference.addEventListener === 'function') {
-      motionPreference.addEventListener('change', syncMotionPreference);
-      return () => motionPreference.removeEventListener('change', syncMotionPreference);
-    }
-
-    motionPreference.addListener(syncMotionPreference);
-    return () => motionPreference.removeListener(syncMotionPreference);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return undefined;
-    }
-
-    const preloadedImages = safeImages.map((item) => {
-      const image = new window.Image();
-      image.src = item.src;
-      return image;
-    });
-
-    return () => {
-      preloadedImages.length = 0;
-    };
-  }, [safeImages]);
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setIsBooting(false);
-      setIsTransitioning(false);
-      return undefined;
-    }
-
-    const bootTimerId = window.setTimeout(() => {
-      setIsBooting(false);
-    }, BOOT_DURATION_MS);
-
-    return () => window.clearTimeout(bootTimerId);
-  }, [prefersReducedMotion]);
-
-  useEffect(() => {
-    if (safeImages.length <= 1 || prefersReducedMotion) {
-      return undefined;
-    }
-
-    if (isBooting || isTransitioning) {
-      return undefined;
-    }
-
-    const timerId = window.setTimeout(() => {
-      setIsTransitioning(true);
-    }, ROTATION_INTERVAL_MS);
-
-    return () => {
-      window.clearTimeout(timerId);
-    };
-  }, [isBooting, isTransitioning, prefersReducedMotion, safeImages.length]);
-
-  useEffect(() => {
-    if (!isTransitioning || prefersReducedMotion) {
-      return undefined;
-    }
-
-    const transitionTimerId = window.setTimeout(() => {
-      setActiveIndex((previousIndex) => (previousIndex + 1) % safeImages.length);
-      setIsTransitioning(false);
-    }, TRANSITION_DURATION_MS);
-
-    return () => {
-      window.clearTimeout(transitionTimerId);
-    };
-  }, [isTransitioning, prefersReducedMotion, safeImages.length]);
-
-  useEffect(() => {
-    if (safeImages.length <= 1 || !prefersReducedMotion) {
-      return undefined;
-    }
-
-    const reducedMotionTimer = window.setInterval(() => {
-      setActiveIndex((previousIndex) => (previousIndex + 1) % safeImages.length);
-    }, ROTATION_INTERVAL_MS);
-
-    return () => window.clearInterval(reducedMotionTimer);
-  }, [prefersReducedMotion, safeImages.length]);
-
-  const totalSlides = safeImages.length;
-  const previousIndex = (activeIndex - 1 + totalSlides) % totalSlides;
-  const nextIndex = (activeIndex + 1) % totalSlides;
-  const activeImage = safeImages[activeIndex];
-  const previousImage = safeImages[previousIndex];
-  const nextImage = safeImages[nextIndex];
-  const stageClassName = [
-    'hero-right__stage',
-    isBooting ? 'is-booting' : '',
-    isTransitioning ? 'is-transitioning' : 'is-idle',
-  ].join(' ').trim();
+const HeroRight = () => {
+  const currentImage = HERO_IMAGES[0];
 
   return (
-    <div className="hero-right" aria-hidden="true">
-      <div className={stageClassName}>
-        <div className={`hero-right__ghost hero-right__ghost--top ${isBooting || isTransitioning ? 'is-hidden' : ''}`}>
+    <div className="hero-right">
+      <div className="hero-right__stage">
+        {/* Center card - main/active */}
+        <div className="hero-right__card hero-right__card--center">
           <img
-            className="hero-right__ghost-image"
-            src={previousImage.src}
-            alt=""
-            decoding="async"
-            loading="lazy"
+            className="hero-right__image"
+            src={currentImage.src}
+            alt={currentImage.alt}
+          />
+          
+          {/* Tags around the image */}
+          {currentImage.tags && currentImage.tags.map((tag, index) => (
+            <div 
+              key={index}
+              className={`hero-right__tag hero-right__tag--${tag.position}`}
+            >
+              {tag.text}
+            </div>
+          ))}
+        </div>
+
+        {/* Top-right ghost card */}
+        <div className="hero-right__card hero-right__card--top">
+          <img
+            className="hero-right__image"
+            src={HERO_IMAGES[1].src}
+            alt={HERO_IMAGES[1].alt}
           />
         </div>
 
-        <div className={`hero-right__ghost hero-right__ghost--bottom ${isTransitioning ? 'is-hidden' : ''}`}>
+        {/* Bottom-right ghost card */}
+        <div className="hero-right__card hero-right__card--bottom">
           <img
-            className="hero-right__ghost-image"
-            src={nextImage.src}
-            alt=""
-            decoding="async"
-            loading="lazy"
+            className="hero-right__image"
+            src={HERO_IMAGES[2].src}
+            alt={HERO_IMAGES[2].alt}
           />
         </div>
-
-        {!isBooting && !isTransitioning && (
-          <div className="hero-right__card hero-right__card--center">
-            <img
-              className="hero-right__image"
-              src={activeImage.src}
-              alt=""
-              decoding="async"
-              loading="eager"
-            />
-          </div>
-        )}
-
-        {isBooting && (
-          <div className="hero-right__card hero-right__card--boot">
-            <img
-              className="hero-right__image"
-              src={activeImage.src}
-              alt=""
-              decoding="async"
-              loading="eager"
-            />
-          </div>
-        )}
-
-        {isTransitioning && (
-          <div className="hero-right__card hero-right__card--outgoing">
-            <img
-              className="hero-right__image"
-              src={activeImage.src}
-              alt=""
-              decoding="async"
-              loading="eager"
-            />
-          </div>
-        )}
-
-        {isTransitioning && (
-          <div className="hero-right__card hero-right__card--incoming">
-            <img
-              className="hero-right__image"
-              src={nextImage.src}
-              alt=""
-              decoding="async"
-              loading="eager"
-            />
-          </div>
-        )}
       </div>
 
-      <p className="hero-right__title">{activeImage.alt}</p>
+      <p className="hero-right__title">{currentImage.alt}</p>
     </div>
   );
 };

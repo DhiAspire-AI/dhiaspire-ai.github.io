@@ -12,30 +12,36 @@ const HeroSection = ({ onBookDemo }) => {
       </div>
 
       <div className="hero-container">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            AI-Powered Employability <br />
-            Ecosystem for Institutions, <br />
-            Students & Employers.
-          </h1>
-          <p className="hero-subtitle">
-            Unlock Skills, Improve Outcomes, Accelerate Careers Powered by <br />
-            Intelligent Personalization.
-          </p>
+        <div className="hero-left">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              AI-Powered Employability <br />
+              Ecosystem for Institutions, <br />
+              Students & Employers.
+            </h1>
+            <p className="hero-subtitle">
+              Unlock Skills, Improve Outcomes, Accelerate Careers Powered by <br />
+              Intelligent Personalization.
+            </p>
 
-          <div className="hero-actions">
-            <button type="button" className="btn btn-primary">Get Started</button>
-            <button
-              type="button"
-              className="btn btn-outline"
-              onClick={onBookDemo}
-            >
-              Book a demo
-            </button>
+            <div className="hero-actions">
+              <button type="button" className="btn btn-primary">Get Started</button>
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={onBookDemo}
+              >
+                Book a demo
+              </button>
+            </div>
           </div>
         </div>
 
-        <HeroRight />
+        <div className="hero-divider"></div>
+
+        <div className="hero-right-grid">
+          <HeroRight />
+        </div>
       </div>
     </section>
   );
