@@ -11,23 +11,16 @@
   width: 100%;
   max-width: 550px;
   height: 500px;
+  overflow: visible;
 }
 
 .hero-right__card {
   position: absolute;
-  width: 425px;
-  height: 462px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-}
-
-.hero-right__card--center {
-  left: 45%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(0deg);
-  opacity: 1;
-  z-index: 3;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
 }
 
 .hero-right__tag {
@@ -47,65 +40,42 @@
   border-radius: 20px;
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  left: 50%;
+  top: 50%;
 }
 
 .hero-right__tag--top-left {
-  top: 25%;
-  left: -35%;
+  // Positioned via GSAP transform
 }
 
 .hero-right__tag--top-right {
-  top: 8%;
-  right: -30%;
+  // Positioned via GSAP transform
 }
 
 .hero-right__tag--top {
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
+  // Positioned via GSAP transform
 }
 
 .hero-right__tag--bottom {
-  bottom: 25%;
-  right: -30%;
+  // Positioned via GSAP transform
 }
 
 .hero-right__tag--bottom-left {
-  bottom: 25%;
-  left: -25%;
+  // Positioned via GSAP transform
 }
 
 .hero-right__tag--left {
-  top: 40%;
-  left: -30%;
+  // Positioned via GSAP transform
 }
 
 .hero-right__tag--right {
-  top: 35%;
-  right: -30%;
-}
-
-.hero-right__card--top {
-  right: -115px;
-  top: -80px;
-  width: 110px;
-  height: 110px;
-  opacity: 0.3;
-  z-index: 2;
-}
-
-.hero-right__card--bottom {
-  right: -100px;
-  top: 550px;
-  width: 95px;
-  height: 95px;
-  opacity: 0.25;
-  z-index: 1;
+  // Positioned via GSAP transform
 }
 
 .hero-right__image {
@@ -114,6 +84,7 @@
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.28));
+  will-change: transform;
 }
 
 .hero-right__title {
@@ -123,4 +94,6 @@
   font-weight: 500;
   font-size: 24px;
   text-align: center;
+  will-change: transform, opacity;
+  opacity: 0;
 }
