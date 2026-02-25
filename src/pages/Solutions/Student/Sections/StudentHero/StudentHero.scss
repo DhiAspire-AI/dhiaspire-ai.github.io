@@ -124,13 +124,29 @@
       }
     }
 
-    .hero-description {
-      margin: 0 0 54px;
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(1rem, 1.5vw, 1.25rem);
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 850px;
+    .hero-intro {
+      font-family: $font-ui;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 auto 54px;
+      max-width: 100%;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+        max-width: 800px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 20px;
+        max-width: 1000px;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 24px;
+        max-width: 1150px;
+      }
     }
 
     .hero-actions {

@@ -19,7 +19,7 @@ const StudentHero = ({ onBookDemo, onGetStarted }) => {
                         <span className="title-line">Platform for Students</span>
                     </h1>
                     
-                    <p className="hero-description">
+                    <p className="hero-intro">
                         Confused about which career path suits you best? DhiAspire is your AI-powered 
                         platform to build job-ready skills and accelerate career success.
                     </p>
