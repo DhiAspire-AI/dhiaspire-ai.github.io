@@ -1,36 +1,51 @@
-import React from 'react';
-import './EmpowerSection.scss';
+import React from "react";
+import "./EmpowerSection.scss";
+import "../HeroSection/HeroLeft/HeroLeft.scss";
 
 const EmpowerSection = ({ onBookDemo }) => {
   return (
-    <section id="empower" className="empower-section">
-      <div className="empower-section__inner container">
+    <section className="empower-section">
+
+      <div className="empower-container">
+
         <header className="empower-header">
-          <h2>
+
+          <h2 className="empower-title">
             Empower Your Future with
-            <br className="desktop-br" />
-            <span> AI-Powered Employability</span> Solutions
+            <br className="hidden md:block" />
+
+            <span>
+              AI-Powered Employability
+            </span>{" "}
+            Solutions
+
           </h2>
-          <p className="lead">
-            Whether you're a student aiming for your dream career, a college improving campus outcomes, or an
-            <br className="desktop-br" />
-            employer looking for skilled talent DhiAspire brings everything under one intelligent ecosystem.
+
+          <p className="empower-subtitle">
+            Whether you're a student aiming for your dream career, a college improving campus outcomes,
+            or an employer looking for skilled talent DhiAspire brings everything under one intelligent ecosystem.
           </p>
+
         </header>
 
-        <div className="empower-ctas">
-          <button type="button" className="btn btn--primary">
+
+        <div className="empower-buttons mx-auto flex flex-row justify-center items-center gap-4 flex-wrap w-full max-w-[640px]">
+
+          <button className="hero-left__btn hero-left__btn--primary flex-1 min-w-[140px] max-w-[320px]">
             Get Started
           </button>
+
           <button
-            type="button"
-            className="btn btn--secondary"
+            className="hero-left__btn hero-left__btn--secondary flex-1 min-w-[140px] max-w-[320px]"
             onClick={onBookDemo}
           >
             Book a demo
           </button>
+
         </div>
+
       </div>
+
     </section>
   );
 };

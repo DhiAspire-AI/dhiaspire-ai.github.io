@@ -1,132 +1,100 @@
-@use '../../../../../styles/variables.scss' as *;
-
 .student-success-stories {
-    padding: 100px 0;
-    background: radial-gradient(circle at 10% 20%, rgba(4, 6, 38, 1) 0%, rgba(13, 17, 51, 1) 45%, rgba(10, 15, 45, 1) 90%);
+    padding: clamp(60px, 8vw, 120px) 0;
+    background: #060819;
     position: relative;
     overflow: hidden;
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -100px;
-        right: -100px;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(82, 183, 255, 0.05) 0%, transparent 70%);
-        pointer-events: none;
-    }
-
     .container {
-        max-width: 1720px;
+        max-width: 1440px;
         margin: 0 auto;
-        padding: 0 64px;
+        padding: 0 clamp(20px, 5vw, 60px);
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        @media (max-width: 768px) {
-            padding: 0 24px;
-        }
     }
 
     .header {
         text-align: center;
-        margin-bottom: 72px;
-
-        @media (max-width: 768px) {
-            margin-bottom: 48px;
-        }
+        margin-bottom: clamp(40px, 6vw, 80px);
 
         h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(32px, 4vw, 54px);
             font-weight: 700;
             color: #ffffff;
             margin: 0;
-            line-height: 1.25;
+            letter-spacing: -0.01em;
         }
     }
 
     .stories-grid {
-        display: flex;
-        justify-content: center;
-        gap: 32px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: clamp(24px, 3vw, 32px);
         width: 100%;
-        margin-bottom: 64px;
+        max-width: 1200px;
+        margin-bottom: 60px;
 
-        @media (max-width: 1200px) {
-            flex-wrap: wrap;
-            gap: 24px;
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
     .story-card {
-        background: #FFFFFF33;
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 48px;
+        background: rgba(255, 255, 255, 0.08); // Semi-transparent grey box from image
+        border-radius: 12px;
+        padding: clamp(24px, 4vw, 40px);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 760px;
-        min-height: 320px;
-        transition: all 0.3s ease;
-        opacity: 1;
+        gap: 24px;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
 
-        @media (max-width: 768px) {
-            padding: 32px;
-            min-height: auto;
+        &:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
         }
 
-        .story-content {
-            p {
-                font-family: 'Poppins', sans-serif;
-                font-size: clamp(1.1rem, 2vw, 1.5rem);
-                font-weight: 400;
-                line-height: 1.5;
-                color: #FFFFFF;
-                letter-spacing: 0%;
-                margin: 0 0 32px 0;
-                max-width: 100%;
-            }
+        .story-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(15px, 1.2vw, 18px);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
         }
 
-        .story-footer {
+        .author-info {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
 
-            img {
-                width: 64px;
-                height: 64px;
+            .author-img {
+                width: 54px;
+                height: 54px;
                 border-radius: 50%;
                 object-fit: cover;
-                border: 2px solid rgba(255, 255, 255, 0.2);
+                flex-shrink: 0;
             }
 
-            .user-info {
+            .author-details {
                 display: flex;
                 flex-direction: column;
-                gap: 4px;
+                gap: 2px;
 
                 h4 {
                     font-family: 'Poppins', sans-serif;
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: 600;
-                    color: #FFFFFF;
-                    line-height: 1.2;
+                    color: #ffffff;
                     margin: 0;
                 }
 
                 p {
                     font-family: 'Poppins', sans-serif;
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 400;
-                    color: rgba(255, 255, 255, 0.8);
-                    line-height: 1.2;
+                    color: rgba(255, 255, 255, 0.6);
                     margin: 0;
                 }
             }
@@ -135,7 +103,7 @@
 
     .pagination-dots {
         display: flex;
-        gap: 12px;
+        gap: 10px;
         justify-content: center;
 
         .dot {
@@ -148,11 +116,8 @@
 
             &.active {
                 background: #ffffff;
-                transform: scale(1.2);
-            }
-
-            &:hover {
-                background: rgba(255, 255, 255, 0.6);
+                width: 24px; // Horizontal stretch for active dot
+                border-radius: 10px;
             }
         }
     }

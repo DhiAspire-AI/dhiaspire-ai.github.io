@@ -1,11 +1,26 @@
-// Demo API service
-export const fetchDemoData = async () => {
+/**
+ * API service for Demo related requests
+ */
+
+import api from './api';
+
+/**
+ * Submits a new demo request to the backend.
+ *
+ * @param {Object} formData - The demo request data
+ * @returns {Promise<Object>} The server response
+ */
+export const submitDemoRequest = async (formData) => {
   try {
-    // const response = await fetch('/api/demo');
-    // return await response.json();
-    return { message: 'Demo data fetched' };
+    // Corrected endpoint path based on backend routes:
+    // app.use("/", indexRouter) in app.ts
+    // router.use("/website", websiteRouter) in index.ts
+    // router.use("/demo", demoRouter) in websiteRoutes.ts
+    // router.post("/bookAdemo", ...) in demoRoutes.ts
+    const response = await api.post('/website/demo/bookAdemo', formData);
+    return response.data;
   } catch (error) {
-    console.error('Error fetching demo data:', error);
+    console.error('Error submitting demo request:', error);
     throw error;
   }
 };

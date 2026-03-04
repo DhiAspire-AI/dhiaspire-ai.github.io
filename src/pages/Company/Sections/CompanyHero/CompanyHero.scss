@@ -1,0 +1,93 @@
+.company-hero {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #060819; 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    // Background Glow Effects (Based on Home Hero styling)
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        width: 70vw;
+        height: 70vw;
+        background: radial-gradient(circle, rgba(35, 42, 134, 0.2) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        right: -10%;
+        width: 60vw;
+        height: 60vw;
+        background: radial-gradient(circle, rgba(82, 183, 255, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .company-hero-container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: clamp(20px, 10vw, 150px); // Increased padding to move content more from the left
+        padding-right: clamp(20px, 5vw, 60px);
+        padding-top: clamp(120px, 15vw, 200px);
+        padding-bottom: clamp(60px, 8vw, 100px);
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content-wrapper {
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px; // Synced with HeroLeft gap
+    }
+
+    &-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: clamp(36px, 3.5vw, 60px); // Perfect sync with HeroLeft title size
+        line-height: 1.25; // Perfect sync with HeroLeft line-height
+        color: #ffffff;
+        margin: 0;
+        letter-spacing: -0.01em;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #4f7cff; 
+        }
+    }
+
+    &-description {
+        font-family: 'DM Sans', sans-serif;
+        font-size: clamp(15px, 1.15vw, 18px); // Perfect sync with HeroLeft description size
+        line-height: 1.75; // Perfect sync with HeroLeft legibility
+        color: rgba(255, 255, 255, 0.7); // Perfect sync with HeroLeft opacity
+        max-width: 850px;
+        margin: 0;
+        letter-spacing: 0.015em;
+        font-weight: 500;
+    }
+}
+
+// Media query for tablets to adjust spacing
+@media (max-width: 1024px) {
+    .company-hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+}

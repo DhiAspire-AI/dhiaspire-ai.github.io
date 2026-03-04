@@ -1,5 +1,3 @@
-@use '../../../../../styles/variables.scss' as *;
-
 .college-hero {
   position: relative;
   width: 100%;
@@ -7,9 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--navbar-height) + 52px) 0 88px;
+  padding: calc(var(--navbar-height) + 64px) 0 100px;
   overflow: hidden;
-  background: radial-gradient(circle at top left, #0a1d3a 0%, #071629 52%, #050a14 100%);
+  background: radial-gradient(circle at center top, #0a1d3a 0%, #071629 50%, #050a14 100%);
   text-align: center;
 
   .hero-background {
@@ -21,52 +19,45 @@
     .blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(92px);
-      opacity: 0.34;
+      filter: blur(140px);
+      opacity: 0.4;
     }
 
     .blob-left {
-      width: min(560px, 42vw);
-      height: min(560px, 42vw);
-      background: #2a5298;
-      top: -120px;
-      left: -130px;
+      width: 600px;
+      height: 600px;
+      background: rgba(42, 82, 152, 0.4);
+      top: -200px;
+      left: -200px;
     }
 
     .blob-right {
-      width: min(420px, 28vw);
-      height: min(420px, 28vw);
-      background: #1e3a8a;
-      bottom: -100px;
-      right: 9%;
-      opacity: 0.22;
+      width: 500px;
+      height: 500px;
+      background: rgba(30, 58, 138, 0.3);
+      top: 20%;
+      right: -100px;
     }
 
     .blob-bottom-right {
-      width: min(780px, 56vw);
-      height: min(780px, 56vw);
-      background: #0e4d5f;
-      right: -240px;
-      bottom: -360px;
-      opacity: 0.54;
-      filter: blur(168px);
+      width: 800px;
+      height: 800px;
+      background: rgba(14, 77, 95, 0.3);
+      right: -300px;
+      bottom: -300px;
     }
   }
 
-  .hero-container {
+  .container-main {
     position: relative;
     z-index: 2;
-    max-width: 1800px;
     width: 100%;
+    max-width: 1778px; // Matching HeroLeft container logic
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 
-    @media (min-width: 768px) {
-      padding: 0 40px;
-    }
-
-    @media (min-width: 1280px) {
-      padding: 0 60px;
+    @media (max-width: 768px) {
+      padding: 0 24px;
     }
   }
 
@@ -74,376 +65,102 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
 
     .hero-title {
-      margin: 0 0 37px;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(32px, 4.5vw, 64px);
+      // Fixed desktop size with clamp for smaller screens, mirroring HeroLeft
+      font-size: clamp(36px, 3vw, 60px); 
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.25;
       color: #ffffff;
-      letter-spacing: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 100%;
-      text-align: center;
-
-      @media (min-width: 1024px) {
-        line-height: 1.25;
-      }
-
-      @media (min-width: 1400px) {
-        font-size: 64px;
-        line-height: 85px;
-      }
-
-      .title-line {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        word-wrap: break-word;
-        
-        @media (min-width: 1600px) {
-          white-space: nowrap;
-          width: fit-content;
-        }
-      }
+      margin: 0 0 16px 0;
+      max-width: 1100px; // Maintain readable line length for center align
+      letter-spacing: -0.01em;
 
       .highlight-blue {
-        background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        display: inline;
+        color: #52b7ff;
       }
     }
 
     .hero-intro {
-      font-family: $font-ui;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(15px, 1.15vw, 18px);
       font-weight: 500;
-      font-size: 15px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.85);
-      margin: 0 auto;
-      max-width: 100%;
-
-      @media (min-width: 768px) {
-        font-size: 18px;
-        max-width: 800px;
-      }
-
-      @media (min-width: 1024px) {
-        font-size: 20px;
-        max-width: 1000px;
-      }
-
-      @media (min-width: 1280px) {
-        font-size: 24px;
-        max-width: 1150px;
-      }
-    }
-
-    .pill-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 32px 0 24px;
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 56px;
-        padding: 12px 36px;
-        border-radius: 14px;
-        border: 1px solid rgba(82, 183, 255, 0.3);
-        background:#202B62;
-        backdrop-filter: blur(10px);
-        font-family: $font-ui;
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: #fff;
-        white-space: nowrap;
-      }
-    }
-
-    .hero-outro {
-      font-family: $font-ui;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 1.4;
-      color: rgba(255, 255, 255, 0.8);
-      margin: 0 auto 48px;
-      max-width: 100%;
-
-      @media (min-width: 768px) {
-        font-size: 16px;
-        margin-bottom: 56px;
-      }
-
-      @media (min-width: 1280px) {
-        font-size: 20px;
-        margin-bottom: 64px;
-      }
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 700px; // Slightly narrower for better readability
+      margin: 0 auto 32px; // Reduced from 40px
+      letter-spacing: 0.015em;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 24px;
+      gap: 20px;
       width: 100%;
-      margin-top: 48px;
+      margin-top: 12px; // Reduced from 40px to pull it up closer to the description
 
-      .btn {
+      @media (max-width: 640px) {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .btn-get-started {
+        min-width: 220px;
+        height: clamp(56px, 5.5vw, 64px);
+        padding: 0 clamp(44px, 5vw, 68px);
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(20px, 1.55vw, 22px);
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 336px;
-        height: 80px;
-        border-radius: 25px;
+        white-space: nowrap;
+        box-shadow: 0 10px 20px rgba(50, 89, 206, 0.25);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 30px rgba(50, 89, 206, 0.35);
+        }
+      }
+
+      .btn-book-demo {
+        min-width: 220px;
+        height: clamp(56px, 5.5vw, 64px);
+        padding: 0 clamp(44px, 5vw, 68px);
         font-family: 'Poppins', sans-serif;
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 1;
+        font-size: clamp(20px, 1.55vw, 22px);
+        font-weight: 600;
+        color: #ffffff;
+        background: transparent;
+        position: relative;
+        border: 3px solid transparent; 
+        border-radius: 25px;
+        // Background-origin/clip used to ensure only border gets the gradient
+        background: 
+          linear-gradient(#0c0d16, #0c0d16) padding-box, // Background of total button
+          linear-gradient(90deg, #232a86 0%, #52b7ff 100%) border-box; // The border gradient
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         white-space: nowrap;
 
-        &.btn-primary {
-          background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
-          color: #fff;
-          
-          box-shadow: 0 4px 15px rgba(35, 42, 134, 0.3);
-
-         
-        }
-
-        &.btn-outline {
-          color: #fff;
-          background: transparent;
-          border: 3px solid transparent;
-          position: relative;
-          z-index: 1;
-
-          &::before {
-            content: "";
-            position: absolute;
-            inset: -3px;
-            border-radius: 25px;
-            padding: 3px;
-            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            z-index: -1;
-            pointer-events: none;
-          }
-
-         
-        }
-
-        &:focus-visible {
-          outline: 2px solid rgba(82, 183, 255, 0.95);
-          outline-offset: 2px;
+        &:hover {
+          transform: translateY(-2px);
+          opacity: 0.9;
         }
       }
     }
-  }
-}
-
-@media (max-width: 1400px) {
-  .college-hero {
-    .hero-content {
-      .hero-title {
-        font-size: clamp(2rem, 4.2vw, 4.4rem);
-      }
-
-      .hero-intro,
-      .hero-outro {
-        max-width: 920px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .college-hero {
-    padding: calc(var(--navbar-height) + 40px) 0 72px;
-
-    .hero-content {
-      .hero-title {
-        margin-bottom: 24px;
-        font-size: clamp(1.9rem, 4vw, 3.8rem);
-      }
-
-      .pill-container {
-        gap: 12px;
-        margin: 18px 0 16px;
-
-        .pill {
-          min-height: 48px;
-          padding: 9px 24px;
-        }
-      }
-
-      .hero-outro {
-        margin-bottom: 42px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .college-hero {
-    min-height: auto;
-    padding: calc(var(--navbar-height) + 48px) 0 80px;
-
-    .hero-content {
-      .hero-title {
-        margin-bottom: 24px;
-        line-height: 1.2;
-      }
-
-      .hero-intro,
-      .hero-outro {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      }
-
-      .hero-outro {
-        margin-bottom: 40px;
-      }
-
-      .hero-actions {
-        .btn {
-          width: 320px;
-          height: 72px;
-          font-size: 26px;
-          border-radius: 25px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .college-hero {
-    padding: calc(var(--navbar-height) + 40px) 0 64px;
-
-    .hero-container {
-      padding: 0 24px;
-    }
-
-    .hero-content {
-      .hero-title {
-        font-size: clamp(1.8rem, 8vw, 2.8rem);
-        margin-bottom: 24px;
-        line-height: 1.2;
-        text-align: center;
-
-        .title-line {
-          width: 100%;
-          text-wrap: balance;
-        }
-      }
-
-      .hero-intro {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .pill-container {
-        gap: 12px;
-        margin: 24px 0 20px;
-
-        .pill {
-          min-height: 44px;
-          padding: 10px 20px;
-          border-radius: 12px;
-          font-size: 1rem;
-        }
-      }
-
-      .hero-outro {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 32px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        gap: 16px;
-        width: 100%;
-        max-width: 400px;
-
-        .btn {
-          width: 100%;
-          max-width: none;
-          height: 64px;
-          font-size: 22px;
-          border-radius: 20px;
-
-          &::before {
-            border-radius: 20px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .college-hero {
-    padding: calc(var(--navbar-height) + 32px) 0 56px;
-
-    .hero-content {
-      .hero-title {
-        font-size: clamp(1.6rem, 9vw, 2.2rem);
-        margin-bottom: 20px;
-      }
-
-      .hero-intro {
-        font-size: 1rem;
-      }
-
-      .pill-container {
-        gap: 10px;
-
-        .pill {
-          min-height: 40px;
-          padding: 8px 16px;
-          font-size: 0.9rem;
-        }
-      }
-
-      .hero-actions {
-        .btn {
-          height: 60px;
-          font-size: 20px;
-          border-radius: 18px;
-
-          &::before {
-            border-radius: 18px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .college-hero .hero-actions .btn {
-    transition: none;
   }
 }

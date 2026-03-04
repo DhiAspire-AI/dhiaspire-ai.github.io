@@ -1,152 +1,103 @@
-@use '../../../../../styles/variables.scss' as *;
-
 .challenges-section {
-    padding: clamp(60px, 8vw, 120px) 0;
-    background-color: #040626; // Deep dark background
+    padding: clamp(80px, 10vw, 140px) 0;
+    background-color: #040626;
     position: relative;
     overflow: hidden;
 
     .challenges-container {
-        max-width: 1720px;
+        width: 100%;
+        max-width: 1440px;
         margin: 0 auto;
-        padding: 0 64px;
-        position: relative;
-        z-index: 2;
-
-        @media (max-width: 1024px) {
-            padding: 0 40px;
-        }
-
-        @media (max-width: 768px) {
-            padding: 0 24px;
-        }
+        padding: 0 clamp(20px, 5vw, 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .challenges-title {
         text-align: center;
-        font-size: clamp(2rem, 5vw, 4rem);
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(36px, 4vw, 64px);
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.1;
         color: #ffffff;
-        margin: 0 auto 64px;
-        max-width: 1200px;
-        font-family: $font-ui;
-
-        @media (max-width: 768px) {
-            margin-bottom: 40px;
-        }
+        margin-bottom: clamp(60px, 8vw, 120px);
+        max-width: 1100px;
 
         .highlight-blue {
-            background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
+            color: #4fa6ff;
         }
     }
 
     .challenges-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 32px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: clamp(24px, 3vw, 40px);
         width: 100%;
         
-        @media (max-width: 1400px) {
+        @media (min-width: 640px) {
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 1000px;
-            margin: 0 auto;
         }
 
-        @media (max-width: 1200px) {
-            gap: 24px;
-        }
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
-            gap: 24px;
-            max-width: 450px;
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(4, 1fr);
         }
     }
 
     .challenge-card {
         width: 100%;
-        max-width: 400px;
-        min-height: 380px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin: 0 auto;
-        
-        @media (max-width: 768px) {
-            min-height: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background: linear-gradient(205.35deg, #1B325A 16.07%, #0E1835 83.93%);
+        border: 2px solid #0C296A;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 12px 30px rgba(12, 41, 106, 0.4);
         }
 
         .card-top {
             width: 100%;
-            height: 220px;
-            padding: 16px;
-            background: linear-gradient(205.35deg, #1B325A 16.07%, #0E1835 83.93%);
-            border: 2px solid #0C296A;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            height: clamp(160px, 15vw, 200px);
             display: flex;
             align-items: center;
             justify-content: center;
-            
-            @media (max-width: 1200px) {
-                height: 200px;
-            }
-
-            @media (max-width: 480px) {
-                height: 180px;
-            }
+            background: rgba(255, 255, 255, 0.03);
 
             .card-image-box {
-                background: #ffffff;
                 width: 100%;
                 height: 100%;
-                border-radius: 12px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                overflow: hidden;
-                padding: 12px;
 
                 img {
-                    max-width: 100%;
-                    max-height: 100%;
+                    width: 100%;
+                    height: 100%;
                     object-fit: contain;
+                    padding: 20px;
                 }
             }
         }
 
         .card-bottom {
-            width: 100%;
-            height: 140px;
-            padding: 16px 12px;
-            background: linear-gradient(205.35deg, #1B325A 16.07%, #0E1835 83.93%);
-            border: 2px solid #0C296A;
-            border-top: none; // Avoid double border with top part
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            padding: clamp(20px, 2vw, 32px);
+            flex-grow: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            
-            @media (max-width: 480px) {
-                height: min-content;
-                padding: 20px 12px;
-            }
+            text-align: center;
 
             p {
-                color: #ffffff;
-                font-size: clamp(1rem, 1.1vw, 1.15rem);
-                line-height: 1.4;
-                text-align: center;
+                font-family: 'Inter', sans-serif;
+                font-size: clamp(15px, 1.1vw, 18px);
                 font-weight: 500;
+                line-height: 1.5;
+                color: #ffffff;
                 margin: 0;
-                padding: 0;
             }
         }
     }

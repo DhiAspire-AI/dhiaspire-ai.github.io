@@ -1,0 +1,85 @@
+.our-story {
+    width: 100%;
+background: #060819;
+    padding: clamp(80px, 12vw, 140px) 0;
+    position: relative;
+    overflow: hidden;
+
+    .our-story-container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 8vw, 100px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .story-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: clamp(36px, 4.5vw, 64px);
+        line-height: 1.2;
+        color: #ffffff;
+        margin-bottom: clamp(60px, 8vw, 100px);
+        text-align: center;
+        letter-spacing: -0.01em;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #4f7cff;
+        }
+    }
+
+    .story-grid {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: clamp(40px, 6vw, 80px);
+        position: relative;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .story-card {
+        flex: 1;
+        max-width: 540px;
+
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: clamp(24px, 2vw, 32px);
+            color: #ffffff;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .card-description {
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(16px, 1.15vw, 18px);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    // The vertical line divider shown in the image
+    .story-divider {
+        width: 1px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.2);
+        margin-top: 20px;
+
+        @media (max-width: 1024px) {
+            display: none; // Hide on mobile/tablet stack
+        }
+    }
+}

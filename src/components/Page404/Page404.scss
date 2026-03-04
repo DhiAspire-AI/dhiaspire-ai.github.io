@@ -1,12 +1,11 @@
-@use '../../styles/variables.scss' as *;
 
 .page-404 {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $color-bg;
-  color: $color-white;
+  background-color: #07142a;
+  color: #ffffff;
   position: relative;
   overflow: hidden;
   padding: 40px 20px;
@@ -21,7 +20,7 @@
       font-size: clamp(100px, 20vw, 200px);
       font-weight: 800;
       margin: 0;
-      background: $gradient-cta;
+      background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
@@ -31,12 +30,12 @@
     .title {
       font-size: clamp(24px, 5vw, 42px);
       margin: 20px 0;
-      font-family: $font-ui;
+      font-family: "Poppins", sans-serif;
     }
 
     .description {
       font-size: 18px;
-      color: $color-muted;
+      color: rgba(224, 231, 255, 0.7);
       margin-bottom: 40px;
       line-height: 1.6;
     }
@@ -52,7 +51,7 @@
         align-items: center;
         gap: 10px;
         padding: 12px 24px;
-        border-radius: $radius-md;
+        border-radius: 12px;
         font-weight: 600;
         transition: all 0.3s ease;
         cursor: pointer;
@@ -60,13 +59,13 @@
       }
 
       .back-home {
-        background: $gradient-cta;
+        background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
         color: white;
         border: none;
 
         &:hover {
           transform: translateY(-2px);
-          box-shadow: $shadow-lg;
+          box-shadow: 0 10px 24px rgba(82, 183, 255, 0.35);
         }
       }
 
@@ -101,7 +100,7 @@
     .circle-1 {
       width: 400px;
       height: 400px;
-      background: $color-grad-start;
+      background: #232a86;
       top: -100px;
       right: -100px;
     }
@@ -109,7 +108,7 @@
     .circle-2 {
       width: 500px;
       height: 500px;
-      background: $color-grad-end;
+      background: #52b7ff;
       bottom: -150px;
       left: -150px;
     }

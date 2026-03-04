@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { submitDemoRequest } from '../../services/demoApi';
 import Toast from '../Toast/Toast';
 import './BookADemo.scss';
 
@@ -113,7 +114,7 @@ const BookADemo = ({ isOpen, onClose }) => {
             };
             console.info('Submitting demo request:', submissionData);
 
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            await submitDemoRequest(submissionData);
 
             setToast({
                 message: 'Demo requested successfully! We will contact you soon.',
@@ -130,8 +131,25 @@ const BookADemo = ({ isOpen, onClose }) => {
             onClose();
         } catch (error) {
             console.error('Error submitting form:', error);
+            
+            // Extract the specific error message from the backend response
+            let errorMessage = 'Something went wrong. Please try again.';
+            
+            if (error.response && error.response.data) {
+                const { status, message, errors: backendErrors } = error.response.data;
+                
+                if (backendErrors && Array.isArray(backendErrors) && backendErrors.length > 0) {
+                    // Joins all validation errors into a single readable string if multiple exist
+                    errorMessage = backendErrors.join('. '); 
+                } else if (message) {
+                    errorMessage = message;
+                }
+            } else if (error.message) {
+                errorMessage = error.message;
+            }
+
             setToast({
-                message: 'Something went wrong. Please try again.',
+                message: errorMessage,
                 type: 'error'
             });
         } finally {

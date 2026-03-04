@@ -1,47 +1,19 @@
-import React from 'react';
-import HeroRight from './HeroRight';
-import './HeroSection.scss';
+import React from "react";
+import HeroLeft from "./HeroLeft/HeroLeft";
+import HeroRight from "./HeroRight/HeroRight";
+import "./HeroSection.scss";
 
 const HeroSection = ({ onBookDemo }) => {
   return (
-    <section className="hero-section">
-      <div className="hero-background">
-        <div className="blob blob-left"></div>
-        <div className="blob blob-right"></div>
-        <div className="blob blob-bottom-right"></div>
-      </div>
+    <section className="hero">
+      <div className="hero__glow hero__glow--left" />
+      <div className="hero__glow hero__glow--right" />
+      <div className="hero__decor hero__decor--top" />
+      <div className="hero__decor hero__decor--bottom" />
 
-      <div className="hero-container">
-        <div className="hero-left">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              AI-Powered Employability <br />
-              Ecosystem for Institutions, <br />
-              Students & Employers.
-            </h1>
-            <p className="hero-subtitle">
-              Unlock Skills, Improve Outcomes, Accelerate Careers Powered by <br />
-              Intelligent Personalization.
-            </p>
-
-            <div className="hero-actions">
-              <button type="button" className="btn btn-primary">Get Started</button>
-              <button
-                type="button"
-                className="btn btn-outline"
-                onClick={onBookDemo}
-              >
-                Book a demo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-divider"></div>
-
-        <div className="hero-right-grid">
-          <HeroRight />
-        </div>
+      <div className="hero__frame">
+        <HeroLeft onBookDemo={onBookDemo} />
+        <HeroRight />
       </div>
     </section>
   );

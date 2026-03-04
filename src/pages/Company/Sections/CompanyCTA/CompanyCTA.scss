@@ -1,0 +1,76 @@
+.company-cta-custom {
+    width: 100%;
+background: #040525;
+    padding: clamp(80px, 12vw, 160px) 0;
+    position: relative;
+    overflow: hidden;
+
+    .cta-container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cta-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: clamp(32px, 4vw, 54px);
+        line-height: 1.3;
+        color: #ffffff;
+        margin-bottom: clamp(40px, 6vw, 60px);
+        letter-spacing: -0.01em;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #4f7cff;
+        }
+    }
+
+    .cta-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(16px, 2.5vw, 32px);
+        flex-wrap: wrap;
+
+        button {
+            height: clamp(56px, 5.5vw, 64px);
+            padding: 0 clamp(32px, 4vw, 56px);
+            border-radius: 12px; // Specific radius from image
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: clamp(16px, 1.2vw, 19px);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 10px 20px rgba(35, 42, 134, 0.25);
+
+           
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #232A86;
+            
+         
+        }
+    }
+}

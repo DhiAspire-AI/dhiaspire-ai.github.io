@@ -1,491 +1,129 @@
-@use '../../../../styles/variables.scss' as *;
-
-.intelligence-section {
+.intelligence {
   width: 100%;
-  padding: 40px 0 60px;
   background: #060819;
-  position: relative;
-  overflow: hidden;
+  padding: clamp(60px, 8vw, 140px) 0;
 
-  @media (min-width: 480px) {
-    padding: 50px 0 70px;
-  }
+  /* CONTAINER */
 
-  @media (min-width: 768px) {
-    padding: 60px 0 80px;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 70px 0 90px;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 80px 0 100px;
-  }
-
-  @media (min-width: 1280px) {
-    padding: 100px 0 120px;
-  }
-
-  // ─── Inner container ─────────────────────────────────────────────
-  .intelligence-section__inner {
-    max-width: 100%;
+  &__container {
     width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-
-    @media (min-width: 480px) {
-      padding: 0 20px;
-      gap: 36px;
-    }
-
-    @media (min-width: 768px) {
-      padding: 0 24px;
-      gap: 42px;
-    }
-
-    @media (min-width: 1024px) {
-      padding: 0 32px;
-      gap: 52px;
-    }
-
-    @media (min-width: 1280px) {
-      max-width: 1800px;
-      padding: 0 60px;
-      gap: 70px;
-    }
+    padding-left: clamp(20px, 5vw, 60px);
+    padding-right: clamp(20px, 5vw, 60px);
   }
 
-  // ─── Section header ──────────────────────────────────────────────
-  .section-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  /* HEADER */
+
+  &__header {
     text-align: center;
+    width: 100%;
+    margin-bottom: clamp(60px, 8vw, 120px);
+  }
 
-    h2 {
-      font-family: $font-sans;
-      font-weight: 700;
-      font-size: 26px;
-      line-height: 1.25;
-      letter-spacing: 0;
-      color: $color-white;
-      margin: 0 0 12px;
-      white-space: normal;
-      max-width: 100%;
+  &__title {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: clamp(36px, 3vw, 60px);
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
 
-      @media (min-width: 480px) {
-        font-size: 30px;
-      }
+  .highlight {
+    background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-      @media (min-width: 640px) {
-        font-size: 34px;
-      }
+  &__subtitle {
+    margin: 0 auto;
+    font-family: "Inter";
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+  }
 
-      @media (min-width: 768px) {
-        font-size: 38px;
-        line-height: 1.15;
-        max-width: 700px;
-      }
+  /* CONTENT */
 
-      @media (min-width: 1024px) {
-        font-size: 42px;
-        max-width: 860px;
-      }
+  &__content {
+    width: 100%;
+  }
 
-      @media (min-width: 1280px) {
-        // "Where Intelligence Meets Skill Development" fits on one line
-        font-size: clamp(32px, 3.4vw, 64px);
-        line-height: 1.06;
-        margin: 0 0 24px;
-        white-space: nowrap;
-        max-width: none;
-      }
+  /* LEFT SIDE */
 
-      .highlight {
-        background: linear-gradient(90deg, #232A86 46.63%, #52B7FF 84.62%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-
-    p {
-      font-family: $font-ui;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 1.5;
-      letter-spacing: 0;
-      color: #FFFFFFCC;
-      margin: 0 auto;
-      max-width: 100%;
-
-      @media (min-width: 480px) {
-        font-size: 15px;
-      }
-
-      @media (min-width: 768px) {
-        font-size: 16px;
-        max-width: 900px;
-      }
-
-      @media (min-width: 1024px) {
-        font-size: 18px;
-        max-width: 1100px;
-      }
-
-      @media (min-width: 1280px) {
-        font-size: 24px;
-        line-height: 1.4;
-        max-width: none;
-        white-space: nowrap;
-      }
+  &__left {
+    width: 100%;
+    @media (min-width: 1280px) { /* Corresponds to Tailwind's 'xl' breakpoint */
+      margin-left: -20px; /* Shift left by 20px */
     }
   }
 
-  // ─── Main content: image + features + CTA footer ─────────────────
-  // Mobile:  flex column (image → features → CTA, all stacked)
-  // Desktop: 2-column grid; image = col 1 row 1, features = col 2 row 1,
-  //          CTA footer spans both columns in row 2.
-  .intelligence-content {
-    width: 100%;
+  &__list {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: clamp(20px, 2.5vw, 32px);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    gap: clamp(16px, 2vw, 24px);
+    align-items: flex-start;
+  }
+
+  /* ICON */
+
+  &__icon {
+    border-radius: 14px;
+    background: linear-gradient(90deg, #232a86, #52b7ff);
+    display: flex;
     align-items: center;
-
-    @media (min-width: 768px) {
-      gap: 40px;
-    }
-
-    @media (min-width: 1280px) {
-      max-width: 100%;
-      display: grid;
-      // 55% image / 45% features — proportional split that fills the full container
-      // at any screen width, so both columns stay perfectly edge-to-edge aligned
-      grid-template-columns: 55fr 45fr;
-      grid-template-rows: auto auto;
-      align-items: center;
-      column-gap: clamp(32px, 3.5vw, 72px);
-      row-gap: 0;
-    }
+    justify-content: center;
   }
 
-  // ─── Left: AI illustration ───────────────────────────────────────
-  .intelligence-left {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .intelligence-image {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-      object-fit: cover;
-      display: block;
-      max-width: 560px;
-
-      @media (min-width: 768px) {
-        border-radius: 24px;
-        max-width: 100%;
-      }
-
-      @media (min-width: 1024px) {
-        border-radius: 28px;
-      }
-
-      @media (min-width: 1280px) {
-        // Image fills its 55% column fully — no max-width cap so it scales with the container
-        width: 100%;
-        max-width: 100%;
-        border-radius: 36px;
-        box-shadow: 0 22px 44px rgba(0, 0, 0, 0.38);
-      }
-    }
+  &__icon-img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
   }
 
-  // ─── Right: feature list ─────────────────────────────────────────
-  .intelligence-right {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // Features naturally fill their 45% column — no explicit grid placement needed
-    // with a 2-element grid (auto-placement handles it correctly)
+  /* TEXT */
 
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-
-      @media (min-width: 768px) {
-        gap: 24px;
-      }
-
-      @media (min-width: 1280px) {
-        gap: 34px;
-      }
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-
-      @media (min-width: 480px) {
-        gap: 14px;
-      }
-
-      @media (min-width: 768px) {
-        gap: 18px;
-      }
-
-      @media (min-width: 1280px) {
-        gap: 22px;
-      }
-    }
-
-    // ─── Icon box ─────────────────────────────────────────────────
-    .feature-icon {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
-      border-radius: 10px;
-      background: $gradient-cta;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: $color-white;
-      box-shadow: 0 4px 12px rgba(35, 42, 134, 0.2);
-
-      @media (min-width: 480px) {
-        width: 50px;
-        height: 50px;
-        flex: 0 0 50px;
-        border-radius: 12px;
-      }
-
-      @media (min-width: 768px) {
-        width: 56px;
-        height: 56px;
-        flex: 0 0 56px;
-      }
-
-      @media (min-width: 1024px) {
-        width: 64px;
-        height: 64px;
-        flex: 0 0 64px;
-        border-radius: $radius-md;
-      }
-
-      @media (min-width: 1280px) {
-        width: $icon-box-size;
-        height: $icon-box-size;
-        flex: 0 0 $icon-box-size;
-      }
-
-      .custom-icon {
-        width: 24px;
-        height: 24px;
-        object-fit: contain;
-        display: block;
-
-        @media (min-width: 480px) {
-          width: 27px;
-          height: 27px;
-        }
-
-        @media (min-width: 768px) {
-          width: 32px;
-          height: 32px;
-        }
-
-        @media (min-width: 1024px) {
-          width: 36px;
-          height: 36px;
-        }
-
-        @media (min-width: 1280px) {
-          width: 44px;
-          height: 44px;
-        }
-      }
-    }
-
-    // ─── Feature text ──────────────────────────────────────────────
-    .feature-copy {
-      flex: 1 1 auto;
-      min-width: 0;
-
-      h3 {
-        margin: 0 0 4px 0;
-        font-family: $font-sans;
-        font-weight: 600;
-        color: $color-white;
-        font-size: 16px;
-        line-height: 1.25;
-        white-space: normal;
-        word-break: break-word;
-
-        @media (min-width: 480px) {
-          font-size: 18px;
-        }
-
-        @media (min-width: 768px) {
-          font-size: 20px;
-        }
-
-        @media (min-width: 1024px) {
-          font-size: 22px;
-        }
-
-        @media (min-width: 1280px) {
-          font-size: 26px;
-          line-height: 1.2;
-          margin: 0 0 6px 0;
-        }
-      }
-
-      p {
-        margin: 0;
-        font-family: $font-sans;
-        font-weight: 400;
-        color: $color-muted-2;
-        // Correct mobile base — 24px was accidentally set by edit; proper mobile size is 13px
-        font-size: 13px;
-        line-height: 1.5;
-        letter-spacing: 0;
-        white-space: normal;
-        word-break: break-word;
-
-        @media (min-width: 480px) {
-          font-size: 14px;
-        }
-
-        @media (min-width: 768px) {
-          font-size: 15px;
-        }
-
-        @media (min-width: 1024px) {
-          font-size: 16px;
-        }
-
-        @media (min-width: 1280px) {
-          font-size: 24px;
-          line-height: 1.4;
-        }
-      }
-    }
+  &__text {
+    flex: 1;
   }
 
-  // ─── CTA footer ──────────────────────────────────────────────────
-  .section-footer {
+  &__text h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.4vw, 26px);
+    line-height: 1.3;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  &__text p {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.2vw, 18px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+  }
+
+  /* RIGHT SIDE */
+
+  &__right {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 12px;
+  }
 
-    @media (min-width: 768px) {
-      margin-top: 20px;
-    }
-
-    @media (min-width: 1280px) {
-      grid-row: 2 / 3;
-      grid-column: 1 / -1;
-      margin-top: 40px;
-    }
-
-    .cta-button {
-      width: 100%;
-      max-width: 320px;
-      min-height: 52px;
-      height: auto;
-      background: $gradient-cta;
-      border: none;
-      border-radius: 12px;
-      padding: 12px 28px;
-      color: $color-white;
-      font-family: $font-ui;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 100%;
-      // Label + icon always centered together — never space-between
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      cursor: pointer;
-      box-shadow: $shadow-lg;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      @media (min-width: 480px) {
-        font-size: 18px;
-        min-height: 56px;
-        max-width: 380px;
-      }
-
-      @media (min-width: 768px) {
-        min-height: 60px;
-        border-radius: 16px;
-        max-width: 420px;
-      }
-
-      @media (min-width: 1280px) {
-        // Fixed width with centered content — label and arrow grouped together
-        width: auto;
-        min-width: 420px;
-        max-width: 560px;
-        height: $cta-height-lg;
-        border-radius: $radius-lg;
-        padding: 16px 40px;
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: 0;
-        gap: 16px;
-        justify-content: center;
-      }
-
-      .cta-label {
-        display: inline-block;
-        text-align: center;
-        white-space: nowrap;
-      }
-
-      svg {
-        width: 20px;
-        height: 20px;
-        flex: 0 0 20px;
-        transition: transform 0.3s ease;
-
-        @media (min-width: 1280px) {
-          width: 28px;
-          height: 28px;
-          flex: 0 0 28px;
-        }
-      }
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 15px 40px rgba(35, 42, 134, 0.4);
-      }
-
-      &:hover svg {
-        transform: translateX(5px);
-      }
-    }
+  &__image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 24px;
   }
 }

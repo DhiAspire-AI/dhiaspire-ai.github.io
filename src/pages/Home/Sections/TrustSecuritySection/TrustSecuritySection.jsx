@@ -1,56 +1,83 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import './TrustSecuritySection.scss';
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import "./TrustSecuritySection.scss";
 
 const features = [
   {
-    title: 'End-to-end encryption',
-    iconUrl: '/assets/home-assets/TrustSecuritySectionAssets/icons/encryption.svg'
+    title: "End-to-end encryption",
+    iconUrl:
+      "/assets/home-assets/TrustSecuritySectionAssets/icons/encryption.svg",
   },
   {
-    title: 'FERPA-grade data protection',
-    iconUrl: '/assets/home-assets/TrustSecuritySectionAssets/icons/protection.svg'
+    title: "FERPA-grade data protection",
+    iconUrl:
+      "/assets/home-assets/TrustSecuritySectionAssets/icons/protection.svg",
   },
   {
-    title: 'Transparent privacy policy',
-    iconUrl: '/assets/home-assets/TrustSecuritySectionAssets/icons/privacy.svg'
-  }
+    title: "Transparent privacy policy",
+    iconUrl:
+      "/assets/home-assets/TrustSecuritySectionAssets/icons/privacy.svg",
+  },
 ];
 
 const TrustSecuritySection = () => {
   return (
-    <section id="trust-security" className="trust-security-section">
-      <div className="trust-security__inner">
-        <header className="trust-security__header">
-          <h2>
+    <section className="trust-security">
+
+      <div className="trust-security__container">
+
+        {/* HEADER */}
+        <div className="trust-security__header">
+
+          <h2 className="trust-security__title">
             Trust, Security & <span>Compliance</span>
           </h2>
-          <p className="lead">
-            We follow industry-standard data protection practices to secure personal, academic,
-            <br className="desktop-br" />
-            and performance information.
-          </p>
-          <p className="highlight-text">Your Data. Protected. Always.</p>
-        </header>
 
+          <p className="trust-security__subtitle">
+            We follow industry-standard data protection practices to secure
+            personal, academic, and performance information.
+          </p>
+
+          <p className="trust-security__highlight">
+            Your Data. Protected. Always.
+          </p>
+
+        </div>
+
+
+        {/* FEATURES */}
         <div className="trust-security__features">
-          {features.map(({ title, iconUrl }) => (
-            <div key={title} className="trust-security__feature">
-              <div className="icon-box">
-                <img src={iconUrl} alt="" className="custom-icon" />
+
+          {features.map((item, index) => (
+            <div key={index} className="trust-security__feature">
+
+              <div className="trust-security__icon">
+                <img src={item.iconUrl} alt="" />
               </div>
-              <h3>{title}</h3>
+
+              <h3>{item.title}</h3>
+
             </div>
           ))}
+
         </div>
 
+
+        {/* CTA */}
         <div className="trust-security__footer">
-          <button type="button" className="cta-button">
-            Explore Employer Solutions
-            <ArrowRight size={24} strokeWidth={2} />
+
+          <button className="trust-security__button">
+
+            <span>Explore Security & Compliance</span>
+
+            <ArrowRight size={24} strokeWidth={2.5} />
+
           </button>
+
         </div>
+
       </div>
+
     </section>
   );
 };

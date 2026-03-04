@@ -27,11 +27,11 @@ const Home = () => {
       <StudentFeaturesSection />
       <CollegeSolutionsSection />
       <EmployerSolutionsSection />
-      <TrustedBySection />
+    <TrustedBySection />
       <HowItWorksSection />
-      <TrustSecuritySection />
-      <EmpowerSection onBookDemo={openDemoModal} />
-      <Footer />
+       <TrustSecuritySection />
+       <EmpowerSection onBookDemo={openDemoModal} />
+      <Footer /> 
 
       <BookADemo 
         isOpen={isDemoModalOpen} 

@@ -1,5 +1,3 @@
-@use '../../styles/variables.scss' as *;
-
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -294,7 +292,6 @@
 
     .book-demo-modal {
         width: 100%;
-        max-width: 500px;
         height: auto;
         max-height: none; // Allow modal to grow if overlay is scrollable
         margin: 0 auto;

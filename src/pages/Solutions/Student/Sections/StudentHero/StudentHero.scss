@@ -1,4 +1,3 @@
-@use '../../../../../styles/variables.scss' as *;
 
 .student-hero {
   position: relative;
@@ -80,230 +79,97 @@
     margin: 0 auto;
 
     .hero-title {
-      margin: 0 0 37px;
+      margin: 0 0 16px;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(32px, 4.5vw, 64px);
+      font-size: clamp(36px, 3vw, 60px);
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.25;
       color: #ffffff;
-      letter-spacing: 0;
+      letter-spacing: -0.01em;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      max-width: 100%;
       text-align: center;
-
-      @media (min-width: 1024px) {
-        line-height: 1.25;
-      }
-
-      @media (min-width: 1400px) {
-        font-size: 64px;
-        line-height: 85px;
-      }
 
       .title-line {
         display: block;
         width: 100%;
-        max-width: 100%;
-        word-wrap: break-word;
-        
-        @media (min-width: 1600px) {
-          white-space: nowrap;
-          width: fit-content;
-        }
       }
 
       .highlight-blue {
-        background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        display: inline;
+        color: #52b7ff;
+        background: none;
+        -webkit-text-fill-color: initial;
       }
     }
 
     .hero-intro {
-      font-family: $font-ui;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(15px, 1.15vw, 18px);
       font-weight: 500;
-      font-size: 15px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.85);
-      margin: 0 auto 54px;
-      max-width: 100%;
-
-      @media (min-width: 768px) {
-        font-size: 18px;
-        max-width: 800px;
-      }
-
-      @media (min-width: 1024px) {
-        font-size: 20px;
-        max-width: 1000px;
-      }
-
-      @media (min-width: 1280px) {
-        font-size: 24px;
-        max-width: 1150px;
-      }
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      margin: 0 auto clamp(24px, 3.5vw, 40px);
+      letter-spacing: 0.015em;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 24px;
+      gap: 20px;
       width: 100%;
-      margin-top: 8px;
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
 
       .btn {
+        min-width: 220px;
+        height: clamp(56px, 5.5vw, 64px);
+        padding: 0 clamp(44px, 5vw, 68px);
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(20px, 1.55vw, 22px);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 336px;
-        height: 80px;
-        border-radius: 25px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 1;
-        cursor: pointer;
-        transition: all 0.3s ease;
         white-space: nowrap;
 
         &.btn-primary {
-          background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
-          color: #fff;
-          box-shadow: 0 4px 15px rgba(35, 42, 134, 0.3);
-        }
+          background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+          color: #ffffff;
+          border: none;
+          box-shadow: 0 10px 20px rgba(50, 89, 206, 0.25);
 
-        &.btn-outline {
-          color: #fff;
-          background: transparent;
-          border: 3px solid transparent;
-          position: relative;
-          z-index: 1;
-
-          &::before {
-            content: "";
-            position: absolute;
-            inset: -3px;
-            border-radius: 25px;
-            padding: 3px;
-            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            z-index: -1;
-            pointer-events: none;
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(50, 89, 206, 0.35);
           }
         }
 
-        &:focus-visible {
-          outline: 2px solid rgba(82, 183, 255, 0.95);
-          outline-offset: 2px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1400px) {
-  .student-hero {
-    .hero-content {
-      .hero-title {
-        font-size: clamp(2rem, 4.2vw, 4.4rem);
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .student-hero {
-    padding: calc(var(--navbar-height) + 40px) 0 72px;
-
-    .hero-content {
-      .hero-title {
-        margin-bottom: 24px;
-        font-size: clamp(1.9rem, 4vw, 3.8rem);
-      }
-
-      .hero-description {
-        margin-bottom: 42px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .student-hero {
-    min-height: auto;
-    padding: calc(var(--navbar-height) + 34px) 0 64px;
-
-    .hero-content {
-      .hero-actions {
-        .btn {
-          width: 300px;
-          height: 72px;
-          font-size: 24px;
+        &.btn-outline {
+          background: transparent;
+          color: #ffffff;
+          position: relative;
+          border: 3px solid transparent; 
           border-radius: 25px;
-        }
-      }
-    }
-  }
-}
+          background: 
+            linear-gradient(#0c0d16, #0c0d16) padding-box,
+            linear-gradient(90deg, #232a86 0%, #52ff00 0%) border-box; /* Adjusted to simple gradient border logic or keeping previous verified one */
+          background: 
+            linear-gradient(#0c0d16, #0c0d16) padding-box,
+            linear-gradient(90deg, #232a86 0%, #52b7ff 100%) border-box;
 
-@media (max-width: 768px) {
-  .student-hero {
-    padding: calc(var(--navbar-height) + 26px) 0 52px;
-
-    .hero-container {
-      padding: 0 24px;
-    }
-
-    .hero-content {
-      .hero-title {
-        font-size: clamp(1.65rem, 7.1vw, 2.35rem);
-        margin-bottom: 18px;
-        line-height: 1.2;
-      }
-
-      .hero-description {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 28px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        gap: 14px;
-
-        .btn {
-          width: 100%;
-          max-width: 400px;
-          height: 64px;
-          font-size: 20px;
-          border-radius: 25px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .student-hero {
-    .hero-content {
-      .hero-title {
-        font-size: clamp(1.5rem, 8vw, 2.1rem);
-      }
-
-      .hero-actions {
-        .btn {
-          height: 60px;
-          font-size: 18px;
-          border-radius: 25px;
+          &:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+          }
         }
       }
     }
