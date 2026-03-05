@@ -14,7 +14,7 @@ const CollegeCTA = ({ onScheduleDemo }) => {
         <p className="cta-description">
           Whether you're a student aiming for your dream career, a college
           improving campus outcomes, or an employer looking for skilled talent
-          DhiAspire brings everything under one intelligent ecosystem.
+          DhiAspire Ai brings everything under one intelligent ecosystem.
         </p>
 
         <div className="cta-actions">

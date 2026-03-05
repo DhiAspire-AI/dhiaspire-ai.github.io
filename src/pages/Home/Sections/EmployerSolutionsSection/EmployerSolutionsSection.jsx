@@ -47,7 +47,7 @@ const EmployerSolutionsSection = () => {
             </h2>
 
             <p className="employer-solutions__subtitle">
-              DhiAspire connects employers with a pre-skilled, assessed,
+              DhiAspire Ai connects employers with a pre-skilled, assessed,
               and job-ready talent pool.
             </p>
 

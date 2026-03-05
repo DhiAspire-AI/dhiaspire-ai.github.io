@@ -37,7 +37,7 @@ const StudentSolutionSection = () => {
         {/* HEADER */}
         <div className="section-header">
           <h2>
-            Why Students <span className="highlight">Choose DhiAspire</span>
+            Why Students <span className="highlight">Choose DhiAspire AI</span>
           </h2>
           <p>
             A single destination that blends AI-driven assessments, hands-on

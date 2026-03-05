@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     quote:
-      "DhiAspire helped me understand my strengths and secure my first internship.",
+      "DhiAspire AI helped me understand my strengths and secure my first internship.",
     author: "Korla Vamzi",
     role: "Student, CSE Dept.",
     avatar:

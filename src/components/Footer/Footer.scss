@@ -48,15 +48,32 @@
   gap: 12px;
 }
 
-.newsletter-form input {
+.newsletter-form .input-container {
   flex: 1;
-  height: 48px;
-  padding: 0 18px;
-  border-radius: 10px;
-  border: 1px solid #3c4fff;
-  background: transparent;
+  width: 230px;
+  max-width: 425px;
+  min-width: 230px;
+  height: 50px;
+  position: relative;
+  background: #040615;
+  border-radius: 12px;
+  /* Use a pseudo-element for the gradient border because border-image ignores border-radius */
+  padding: 1px;
+  background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-form input {
+  width: 100%;
+  height: 100%;
+  padding: 16px 17px;
+  border: none;
+  background: #040615;
   color: white;
   font-size: 14px;
+  outline: none;
+  border-radius: 11px; /* Slightly smaller to fit perfectly inside the 12px container */
 }
 
 .newsletter-form input::placeholder {
@@ -68,11 +85,12 @@
   height: 48px;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(90deg, #232A86, #52B7FF);
+  background: linear-gradient(135deg, #232A86, #52B7FF);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: white;
 }
 
 /* LINKS AREA */
@@ -116,10 +134,86 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-col.contact li span, 
+.footer-col.contact li a {
+  color: #BCC3D7;
+  font-size: 15px;
+  text-decoration: none;
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+
+.footer-col.contact li:hover span,
+.footer-col.contact li:hover a {
+  color: #52B7FF;
+}
+
+.footer-col.contact li.location span {
+  font-weight: 400;
 }
 
 .footer-col.contact svg {
-  color: #52B7FF;
+  border: none;
+  width: 20px;
+  height: 20px;
+  stroke: url(#icon-gradient);
+  background: none;
+  padding: 0;
+  transition: stroke 0.3s ease;
+}
+
+.footer-col.contact li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-col.contact ul {
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid;
+  border-image-source: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+  border-image-slice: 1;
+  margin-bottom: 15px;
+  width: fit-content;
+  min-width: 250px;
+}
+
+.connect-us {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.connect-us span {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 /* BOTTOM */

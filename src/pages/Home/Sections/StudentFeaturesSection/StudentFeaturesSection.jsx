@@ -3,7 +3,7 @@ import "./StudentFeaturesSection.scss";
 
 const features = [
   {
-    title: "AI Career Assessment Test",
+    title: "AI Career Assessment",
     description:
       "Discover your strengths, interests, and ideal career roles.",
     iconUrl:

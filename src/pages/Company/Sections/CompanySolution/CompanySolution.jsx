@@ -28,7 +28,7 @@ const CompanySolution = () => {
                         Our <span className="highlight-blue">Solution</span>
                     </h2>
                     <p className="solution-subtitle">
-                        DhiAspire creates a comprehensive employability ecosystem
+                        DhiAspire Ai creates a comprehensive employability ecosystem
                     </p>
                 </div>
 

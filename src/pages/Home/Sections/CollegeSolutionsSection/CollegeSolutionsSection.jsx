@@ -51,7 +51,7 @@ const CollegeSolutionsSection = () => {
             </h2>
 
             <p className="college-solutions__subtitle">
-              DhiAspire empowers institutions to create measurable impact using deep analytics.
+              DhiAspire AI empowers institutions to create measurable impact using deep analytics.
             </p>
 
           </div>

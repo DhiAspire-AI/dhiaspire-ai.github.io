@@ -20,7 +20,7 @@ const StudentHero = ({ onBookDemo, onGetStarted }) => {
                     </h1>
                     
                     <p className="hero-intro">
-                        Confused about which career path suits you best? DhiAspire is your AI-powered 
+                        Confused about which career path suits you best? DhiAspire AI is your AI-powered 
                         platform to build job-ready skills and accelerate career success.
                     </p>
                     

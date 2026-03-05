@@ -18,7 +18,7 @@ const CollegeHero = ({ onBookDemo }) => {
           </h1>
 
           <p className="hero-intro">
-            DhiAspire empowers colleges with comprehensive AI-driven tools to Measure, Improve and
+            DhiAspire AI empowers colleges with comprehensive AI-driven tools to Measure, Improve and
             Demonstrate student employability outcomes.
           </p>
 

@@ -23,7 +23,7 @@ const EmpowerSection = ({ onBookDemo }) => {
 
           <p className="empower-subtitle">
             Whether you're a student aiming for your dream career, a college improving campus outcomes,
-            or an employer looking for skilled talent DhiAspire brings everything under one intelligent ecosystem.
+            or an employer looking for skilled talent DhiAspire Ai brings everything under one intelligent ecosystem.
           </p>
 
         </header>

@@ -5,6 +5,11 @@ import { subscribeNewsletter } from "../../services/newsletterApi";
 import Toast from "../Toast/Toast";
 import "./Footer.scss";
 
+// Import Social Icons from Assets
+import WhatsAppIcon from "/assets/home-assets/FooterAssets/icons/whatsapp.svg";
+import InstagramIcon from "/assets/home-assets/FooterAssets/icons/instagram.svg";
+import LinkedInIcon from "/assets/home-assets/FooterAssets/icons/linkedin.svg";
+
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,6 +42,13 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      {/* Shared Gradient for Icons */}
+      <svg width="0" height="0">
+        <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#232A86" />
+          <stop offset="100%" stopColor="#52B7FF" />
+        </linearGradient>
+      </svg>
 
       <div className="footer-container">
 
@@ -48,18 +60,19 @@ const Footer = () => {
             <h3>Join a Newsletter</h3>
 
             <p>
-              It has long been known that a reader’s attention will be diverted
-              from
+              Get updates delivered straight <br /> to your inbox.
             </p>
 
             <form className="newsletter-form" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                placeholder="Enter Your Email Here"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+              <div className="input-container">
+                <input
+                  type="email"
+                  placeholder="Enter Your Email Here"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
 
               <button type="submit">
                 <ArrowRight size={18} />
@@ -93,25 +106,55 @@ const Footer = () => {
               <h4>Contact</h4>
 
               <ul>
-                <li>
+                <li className="location">
                   <MapPin size={18}/>
                   <span>Andhra Pradesh, India</span>
                 </li>
 
                 <li>
                   <Mail size={18}/>
-                  <a href="mailto:dhiaspireai@gmail.com">
-                    dhiaspireai@gmail.com
+                  <a href="mailto:info@dhiaspireai.com">
+                    info@dhiaspireai.com
                   </a>
                 </li>
 
                 <li>
                   <Phone size={18}/>
-                  <a href="tel:+917448406219">
-                    +91 7448406219
+                  <a href="tel:+917207736051">
+                    +91 72077 36051
                   </a>
                 </li>
               </ul>
+
+              <div className="connect-us">
+                <span>Connect Us!</span>
+                <div className="social-icons">
+                  <a 
+                    href="https://wa.me/917207736051" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="whatsapp"
+                  >
+                    <img src={WhatsAppIcon} alt="WhatsApp" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/dhiaspireai/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="instagram"
+                  >
+                    <img src={InstagramIcon} alt="Instagram" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/company/dhiaspireai" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="linkedin"
+                  >
+                    <img src={LinkedInIcon} alt="LinkedIn" />
+                  </a>
+                </div>
+              </div>
             </div>
 
           </div>

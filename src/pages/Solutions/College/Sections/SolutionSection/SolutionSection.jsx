@@ -44,7 +44,7 @@ const SolutionSection = () => {
           <div className="solution-left">
             <img
             src="/assets/solutions-assets/college-solution-assets/solution-img-1.png" 
-              alt="DhiAspire College Solution"
+              alt="DhiAspire AI College Solution"
               className="solution-image"
             />
           </div>

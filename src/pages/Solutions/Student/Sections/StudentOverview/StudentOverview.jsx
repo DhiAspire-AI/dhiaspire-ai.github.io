@@ -32,7 +32,7 @@ const StudentOverview = () => {
                     <div className="text-content">
                         <h2 className="section-title">A Unified <span className="highlight">Platform</span> for Your Career Success</h2>
                         <p className="section-desc">
-                            DhiAspire is more than a learning platform. It's your career companion that guides you from 
+                            DhiAspire AI is more than a learning platform. It's your career companion that guides you from 
                             first-year curiosity to your dream job offer letter.
                         </p>
                         
