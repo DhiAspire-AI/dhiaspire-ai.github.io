@@ -58,21 +58,19 @@
     }
   }
 
-  // Main Content Frame - Moved further left via reduced padding
+  // Main Content Frame
   &__frame {
     width: 100%;
     max-width: 1440px;
-    // Lower horizontal padding (40px max) pushes HeroLeft towards the left edge
-    padding: clamp(80px, 12vh, 160px) clamp(20px, 4vw, 40px) 80px;
+    padding: clamp(100px, 15vh, 180px) clamp(24px, 5vw, 60px) 100px;
     margin: 0 auto;
     position: relative;
     z-index: 5;
 
     display: flex;
     align-items: center;
-    // Pushed HeroRight even closer to HeroLeft to the left
-    justify-content: flex-start;
-    gap: clamp(10px, 2vw, 40px);
+    justify-content: space-between;
+    gap: clamp(20px, 4vw, 80px);
   }
 }
 
@@ -80,8 +78,8 @@
 @media (max-width: 1200px) {
   .hero {
     min-height: auto;
-    padding-top: 100px;
-    
+    padding-top: 140px;
+
     &__decor {
       display: none;
     }
@@ -90,18 +88,20 @@
       flex-direction: column;
       text-align: center;
       gap: 60px;
-      padding-top: 60px;
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-top: 20px;
+      padding-bottom: 80px;
     }
   }
 }
 
 @media (max-width: 768px) {
   .hero {
+    padding-top: 100px;
+
     &__frame {
-      padding-top: 40px;
-      gap: 48px;
+      gap: 40px;
+      padding-top: 0;
+      padding-bottom: 60px;
       padding-left: 20px;
       padding-right: 20px;
     }

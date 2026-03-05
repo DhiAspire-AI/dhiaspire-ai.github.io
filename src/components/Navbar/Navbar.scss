@@ -16,7 +16,8 @@
 
   .navbar-container {
     width: 100%;
-    max-width: 1440px; /* aligned with sections */
+    max-width: 1440px;
+    /* aligned with sections */
     margin: 0 auto;
     padding: 0 32px;
     display: flex;
@@ -77,6 +78,14 @@
         text-decoration: none;
         transition: all 0.3s ease;
         cursor: pointer;
+
+        .chevron {
+          transition: transform 0.3s ease;
+
+          &.rotated {
+            transform: rotate(180deg);
+          }
+        }
       }
 
       a:hover,
@@ -105,22 +114,31 @@
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
   }
 
-  .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(14px) scale(1);
+  .dropdown:hover {
+    .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(14px) scale(1);
+    }
+
+    .chevron {
+      transform: rotate(180deg);
+    }
   }
 
   /* SIGN IN */
   .btn-signin {
-    padding: 14px 34px; // Increased padding for a taller, more balanced button
-    font-size: 16px; // Slightly increased for visibility
+    padding: 12px 28px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       background: white;
@@ -191,10 +209,50 @@
           padding: 12px 0;
           border-radius: 0;
           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          justify-content: space-between; // Push chevron to right on mobile
 
-          &:hover, &.active {
+          &:hover,
+          &.active {
             background: none;
             color: #4bb6ff;
+          }
+        }
+
+        &.dropdown {
+          .dropdown-menu {
+            position: static;
+            transform: none;
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            box-shadow: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+
+            li a {
+              padding: 12px 20px;
+              font-size: 16px;
+              color: rgba(255, 255, 255, 0.6);
+              border-bottom: none;
+
+              &:hover {
+                color: #4bb6ff;
+              }
+            }
+          }
+
+          &.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            max-height: 200px;
+            padding: 8px 0;
+            margin-top: 5px;
+            background: rgba(255, 255, 255, 0.05);
           }
         }
       }
@@ -214,7 +272,7 @@
     }
 
     .auth-buttons--desktop {
-      display: none;
+      display: none !important;
     }
 
     .mobile-menu-btn {
@@ -242,12 +300,53 @@
       }
     }
   }
+
+  /* Mid-size Desktop scaling (1025px - 1400px) to prevent overlap */
+  @media (min-width: 1025px) and (max-width: 1400px) {
+    .navbar-container {
+      padding: 0 24px;
+    }
+
+    .nav-section--right {
+      gap: 12px;
+    }
+
+    .nav-links {
+      gap: 4px;
+      padding: 6px;
+
+      li a,
+      li .dropdown-trigger {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
+
+    .nav-signin-link {
+      padding: 10px 18px;
+      font-size: 13px;
+      margin-right: 0;
+    }
+
+    .btn-book-demo {
+      height: 42px;
+      padding: 0 14px;
+      font-size: 13px;
+      gap: 6px;
+
+      .arrow-icon {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
 }
+
 /* BUTTON SYNC & BOOK A DEMO */
 .auth-buttons--desktop {
-  display: flex !important;
+  display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .nav-signin-link {
@@ -260,7 +359,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   margin-right: 12px; // Move it a little more left away from Book a Demo
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: #ffffff;
@@ -273,7 +372,7 @@
   background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
   color: #ffffff;
   border: none;
-  border-radius: 12px;
+  border-radius: 50px; // Unified border-radius with .nav-signin-link
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -301,12 +400,12 @@
   .auth-buttons--mobile {
     flex-direction: column;
     gap: 16px;
-    
+
     .btn-signin {
       background: transparent !important;
       border: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
-    
+
     .btn-book-demo {
       width: 100%;
       justify-content: center;

@@ -22,14 +22,15 @@
   &__title {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: clamp(36px, 3.5vw, 56px);
-    line-height: 1.2;
+    font-size: clamp(26px, 6vw, 56px);
+    line-height: 1.25;
     color: #ffffff;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .highlight {
     background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -112,10 +113,10 @@
 
   &__cta {
     width: auto;
-    min-width: clamp(240px, 20vw, 420px);
-    height: clamp(56px, 5.5vw, 68px);
-    border-radius: 100px;
-    padding: 0 clamp(32px, 5vw, 64px);
+    min-width: clamp(240px, 20vw, 360px);
+    height: clamp(56px, 5vw, 64px); // Unified website height
+    border-radius: 100px; // Unified border radius
+    padding: 0 clamp(32px, 4vw, 48px);
     background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
     border: none;
     cursor: pointer;
@@ -126,7 +127,7 @@
 
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: clamp(16px, 1.4vw, 22px);
+    font-size: clamp(16px, 1.25vw, 18px); // Unified text size
     line-height: 1;
     letter-spacing: 0%;
     white-space: nowrap;
@@ -157,17 +158,18 @@
 
     @media (max-width: 1024px) {
       width: auto;
-      max-width: 100%;
-      min-width: 280px;
+      max-width: 320px;
+      min-width: 240px;
     }
 
     @media (max-width: 640px) {
       width: 100%;
-      height: 60px;
-      border-radius: 100px;
+      height: 56px; // Unified mobile height
+      border-radius: 100px; // Unified border radius
+      padding: 0 24px;
 
       svg {
-        width: 24px;
+        width: 22px;
       }
     }
   }

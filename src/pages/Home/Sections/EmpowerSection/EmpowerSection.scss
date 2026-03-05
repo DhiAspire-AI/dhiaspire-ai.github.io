@@ -39,8 +39,8 @@
 .empower-title {
   font-family: "Inter";
   font-weight: 700;
-  font-size: clamp(36px, 3vw, 60px);
-  line-height: 1.1;
+  font-size: clamp(28px, 6vw, 60px);
+  line-height: 1.2;
   margin: 0 0 12px 0;
   color: #ffffff;
 
@@ -61,6 +61,7 @@
 
 .empower-title span {
   background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -107,43 +108,42 @@
 
 .empower-btn {
   width: auto;
-  min-width: clamp(240px, 20vw, 420px);
-  height: clamp(54px, 6vw, 68px);
-  border-radius: 12px;
-  padding: 0 clamp(20px, 3vw, 40px);
-  background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
+  min-width: clamp(240px, 20vw, 360px);
+  height: clamp(56px, 5vw, 64px); // Unified website height
+  border-radius: 100px; // Unified border radius
+  padding: 0 clamp(32px, 4vw, 48px);
+  background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(10px, 1.2vw, 16px);
+  gap: 16px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: clamp(16px, 1.25vw, 20px);
+  font-weight: 600;
+  font-size: clamp(16px, 1.25vw, 18px); // Unified text size
   line-height: 1;
   white-space: nowrap;
   color: #ffffff;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 10px 30px rgba(82, 183, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(50, 89, 206, 0.3);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(82, 183, 255, 0.4);
-    opacity: 0.95;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(50, 89, 206, 0.4);
+    opacity: 1;
   }
 
   @media (max-width: 1024px) {
-    width: clamp(280px, 80vw, 537px);
-    height: clamp(60px, 8vw, 80px);
-    font-size: clamp(18px, 2.5vw, 32px);
+    min-width: 280px;
+    height: 56px;
   }
 
   @media (max-width: 640px) {
     width: 100%;
-    height: 64px;
-    font-size: 20px;
-    border-radius: 8px;
+    height: 56px; // Unified mobile height
+    border-radius: 100px;
+    padding: 0 24px;
   }
 }
 
@@ -152,7 +152,7 @@
 /* PRIMARY */
 
 .empower-btn.primary {
-  background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
+  background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
   border: none;
   color: white;
 }
@@ -163,10 +163,14 @@
 
 .empower-btn.secondary {
   background: transparent;
-  border: 2px solid #52b7ff;
-  color: white;
+  border: 3px solid transparent;
+  color: #ffffff;
+  position: relative;
+  background:
+    linear-gradient(#0c0d16, #0c0d16) padding-box,
+    linear-gradient(90deg, #232a86 0%, #52b7ff 100%) border-box;
 }
 
-.empower-btn + .empower-btn {
+.empower-btn+.empower-btn {
   margin-left: 0;
 }

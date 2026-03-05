@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { submitDemoRequest } from '../../services/demoApi';
 import Toast from '../Toast/Toast';
 import './BookADemo.scss';
@@ -131,16 +132,16 @@ const BookADemo = ({ isOpen, onClose }) => {
             onClose();
         } catch (error) {
             console.error('Error submitting form:', error);
-            
+
             // Extract the specific error message from the backend response
             let errorMessage = 'Something went wrong. Please try again.';
-            
+
             if (error.response && error.response.data) {
                 const { status, message, errors: backendErrors } = error.response.data;
-                
+
                 if (backendErrors && Array.isArray(backendErrors) && backendErrors.length > 0) {
                     // Joins all validation errors into a single readable string if multiple exist
-                    errorMessage = backendErrors.join('. '); 
+                    errorMessage = backendErrors.join('. ');
                 } else if (message) {
                     errorMessage = message;
                 }
@@ -159,7 +160,7 @@ const BookADemo = ({ isOpen, onClose }) => {
 
     return (
         <>
-            {isOpen && (
+            {isOpen && createPortal(
                 <div className="modal-overlay" onClick={onClose}>
                     <div className="book-demo-modal" onClick={e => e.stopPropagation()}>
                         <div className="modal-header">
@@ -262,7 +263,8 @@ const BookADemo = ({ isOpen, onClose }) => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
 
             {toast && (

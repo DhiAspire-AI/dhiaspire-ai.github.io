@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import BookADemo from "../BookADemo/BookADemo";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
+  const openDemoModal = () => setIsDemoModalOpen(true);
+  const closeDemoModal = () => setIsDemoModalOpen(false);
 
   const location = useLocation();
 
@@ -30,20 +36,27 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", controlNavbar);
   }, []);
 
-  /* Lock body scroll when mobile menu open */
+  /* Lock body scroll when mobile menu or demo modal is open */
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
+    if (isMenuOpen || isDemoModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isDemoModalOpen]);
 
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/" ? "active" : "";
     return location.pathname.startsWith(path) ? "active" : "";
   };
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsSolutionsOpen(false);
+  };
 
   return (
     <nav className={`navbar ${!isVisible ? "navbar--hidden" : ""}`}>
@@ -75,9 +88,12 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="dropdown">
-              <div className={`dropdown-trigger ${isActive("/solutions")}`}>
-                Solutions <ChevronDown size={16} />
+            <li className={`dropdown ${isSolutionsOpen ? "open" : ""}`}>
+              <div
+                className={`dropdown-trigger ${isActive("/solutions")}`}
+                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+              >
+                Solutions <ChevronDown size={16} className={`chevron ${isSolutionsOpen ? "rotated" : ""}`} />
               </div>
 
               <ul className="dropdown-menu">
@@ -118,13 +134,13 @@ const Navbar = () => {
             <Link to="/login" className="btn-signin" onClick={closeMenu}>
               Sign In
             </Link>
-            <button className="btn-book-demo" onClick={() => { closeMenu(); /* context for opening demo modal */ }}>
+            <button className="btn-book-demo" onClick={() => { closeMenu(); openDemoModal(); }}>
               Book a Demo
-              <svg 
-                className="arrow-icon" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="arrow-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
                 strokeWidth="2.5"
               >
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -139,13 +155,13 @@ const Navbar = () => {
             <Link to="/login" className="nav-signin-link">
               Sign In
             </Link>
-            <button className="btn-book-demo">
+            <button className="btn-book-demo" onClick={openDemoModal}>
               Book a Demo
-              <svg 
-                className="arrow-icon" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="arrow-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
                 strokeWidth="2.5"
               >
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -163,6 +179,10 @@ const Navbar = () => {
         </div>
 
       </div>
+
+      {/* RENDER MODAL HERE SO NAVBAR CAN MANAGE IT INDEPENDENTLY */}
+      <BookADemo isOpen={isDemoModalOpen} onClose={closeDemoModal} />
+
     </nav>
   );
 };
