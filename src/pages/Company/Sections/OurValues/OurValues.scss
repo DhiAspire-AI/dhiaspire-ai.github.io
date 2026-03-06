@@ -36,21 +36,23 @@ background: #080F1E;
     .values-list {
         display: flex;
         flex-direction: column;
-        gap: clamp(32px, 4vw, 48px);
-        width: 100%;
-        max-width: 900px;
+        gap: clamp(20px, 2.5vw, 32px);
+        width: fit-content;
+        margin: 0 auto; // Center the container even when content shifts
     }
 
     .value-item {
         display: flex;
-        align-items: center;
-        gap: clamp(16px, 2vw, 24px);
+        align-items: flex-start; // Better for multi-line text
+        gap: clamp(12px, 1.5vw, 20px);
         width: 100%;
+        text-align: left;
 
         .icon-wrapper {
             flex-shrink: 0;
-            width: clamp(28px, 3vw, 36px);
-            height: clamp(28px, 3vw, 36px);
+            width: clamp(20px, 2vw, 28px);
+            height: clamp(20px, 2vw, 28px);
+            margin-top: 4px; // Align icon with first line of text
             display: flex;
             align-items: center;
             justify-content: center;
@@ -60,14 +62,20 @@ background: #080F1E;
                 height: 100%;
                 color: #ffffff;
                 stroke: #ffffff;
-                opacity: 0.9;
+                stroke-width: 3px;
+                opacity: 1;
             }
         }
 
         .value-content {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(18px, 1.4vw, 24px);
-            line-height: 1.4;
+            font-size: clamp(14px, 1.25vw, 18px);
+            line-height: 1.5;
+            display: flex;
+            flex-wrap: wrap; // Allow wrapping on small screens
+            column-gap: 8px;
+            row-gap: 2px;
+            white-space: normal; // Allow text to wrap
 
             .value-title {
                 font-weight: 700;
@@ -77,6 +85,23 @@ background: #080F1E;
             .value-description {
                 font-weight: 400;
                 color: rgba(255, 255, 255, 0.85);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .values-list {
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .value-item {
+            .value-content {
+                display: block; // Stack title and description on small mobile if needed
+                
+                .value-title::after {
+                    content: ""; // Remove separator or handle it via block display
+                }
             }
         }
     }

@@ -32,6 +32,7 @@
 
 .highlight {
   background: linear-gradient(90deg, #4f7cff, #52b7ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -49,7 +50,8 @@
 
 .how-steps {
   width: 100%;
-  padding-top: 80px;
+  padding-top: 0;
+  /* Removed excessive top padding that pushed content down */
 }
 
 

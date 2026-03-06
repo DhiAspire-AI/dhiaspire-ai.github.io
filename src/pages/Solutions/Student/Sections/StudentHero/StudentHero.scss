@@ -110,6 +110,7 @@
       font-weight: 500;
       line-height: 1.75;
       color: rgba(255, 255, 255, 0.7);
+      max-width: 680px; /* Reduced from 1470px for better readability */
       width: 100%;
       margin: 0 auto clamp(24px, 3.5vw, 40px);
       letter-spacing: 0.015em;

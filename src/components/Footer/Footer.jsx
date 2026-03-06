@@ -146,7 +146,7 @@ const Footer = () => {
                     <img src={InstagramIcon} alt="Instagram" />
                   </a>
                   <a 
-                    href="https://www.linkedin.com/company/dhiaspireai" 
+                    href="https://www.linkedin.com/company/dhiaspire-ai/posts/?feedView=all" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="linkedin"

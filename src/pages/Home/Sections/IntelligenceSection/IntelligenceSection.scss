@@ -18,7 +18,8 @@
   &__header {
     text-align: center;
     width: 100%;
-    margin-bottom: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(40px, 5vw, 80px);
+    /* Reduced gap to move content up */
   }
 
   &__title {
@@ -33,6 +34,7 @@
   .highlight {
     background: linear-gradient(90deg, #4f7cff, #4bb6ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -54,8 +56,11 @@
 
   &__left {
     width: 100%;
-    @media (min-width: 1280px) { /* Corresponds to Tailwind's 'xl' breakpoint */
-      margin-left: -20px; /* Shift left by 20px */
+
+    @media (min-width: 1280px) {
+      /* Corresponds to Tailwind's 'xl' breakpoint */
+      margin-left: -20px;
+      /* Shift left by 20px */
     }
   }
 

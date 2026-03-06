@@ -14,8 +14,8 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/solutions/student" element={<StudentSolution />} />
             <Route path="/solutions/college" element={<CollegeSolution />} />
-            <Route path="/platform" element={<Platform />} />
-            <Route path="/resources" element={<Resources />} />
+            <Route path="/platform" element={<Page404 />} />
+            <Route path="/resources" element={<Page404 />} />
             <Route path="/company" element={<Company />} />
             {/* Catch-all route for 404 page */}
             <Route path="*" element={<Page404 />} />

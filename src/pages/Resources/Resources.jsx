@@ -1,12 +1,8 @@
 import React from 'react';
-import './Resources.scss';
+import Page404 from '../../components/Page404/Page404';
 
 const Resources = () => {
-    return (
-        <div className="resources-page">
-            <h1>Resources Page</h1>
-        </div>
-    );
+  return <Page404 />;
 };
 
 export default Resources;

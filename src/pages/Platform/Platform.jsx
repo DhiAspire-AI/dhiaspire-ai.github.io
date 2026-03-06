@@ -1,12 +1,8 @@
 import React from 'react';
-import './Platform.scss';
+import Page404 from '../../components/Page404/Page404';
 
 const Platform = () => {
-    return (
-        <div className="platform-page">
-            <h1>Platform Page</h1>
-        </div>
-    );
+  return <Page404 />;
 };
 
 export default Platform;

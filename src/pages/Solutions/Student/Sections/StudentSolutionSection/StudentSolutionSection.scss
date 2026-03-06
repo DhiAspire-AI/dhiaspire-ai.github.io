@@ -24,7 +24,7 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: clamp(30px, 3vw, 60px);
+  margin-bottom: clamp(12px, 1.5vw, 24px); /* Reduced further from 16px-32px */
 }
 
 .section-header h2 {
@@ -96,14 +96,15 @@
 /* ICON */
 
 .icon-box {
-  width: clamp(56px, 6vw, 80px);
-  height: clamp(56px, 6vw, 80px);
-  border-radius: 16px;
-  background: linear-gradient(135deg, #2b3ccf, #5bb5ff);
+  width: clamp(56px, 6vw, 72px);
+  height: clamp(56px, 6vw, 72px);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 30px rgba(43, 60, 207, 0.4);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2b3ccf, #5bb5ff);
+  box-shadow: 0 10px 25px rgba(43, 60, 207, 0.3);
 }
 
 .custom-icon {

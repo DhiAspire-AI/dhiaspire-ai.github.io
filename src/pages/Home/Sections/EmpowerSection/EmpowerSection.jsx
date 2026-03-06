@@ -29,14 +29,14 @@ const EmpowerSection = ({ onBookDemo }) => {
         </header>
 
 
-        <div className="empower-buttons mx-auto flex flex-row justify-center items-center gap-4 flex-wrap w-full max-w-[640px]">
+        <div className="empower-buttons">
 
-          <button className="hero-left__btn hero-left__btn--primary flex-1 min-w-[140px] max-w-[320px]">
+          <button className="hero-left__btn hero-left__btn--primary">
             Get Started
           </button>
 
           <button
-            className="hero-left__btn hero-left__btn--secondary flex-1 min-w-[140px] max-w-[320px]"
+            className="hero-left__btn hero-left__btn--secondary"
             onClick={onBookDemo}
           >
             Book a demo

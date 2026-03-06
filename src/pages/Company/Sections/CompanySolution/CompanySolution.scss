@@ -65,10 +65,7 @@ background: #040525;
         transition: transform 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.05);
 
-        &:hover {
-            transform: translateY(-8px);
-        }
-
+       
         &--students {
             background: linear-gradient(205.35deg, #1B325A 16.07%, #0E1835 83.93%);
             border: 2px solid #0C296A;

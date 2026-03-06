@@ -30,7 +30,8 @@
   &__header {
     text-align: center;
     width: 100%;
-    margin-bottom: clamp(60px, 8vw, 120px);
+    margin-bottom: clamp(40px, 5vw, 80px);
+    /* Reduced gap to move content up */
   }
 
 

@@ -35,6 +35,7 @@
 .ecosystem__highlight {
   background: linear-gradient(90deg, #4f7cff, #4bb6ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -64,18 +65,21 @@
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  padding-top: clamp(60px, 6vw, 80px); /* Reduced space above to move card body UP */
+  padding-top: clamp(60px, 6vw, 80px);
+  /* Reduced space above to move card body UP */
 }
 
 /* IMAGE */
 
 .ecosystem-card__image-container {
   position: absolute;
-  top: -68px; /* Moves images even HIGHER (Little bit more up) */
+  top: -68px;
+  /* Moves images even HIGHER (Little bit more up) */
   left: 50%;
   transform: translateX(-50%);
   width: clamp(200px, 18vw, 280px);
-  z-index: 1; /* Images are now BELOW the cards */
+  z-index: 1;
+  /* Images are now BELOW the cards */
   display: flex;
   justify-content: center;
 }
@@ -96,7 +100,8 @@
   border: 1px solid rgba(75, 182, 255, 0.2);
   backdrop-filter: blur(20px);
   position: relative;
-  z-index: 5; /* Card body is now ON TOP of the images */
+  z-index: 5;
+  /* Card body is now ON TOP of the images */
   /* Reduced top padding even further to move content almost to the top */
   padding: clamp(20px, 3vw, 36px) clamp(20px, 3vw, 32px) clamp(24px, 3vw, 40px);
   display: flex;
@@ -130,7 +135,8 @@
   font-size: clamp(26px, 2vw, 32px);
   text-align: center;
   color: #ffffff;
-  margin-bottom: clamp(10px, 1vw, 14px); /* Tighter spacing to pull content up */
+  margin-bottom: clamp(10px, 1vw, 14px);
+  /* Tighter spacing to pull content up */
 }
 
 /* LIST */
@@ -143,7 +149,8 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 0.8vw, 10px); /* Tighter gap */
+  gap: clamp(6px, 0.8vw, 10px);
+  /* Tighter gap */
 }
 
 .ecosystem-card__list-item {
@@ -188,7 +195,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  
+
   /* Responsive Desktop Typography */
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -196,7 +203,7 @@
   line-height: 1;
   letter-spacing: 0%;
   white-space: nowrap;
-  
+
   color: #ffffff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(50, 89, 206, 0.3);
@@ -230,13 +237,90 @@
   }
 }
 
+/* ── MOBILE: Image flows in-document, overlaps DOWN into card body ── */
+@media (max-width: 768px) {
+  .ecosystem__cards {
+    gap: 60px !important;
+    /* Reduced vertical separation between cards */
+  }
+
+  .ecosystem-card {
+    max-width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    /* Remove margin hacks */
+  }
+
+  /* Image above card — overlaps DOWN into the card top */
+  .ecosystem-card__image-container {
+    position: relative;
+    width: 170px;
+    /* refined size */
+    z-index: 1;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: -10px auto -25px;
+    /* sit tighter on card */
+  }
+
+  /* Card body: tighter padding to fix "too long" size */
+  .ecosystem-card__body {
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    padding: 36px 20px 24px;
+    /* Reduced top padding from 64px to 36px */
+  }
+
+  /* Fix fonts to be perfect inside the card */
+  .ecosystem-card__title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .ecosystem-card__list {
+    gap: 12px;
+  }
+
+  .ecosystem-card__list-item {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 640px) {
+  .ecosystem__cards {
+    gap: 50px !important;
+    /* Reduced gap on smaller screens */
+  }
+
   .ecosystem__button {
     width: 100%;
     height: 60px;
     border-radius: 100px;
   }
+
   .ecosystem__button-icon {
     width: 24px;
+  }
+
+  .ecosystem-card__image-container {
+    width: 150px;
+    margin: -10px auto -20px;
+  }
+
+  .ecosystem-card__body {
+    padding: 32px 18px 24px;
+  }
+
+  .ecosystem-card__title {
+    font-size: 22px;
+  }
+
+  .ecosystem-card__list-item {
+    font-size: 14px;
   }
 }

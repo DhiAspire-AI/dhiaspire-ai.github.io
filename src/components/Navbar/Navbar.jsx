@@ -131,7 +131,7 @@ const Navbar = () => {
 
           {/* MOBILE ACTIONS */}
           <div className="auth-buttons auth-buttons--mobile">
-            <Link to="/login" className="btn-signin" onClick={closeMenu}>
+            <Link to="/404" className="btn-signin" onClick={closeMenu}>
               Sign In
             </Link>
             <button className="btn-book-demo" onClick={() => { closeMenu(); openDemoModal(); }}>
@@ -152,7 +152,7 @@ const Navbar = () => {
         {/* RIGHT */}
         <div className="nav-section nav-section--right">
           <div className="auth-buttons auth-buttons--desktop">
-            <Link to="/login" className="nav-signin-link">
+            <Link to="/404" className="nav-signin-link">
               Sign In
             </Link>
             <button className="btn-book-demo" onClick={openDemoModal}>

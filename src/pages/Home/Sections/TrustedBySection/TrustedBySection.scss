@@ -32,7 +32,8 @@
 
   text-align: center;
   width: 100%;
-  margin-bottom: clamp(60px, 8vw, 120px);
+  margin-bottom: clamp(30px, 5vw, 60px);
+  /* Reduced gap to move content up */
 
 }
 

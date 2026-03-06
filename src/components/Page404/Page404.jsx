@@ -1,33 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Home, ArrowLeft } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
 import './Page404.scss';
 
 const Page404 = () => {
+  const [email, setEmail] = useState('');
+
+  // Force scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle newsletter signup
+    console.log('Signing up with:', email);
+    setEmail('');
+  };
+
   return (
-    <div className="page-404">
+    <div className="launching-soon">
       <div className="content">
-        <h1 className="error-code">404</h1>
-        <h2 className="title">Page Not Found</h2>
-        <p className="description">
-          Oops! The page you're looking for doesn't exist or has been moved. 
-          We're still building some parts of our platform.
+        <h1 className="main-title">We are Launching Soon!</h1>
+        <p className="sub-title">
+          AI-powered employability platform. Launching soon.<br />
+          Be the first to know when this feature is ready!<br />
+          Sign up now, We'll notify!
         </p>
-        <div className="actions">
-          <Link to="/" className="back-home">
-            <Home size={20} />
-            <span>Back to Home</span>
-          </Link>
-          <button onClick={() => window.history.back()} className="go-back">
-            <ArrowLeft size={20} />
-            <span>Go Back</span>
-          </button>
-        </div>
+        
+        <form className="notify-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input 
+              type="email" 
+              placeholder="Enter Your Email Here" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit" className="submit-btn">
+              <ArrowRight size={20} color="white" />
+            </button>
+          </div>
+        </form>
       </div>
-      <div className="background-elements">
-        <div className="circle circle-1"></div>
-        <div className="circle circle-2"></div>
-      </div>
+
+      {/* Atmospheric Background Effects from Figma */}
+      <div className="bg-glow bg-glow-left"></div>
+      <div className="bg-glow bg-glow-right"></div>
     </div>
   );
 };
