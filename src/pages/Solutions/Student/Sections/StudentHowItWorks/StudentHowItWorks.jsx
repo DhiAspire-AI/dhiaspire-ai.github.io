@@ -5,23 +5,23 @@ const StudentHowItWorks = () => {
     const steps = [
         {
             number: '1',
-            title: 'Discover & Profile',
-            description: 'Uncover your hidden potential through AI-powered career assessments and build your unique employability profile.'
+            title: 'Career Discovery',
+            description: ' Take the AI Career Assessment to create your employability profile.'
         },
         {
             number: '2',
-            title: 'Personalize & Learn',
-            description: 'Get a customized learning roadmap tailored to your career goals, featuring industry-aligned courses and skills.'
+            title: 'Learning Path',
+            description: 'Follow your personalized learning path with recommended courses and milestones.'
         },
         {
             number: '3',
-            title: 'Master & Certify',
-            description: 'Apply your knowledge through hands-on projects and internships while earning certifications that employers trust.'
+            title: 'Skill Building',
+            description: 'Build real-world skills through practical projects and internships.'
         },
         {
             number: '4',
-            title: 'Connect & Land',
-            description: 'Get matched with top internship and job opportunities through our network of employers and placement support.'
+            title: 'Placement Prep',
+            description: 'Prepare for placement with mock interviews and assessments.'
         }
     ];
 

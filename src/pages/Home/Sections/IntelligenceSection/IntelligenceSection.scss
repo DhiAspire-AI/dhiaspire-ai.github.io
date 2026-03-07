@@ -1,7 +1,7 @@
 .intelligence {
   width: 100%;
   background: #060819;
-  padding: clamp(60px, 8vw, 140px) 0;
+  padding: clamp(40px, 5vw, 60px) 0; // Significantly reduced from 60px-140px
 
   /* CONTAINER */
 
@@ -15,7 +15,7 @@
 
   /* HEADER */
 
-  &__header {
+  &__header { 
     text-align: center;
     width: 100%;
     margin-bottom: clamp(40px, 5vw, 80px);
@@ -23,12 +23,21 @@
   }
 
   &__title {
-    font-family: "Inter";
-    font-weight: 700;
-    font-size: clamp(36px, 3vw, 60px);
-    line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+    line-height: 1.4; // Reference from hero-left
     color: #ffffff;
     margin-bottom: 24px;
+    letter-spacing: 0.015em; // Reference from hero-left
+
+    @media (max-width: 1440px) {
+      font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+    }
+
+    @media (max-width: 768px) {
+      font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+    }
   }
 
   .highlight {
@@ -40,10 +49,12 @@
 
   &__subtitle {
     margin: 0 auto;
-    font-family: "Inter";
-    font-size: clamp(16px, 1.2vw, 20px);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
+    font-family: 'Poppins', sans-serif; // Reference from hero-left
+    font-weight: 400; // Reference from hero-left
+    font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+    line-height: 1.5; // Reference from hero-left
+    color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+    letter-spacing: 0.01em; // Reference from hero-left
   }
 
   /* CONTENT */

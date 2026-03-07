@@ -86,7 +86,7 @@ const EcosystemSection = () => {
 
         <div className="ecosystem__footer">
           <button className="ecosystem__button">
-            See How DhiAspire Ai Works
+            See How DhiAspire AI Works
             <img
               src="/assets/button-arrow.svg"
               alt="arrow"

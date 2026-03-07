@@ -18,6 +18,7 @@ const features = [
     iconUrl:
       "/assets/home-assets/TrustSecuritySectionAssets/icons/privacy.svg",
   },
+  
 ];
 
 const TrustSecuritySection = () => {

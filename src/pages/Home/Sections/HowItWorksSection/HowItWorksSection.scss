@@ -1,7 +1,7 @@
 .how-it-works-section {
   background: #040525;
   color: #ffffff;
-  padding: clamp(80px, 10vw, 150px) 0;
+  padding: clamp(40px, 5vw, 60px) 0; // Significantly reduced from 80px-150px
   width: 100%;
 }
 
@@ -23,27 +23,39 @@
 }
 
 .how-title {
-  font-family: "Inter";
-  font-weight: 700;
-  font-size: clamp(36px, 3vw, 60px);
-  line-height: 1.1;
-  margin: 0 0 12px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+  line-height: 1.4; // Reference from hero-left
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.015em; // Reference from hero-left
+
+  @media (max-width: 1440px) {
+    font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+  }
 }
 
 .highlight {
-  background: linear-gradient(90deg, #4f7cff, #52b7ff);
-  background-clip: text;
+  background: linear-gradient(90deg, #4f7cff, #4bb6ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .how-subtitle {
-  margin: 0 auto;
   max-width: 900px;
-  font-family: "Inter";
-  font-size: clamp(16px, 1.2vw, 20px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif; // Reference from hero-left
+  font-weight: 400; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  letter-spacing: 0.01em; // Reference from hero-left
 }
 
 /* STEPS */

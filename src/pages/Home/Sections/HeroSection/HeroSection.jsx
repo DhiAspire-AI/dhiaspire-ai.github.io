@@ -13,7 +13,7 @@ const HeroSection = ({ onBookDemo }) => {
 
       <div className="hero__frame">
         <HeroLeft onBookDemo={onBookDemo} />
-        <HeroRight />
+        {/* <HeroRight /> */}
       </div>
     </section>
   );

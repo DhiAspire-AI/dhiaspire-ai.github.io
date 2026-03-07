@@ -2,6 +2,8 @@ import React from "react";
 import "./HeroLeft.scss";
 
 const HeroLeft = ({ onBookDemo }) => {
+  const LOGIN_URL = import.meta.env.VITE_LOGIN_URL ;
+
   return (
     <div className="hero-left">
       <h1 className="hero-left__title">
@@ -15,9 +17,14 @@ const HeroLeft = ({ onBookDemo }) => {
       </p>
 
       <div className="hero-left__actions">
-        <button className="hero-left__btn hero-left__btn--primary">
+        <a
+          href={LOGIN_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-left__btn hero-left__btn--primary"
+        >
           Get Started
-        </button>
+        </a>
 
         <button
           onClick={onBookDemo}

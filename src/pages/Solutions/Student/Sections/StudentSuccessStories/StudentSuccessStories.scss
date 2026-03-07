@@ -1,13 +1,13 @@
 .student-success-stories {
-    padding: clamp(60px, 8vw, 120px) 0;
+    padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
     background: #060819;
     position: relative;
     overflow: hidden;
 
     .container {
-        max-width: 1440px;
+        max-width: 1440px; 
         margin: 0 auto;
-        padding: 0 clamp(20px, 5vw, 60px);
+        padding: 0 clamp(20px, 5vw, 60px); 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -15,15 +15,16 @@
 
     .header {
         text-align: center;
-        margin-bottom: clamp(40px, 6vw, 80px);
+        margin-bottom: clamp(40px, 5vw, 60px); 
 
         h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(32px, 4vw, 54px);
-            font-weight: 700;
+            font-weight: 600; // Reference from hero-left
+            font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+            line-height: 1.4; // Reference from hero-left
             color: #ffffff;
             margin: 0;
-            letter-spacing: -0.01em;
+            letter-spacing: 0.015em; // Reference from hero-left
         }
     }
 
@@ -41,7 +42,8 @@
     }
 
     .story-card {
-        background: rgba(255, 255, 255, 0.08); // Semi-transparent grey box from image
+       background: #FFFFFF33;
+
         border-radius: 12px;
         padding: clamp(24px, 4vw, 40px);
         display: flex;
@@ -50,10 +52,7 @@
         transition: transform 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.05);
 
-        &:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.12);
-        }
+        
 
         .story-text {
             font-family: 'Poppins', sans-serif;

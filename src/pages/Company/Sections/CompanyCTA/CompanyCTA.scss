@@ -1,7 +1,7 @@
 .company-cta-custom {
     width: 100%;
-background: #040525;
-    padding: clamp(80px, 12vw, 160px) 0;
+    background: #040525;
+    padding: clamp(40px, 5vw, 60px) 0; // Reduced vertical spacing to match site rhythm
     position: relative;
     overflow: hidden;
 
@@ -18,12 +18,12 @@ background: #040525;
 
     .cta-title {
         font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: clamp(32px, 4vw, 54px);
-        line-height: 1.3;
+        font-weight: 600; // match HeroLeft
+        font-size: clamp(32px, 4.5vw, 54px);
+        line-height: 1.4;
         color: #ffffff;
-        margin-bottom: clamp(40px, 6vw, 60px);
-        letter-spacing: -0.01em;
+        margin-bottom: clamp(24px, 3vw, 40px); // increased gap to separate header from actions
+        letter-spacing: 0.015em;
 
         .highlight-blue {
             background: linear-gradient(90deg, #4f7cff, #4bb6ff);
@@ -42,14 +42,16 @@ background: #040525;
         flex-wrap: wrap;
 
         button {
-            height: clamp(56px, 5.5vw, 64px);
-            padding: 0 clamp(32px, 4vw, 56px);
-            border-radius: 12px; // Specific radius from image
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: clamp(16px, 1.2vw, 19px);
+            height: clamp(56px, 6vw, 72px);
+            min-width: clamp(200px, 18vw, 320px);
+            padding: 0 40px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 500 !important;
+            font-size: clamp(16px, 1.8vw, 24px) !important;
+            line-height: 1 !important;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.32s cubic-bezier(0.22, 0.9, 0.28, 1), box-shadow 0.32s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -57,10 +59,10 @@ background: #040525;
         }
 
         .btn-primary {
-            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+            background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
             color: #ffffff;
             border: none;
-            box-shadow: 0 10px 20px rgba(35, 42, 134, 0.25);
+            box-shadow: 0 12px 30px rgba(50, 89, 206, 0.24);
 
            
         }
@@ -68,9 +70,13 @@ background: #040525;
         .btn-secondary {
             background: transparent;
             color: #ffffff;
-            border: 2px solid #232A86;
-            
-         
+            border: 3px solid transparent;
+            border-radius: 25px;
+            background:
+                linear-gradient(#040525, #040525) padding-box,
+                linear-gradient(90deg, #232A86 0%, #52B7FF 100%) border-box;
+
+           
         }
     }
 }

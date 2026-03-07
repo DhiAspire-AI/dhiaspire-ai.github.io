@@ -14,6 +14,7 @@ const Navbar = () => {
   const closeDemoModal = () => setIsDemoModalOpen(false);
 
   const location = useLocation();
+  const loginUrl = import.meta.env.VITE_LOGIN_URL ;
 
   /* ✅ Improved Scroll Hide Logic (Stable) */
   useEffect(() => {
@@ -131,9 +132,9 @@ const Navbar = () => {
 
           {/* MOBILE ACTIONS */}
           <div className="auth-buttons auth-buttons--mobile">
-            <Link to="/404" className="btn-signin" onClick={closeMenu}>
+            <a href={loginUrl} className="btn-signin" onClick={closeMenu} target="_blank" rel="noopener noreferrer">
               Sign In
-            </Link>
+            </a>
             <button className="btn-book-demo" onClick={() => { closeMenu(); openDemoModal(); }}>
               Book a Demo
               <svg
@@ -152,9 +153,9 @@ const Navbar = () => {
         {/* RIGHT */}
         <div className="nav-section nav-section--right">
           <div className="auth-buttons auth-buttons--desktop">
-            <Link to="/404" className="nav-signin-link">
+            <a href={loginUrl} className="nav-signin-link" target="_blank" rel="noopener noreferrer">
               Sign In
-            </Link>
+            </a>
             <button className="btn-book-demo" onClick={openDemoModal}>
               Book a Demo
               <svg

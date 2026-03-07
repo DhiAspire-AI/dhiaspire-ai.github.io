@@ -1,7 +1,7 @@
 .solution-section {
   width: 100%;
   background: #060819;
-  padding: clamp(60px, 8vw, 140px) 0;
+  padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
 
   .solution-container {
     width: 100%;
@@ -13,11 +13,12 @@
 
   .solution-title {
     text-align: center;
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: clamp(36px, 3vw, 60px);
-    line-height: 1.1;
-    margin-bottom: clamp(60px, 8vw, 120px);
+    font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+    font-weight: 600 !important; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px) !important; // Reference from hero-left
+    line-height: 1.4 !important; // Reference from hero-left
+    margin-bottom: clamp(32px, 4vw, 48px); // Reduced margin
+    letter-spacing: 0.015em !important; // Reference from hero-left
 
     .highlight-blue {
       background: linear-gradient(90deg, #4f7cff, #4bb6ff);
@@ -72,6 +73,7 @@
     }
 
     .solution-list {
+      font-family: 'Poppins', sans-serif !important; // Reference from hero-left
       display: flex;
       flex-direction: column;
       gap: clamp(20px, 2.5vw, 32px);
@@ -107,8 +109,8 @@
       flex: 1;
 
       h3 {
-        font-family: "Inter", sans-serif;
-        font-weight: 700;
+        font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+        font-weight: 700 !important; // Reference from hero-left
         font-size: clamp(18px, 1.4vw, 26px);
         line-height: 1.3;
         color: #ffffff;
@@ -116,7 +118,7 @@
       }
 
       p {
-        font-family: "Inter", sans-serif;
+        font-family: 'Poppins', sans-serif !important; // Reference from hero-left
         font-size: clamp(14px, 1.2vw, 18px);
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.65);

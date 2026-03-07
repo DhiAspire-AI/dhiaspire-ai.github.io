@@ -1,7 +1,7 @@
 .empower-section {
 
-  padding-top: clamp(80px, 10vw, 140px);
-  padding-bottom: clamp(80px, 10vw, 140px);
+  padding-top: clamp(40px, 5vw, 60px); // Reduced from 80-140px
+  padding-bottom: clamp(40px, 5vw, 60px); // Reduced from 80-140px
 
   background: #040525;
 
@@ -37,19 +37,28 @@
 /* TITLE */
 
 .empower-title {
-  font-family: "Inter";
-  font-weight: 700;
-  font-size: clamp(28px, 6vw, 60px);
-  line-height: 1.2;
-  margin: 0 0 12px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+  line-height: 1.4; // Reference from hero-left
+  margin: 0 0 16px 0;
   color: #ffffff;
+  letter-spacing: 0.015em; // Reference from hero-left
+
+  @media (max-width: 1440px) {
+    font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+  }
 
   br {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .empower-title br {
+    & br {
       display: block;
     }
   }
@@ -71,13 +80,14 @@
 /* SUBTITLE */
 
 .empower-subtitle {
-  margin: 25px auto 0 auto;
-  /* Moved subtitle slightly down */
-  max-width: 950px;
-  font-family: "Inter";
-  font-size: clamp(16px, 1.2vw, 20px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  max-width: 800px; // Reference from hero-left max-width: 900px
+  margin: 24px auto 0;
+  font-family: 'Poppins', sans-serif; // Reference from hero-left
+  font-weight: 400; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  letter-spacing: 0.01em; // Reference from hero-left
 }
 
 

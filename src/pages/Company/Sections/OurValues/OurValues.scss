@@ -18,7 +18,7 @@ background: #080F1E;
         text-align: center;
         margin-bottom: clamp(60px, 8vw, 100px);
         font-family: 'Poppins', sans-serif;
-        font-weight: 700;
+        font-weight: 600;
         font-size: clamp(36px, 4.5vw, 64px);
         line-height: 1.2;
         color: #ffffff;
@@ -69,7 +69,7 @@ background: #080F1E;
 
         .value-content {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(14px, 1.25vw, 18px);
+            font-size: clamp(14px, 1.25vw, 24px);
             line-height: 1.5;
             display: flex;
             flex-wrap: wrap; // Allow wrapping on small screens
@@ -78,7 +78,7 @@ background: #080F1E;
             white-space: normal; // Allow text to wrap
 
             .value-title {
-                font-weight: 700;
+                font-weight: 500;
                 color: #ffffff;
             }
 

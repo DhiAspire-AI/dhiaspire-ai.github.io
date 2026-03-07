@@ -1,7 +1,7 @@
 .key-benefits {
   width: 100%;
-background: #080F1E;
-  padding: clamp(60px, 8vw, 100px) 0;
+  background: #080F1E;
+  padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
 
   .benefits-container {
     width: 100%;
@@ -15,12 +15,13 @@ background: #080F1E;
 
   .benefits-title {
     text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: clamp(32px, 4vw, 54px);
-    line-height: 1.2;
+    font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+    font-weight: 600 !important; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px) !important; // Reference from hero-left
+    line-height: 1.4 !important; // Reference from hero-left
     color: #ffffff;
-    margin-bottom: clamp(50px, 6vw, 80px);
+    margin-bottom: clamp(32px, 4vw, 48px); // Reduced margin
+    letter-spacing: 0.015em !important; // Reference from hero-left
 
     .highlight-blue {
       color: #3b82f6; // Specific blue from image
@@ -75,8 +76,8 @@ background: #080F1E;
 
     .benefit-content {
       h3 {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
+        font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+        font-weight: 600 !important; // Reference from hero-left
         font-size: clamp(18px, 1.4vw, 22px);
         color: #ffffff;
         line-height: 1.2;
@@ -84,7 +85,8 @@ background: #080F1E;
       }
 
       p {
-        font-family: "Poppins", sans-serif;
+        font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+        font-weight: 400 !important; // Reference from hero-left
         font-size: clamp(14px, 1.1vw, 17px);
         line-height: 1.4;
         color: rgba(255, 255, 255, 0.85);

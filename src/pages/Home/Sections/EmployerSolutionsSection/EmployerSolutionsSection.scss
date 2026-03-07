@@ -3,7 +3,7 @@
   width: 100%;
   background: #040525;
 
-  padding: clamp(40px, 6vw, 100px) 0;
+  padding: clamp(40px, 5vw, 60px) 0; // Significantly reduced from 40px-100px
 
   /* CONTAINER */
   &__container {
@@ -36,19 +36,28 @@
 
 
   &__title {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: clamp(26px, 6vw, 56px);
-    line-height: 1.25;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+    line-height: 1.4; // Reference from hero-left
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    letter-spacing: 0.015em; // Reference from hero-left
+
+    @media (max-width: 1440px) {
+      font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+    }
+
+    @media (max-width: 768px) {
+      font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+    }
   }
 
 
   .highlight {
     background: linear-gradient(90deg, #4f7cff, #4bb6ff);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -56,10 +65,12 @@
   &__subtitle {
     max-width: 900px;
     margin: 0 auto;
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(16px, 1.25vw, 20px);
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Poppins', sans-serif; // Reference from hero-left
+    font-weight: 400; // Reference from hero-left
+    font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+    line-height: 1.5; // Reference from hero-left
+    color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+    letter-spacing: 0.01em; // Reference from hero-left
   }
 
 
@@ -168,10 +179,10 @@
 
   &__cta {
     width: auto;
-    min-width: clamp(240px, 20vw, 360px);
-    height: clamp(56px, 5vw, 64px); // Unified website height
-    border-radius: 100px;
-    padding: 0 clamp(32px, 4vw, 48px);
+    min-width: clamp(200px, 18vw, 320px); 
+    height: clamp(56px, 6vw, 72px); 
+    border-radius: 25px; 
+    padding: 0 40px; 
     background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
     border: none;
     cursor: pointer;
@@ -180,11 +191,12 @@
     justify-content: center;
     gap: 16px;
 
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: clamp(16px, 1.25vw, 18px); // Unified text size
-    line-height: 1;
-    letter-spacing: 0%;
+    /* Reference from hero-left button */
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: clamp(16px, 1.8vw, 24px) !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
     white-space: nowrap;
 
     color: #ffffff;

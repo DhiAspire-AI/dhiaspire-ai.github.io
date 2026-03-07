@@ -1,10 +1,7 @@
 .student-solution-section {
 
   width: 100%;
-  padding-top: clamp(80px, 10vw, 140px);
-  padding-right: clamp(16px, 5vw, 60px);
-  padding-left: clamp(16px, 5vw, 60px);
-  padding-bottom: clamp(40px, 6vw, 80px);
+  padding: clamp(20px, 3vw, 40px) 0; // Reduced top/bottom padding to move entire content up
   background: #060819;
   color: #ffffff;
 
@@ -14,25 +11,28 @@
 
 .student-solution-section__inner {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px; 
+  padding: 0 clamp(20px, 5vw, 60px); 
   display: flex;
   flex-direction: column;
-  gap: clamp(24px, 4vw, 48px);
+  gap: clamp(12px, 1.5vw, 24px); // Further reduced gap from 16px-32px
 }
 
 /* HEADER */
 
 .section-header {
   text-align: center;
-  margin-bottom: clamp(12px, 1.5vw, 24px); /* Reduced further from 16px-32px */
+  margin-bottom: clamp(16px, 2.5vw, 32px); // Further reduced margin from 24px-40px
 }
 
 .section-header h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: clamp(32px, 4.5vw, 64px);
-  line-height: 1.1;
-  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+  line-height: 1.4; // Reference from hero-left
+  color: #ffffff;
+  margin: 0 0 24px;
+  letter-spacing: 0.015em; // Reference from hero-left
 }
 
 .highlight {
@@ -42,19 +42,21 @@
 }
 
 .section-header p {
-  margin: clamp(20px, 2.5vw, 32px) auto 0;
-  max-width: 780px;
-  font-family: "DM Sans", sans-serif;
-  font-size: clamp(16px, 1.1vw, 20px);
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif; // Reference from hero-left
+  font-weight: 400; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  max-width: 800px;
+  margin:72 0 auto;
+  letter-spacing: 0.01em; // Reference from hero-left
 }
 
 /* PANEL */
 
 .student-solution-panel {
   width: 100%;
-  margin-top: clamp(0px, 1vw, 20px);
+  margin-top: 0; // Removed clamp(0px, 1vw, 20px) to mo726ve it up further
 }
 
 .student-solution-panel__grid {
@@ -116,14 +118,14 @@
 /* TEXT */
 
 .feature-copy h3 {
-  font-family: "Inter";
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: clamp(20px, 1.6vw, 28px);
   margin-bottom: 6px;
 }
 
 .feature-copy p {
-  font-family: "Inter";
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(15px, 1.2vw, 18px);
   color: rgba(224, 231, 255, 0.75);
   line-height: 1.5;
@@ -240,7 +242,12 @@
   }
 }
 
-/* Cleanup duplicate/old breakpoints */
+/* Desktop-only: lift panel more on larger screens */
 @media (min-width: 1024px) {
-  // Styles already defined in main section
+  .student-solution-panel {
+    transform: translateY(clamp(-48px, -6vw, -96px)) !important;
+    position: relative;
+    top: 10px !important;
+    z-index: 1;
+  }
 }

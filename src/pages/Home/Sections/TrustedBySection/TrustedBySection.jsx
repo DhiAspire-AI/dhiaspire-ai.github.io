@@ -25,6 +25,14 @@ const testimonials = [
     avatar:
       "/assets/home-assets/TrustedBySectionAssets/author-home.svg",
   },
+  {
+    quote:
+      "The platform bridge the gap between academic learning and industry requirements seamlessly.",
+    author: "Dr.Nandha Kumar",
+    role: "Industry Expert",
+    avatar:
+      "/assets/home-assets/TrustedBySectionAssets/author-home.svg",
+  },
 ];
 
 const TrustedBySection = () => {

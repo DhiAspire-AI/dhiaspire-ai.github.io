@@ -1,26 +1,27 @@
 
 .student-challenges {
-    padding: 100px 0;
+    padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
     background: #040626;
     position: relative;
     overflow: hidden;
 
     .container {
-        max-width: 1200px;
+        max-width: 1440px; 
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 clamp(20px, 5vw, 60px); 
     }
 
     .header {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: clamp(40px, 5vw, 60px); 
 
         h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 40px;
-            font-weight: 600;
-            line-height: 100%;
+            font-weight: 600; // Reference from hero-left
+            font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+            line-height: 1.4; // Reference from hero-left
             color: #ffffff;
+            letter-spacing: 0.015em; // Reference from hero-left
             margin-bottom: 24px;
 
             .highlight {
@@ -33,10 +34,14 @@
         }
 
         p {
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 400;
+            font-family: 'Poppins', sans-serif; // Reference from hero-left
+            font-weight: 400; // Reference from hero-left
+            font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+            line-height: 1.5; // Reference from hero-left
+            color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+            max-width: 800px;
+            margin: 0 auto;
+            letter-spacing: 0.01em; // Reference from hero-left
         }
     }
 

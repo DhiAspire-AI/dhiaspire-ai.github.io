@@ -1,5 +1,5 @@
 .challenges-section {
-  padding: clamp(80px, 10vw, 140px) 0;
+  padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
   background-color: #040626;
 
   .challenges-container {
@@ -14,11 +14,13 @@
 
   .challenges-title {
     text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(36px, 4vw, 64px);
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+    font-weight: 600 !important; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px) !important; // Reference from hero-left
+    line-height: 1.4 !important; // Reference from hero-left
     color: #fff;
-    margin-bottom: clamp(60px, 7vw, 100px);
+    margin-bottom: clamp(32px, 4vw, 48px); // Reduced margin
+    letter-spacing: 0.015em !important; // Reference from hero-left
 
     .highlight-blue {
       color: #4fa6ff;
@@ -78,10 +80,10 @@
       background: linear-gradient(205.35deg, #1b325a 16.07%, #0e1835 83.93%);
 
       p {
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
         line-height: 1.4;
-        font-weight: 500;
+        font-weight: 400;
         color: #ffffff;
         margin: 0;
       }

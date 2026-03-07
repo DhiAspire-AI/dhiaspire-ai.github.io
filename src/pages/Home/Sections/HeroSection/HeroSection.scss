@@ -62,7 +62,7 @@
   &__frame {
     width: 100%;
     max-width: 1440px;
-    padding: clamp(100px, 15vh, 180px) clamp(24px, 5vw, 60px) 100px;
+    padding: clamp(80px, 14vh, 180px) clamp(20px, 6vw, 100px) 80px; // Reduced top padding for tighter hero
     margin: 0 auto;
     position: relative;
     z-index: 5;
@@ -70,15 +70,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(20px, 4vw, 80px);
+    gap: clamp(24px, 4vw, 80px);
+    /* allow wrapping when browser zooms so items do not overlap */
+    flex-wrap: wrap;
+
+    /* Ensure immediate children can shrink/grow predictably when zooming */
+    & > * {
+      box-sizing: border-box;
+      flex: 0 1 auto;
+      min-width: 0;
+    }
   }
 }
 
-// Responsive Design
+// Responsive Design Enhancements
+@media (max-width: 1440px) {
+  .hero {
+    &__frame {
+      padding-top: 180px; // Further increased top padding for better laptop view
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .hero {
     min-height: auto;
-    padding-top: 140px;
+    padding-top: 100px;
 
     &__decor {
       display: none;
@@ -87,9 +104,34 @@
     &__frame {
       flex-direction: column;
       text-align: center;
-      gap: 60px;
+      gap: 32px;
       padding-top: 20px;
-      padding-bottom: 80px;
+      padding-bottom: 60px;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
+/* Keep left/right on the same row for wide screens to avoid hero-right dropping below */
+@media (min-width: 1100px) {
+  .hero {
+    &__frame {
+      flex-wrap: nowrap; /* prevent wrapping on desktop */
+    }
+
+    /* stronger, explicit flex-basis so left/right fit together reliably */
+    .hero-left {
+      flex: 0 0 60%;
+      min-width: 420px;
+    }
+
+    .hero-right {
+      flex: 0 0 40%;
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
