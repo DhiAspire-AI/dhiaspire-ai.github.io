@@ -31,6 +31,7 @@ const CARDS = [
     items: [
       "Access to a pre-skilled",
       "Job-ready talent pool with AI-driven matching",
+      "faster hiring with pre-verified candidate profiles"
     ],
   },
 ];

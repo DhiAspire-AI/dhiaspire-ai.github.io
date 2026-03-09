@@ -1,16 +1,15 @@
 .hero-left {
   /* Use a stable flex-basis to avoid collapse when zooming */
-  flex: 0 1 54%;
-  min-width: 320px; /* slightly larger to avoid truncation at higher zoom */
-  max-width: 880px;
+  flex: 1;
+  max-width: 800px;
   z-index: 10;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  /* Slight left offset on wide screens for better visual balance with right-stage — use transform for stable rendering */
-  transform: translateX(clamp(-56px, -6.5vw, -30px));
+  /* Reset previous complex transforms and rely on container gap */
+  transform: none;
 
   &__content {
     display: flex;
@@ -21,7 +20,7 @@
   &__title {
     font-family: 'Poppins';
     font-weight: 600;
-    font-size: clamp(32px, 4.5vw, 54px); // Slightly reduced max size for laptops
+    font-size: clamp(32px, 4.5vw, 50px); // Slightly reduced max size for laptops
     line-height: 1.4;
     color: #ffffff;
     margin: 0 0 16px 0;

@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: clamp(800px, 100vh, 1080px); /* Adjusts automatically between values */
   background: #080f1e;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@
   &__frame {
     width: 100%;
     max-width: 1440px;
-    padding: clamp(80px, 14vh, 180px) clamp(20px, 6vw, 100px) 80px; // Reduced top padding for tighter hero
+    padding: clamp(80px, 14vh, 180px) 40px 80px; 
     margin: 0 auto;
     position: relative;
     z-index: 5;
@@ -70,24 +70,49 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(24px, 4vw, 80px);
-    /* allow wrapping when browser zooms so items do not overlap */
+    gap: 40px;
     flex-wrap: wrap;
 
     /* Ensure immediate children can shrink/grow predictably when zooming */
     & > * {
       box-sizing: border-box;
-      flex: 0 1 auto;
+      flex: 1; /* Allow equal growth */
       min-width: 0;
     }
   }
 }
 
 // Responsive Design Enhancements
-@media (max-width: 1440px) {
+@media (min-width: 1201px) {
   .hero {
     &__frame {
-      padding-top: 180px; // Further increased top padding for better laptop view
+      display: flex;
+      align-items: center; /* Vertically centers both left and right */
+      justify-content: space-between; 
+      flex-wrap: nowrap;
+      padding-top: 0; /* Reset padding-top to rely on flex centering */
+      padding-bottom: 0;
+      gap: 60px; 
+      height: 100vh; /* Use full height for precise centering */
+      min-height: 800px;
+    }
+
+    .hero-left {
+      flex: 1;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      left: 7px;
+    }
+
+    .hero-right {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; 
     }
   }
 }
@@ -95,54 +120,41 @@
 @media (max-width: 1200px) {
   .hero {
     min-height: auto;
-    padding-top: 100px;
-
+    
     &__decor {
       display: none;
     }
 
     &__frame {
       flex-direction: column;
-      text-align: center;
-      gap: 32px;
-      padding-top: 20px;
-      padding-bottom: 60px;
       align-items: center;
+      text-align: center;
+      gap: 48px;
+      padding: 120px 24px 80px;
       width: 100%;
     }
-  }
-}
 
-/* Keep left/right on the same row for wide screens to avoid hero-right dropping below */
-@media (min-width: 1100px) {
-  .hero {
-    &__frame {
-      flex-wrap: nowrap; /* prevent wrapping on desktop */
-    }
-
-    /* stronger, explicit flex-basis so left/right fit together reliably */
     .hero-left {
-      flex: 0 0 60%;
-      min-width: 420px;
+      width: 100%;
+      max-width: 800px;
     }
 
     .hero-right {
-      flex: 0 0 40%;
-      min-width: 300px;
+      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: center;
+      transform: none;
+      position: static;
+      left: auto;
     }
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px;
-
     &__frame {
       gap: 40px;
-      padding-top: 0;
+      padding-top: 100px;
       padding-bottom: 60px;
       padding-left: 20px;
       padding-right: 20px;

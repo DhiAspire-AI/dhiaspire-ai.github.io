@@ -1,136 +1,69 @@
-.hero-right {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.hero-right{
+  position:relative;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-.hero-right__stage {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  height: 480px;
-  overflow: visible;
+.hero-right__stage{
+  position:relative;
+  width:100%;
+  max-width:520px;
+  height:480px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.hero-right__card {
-  position: absolute;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  will-change: transform, opacity;
-  transform: translate(-50%, -50%);
-  width: clamp(220px, 36%, 420px);
-  height: auto;
+.hero-right__card{
+  position:absolute;
+  width:clamp(220px,36%,420px);
+  display:flex;
+  justify-content:center;
+  will-change:transform,opacity;
 }
 
-.hero-right__card--large {
-  width: clamp(260px, 42%, 500px);
+.hero-right__image-wrapper{
+  position:relative;
+  width:100%;
 }
 
-.hero-right__tag {
-  position: absolute;
-  min-width: 150px;
-  height: auto;
-  padding: 10px 24px;
-  background: #FFFFFF;
-  color: #1a1a2e;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0;
-  text-align: center;
-  border-radius: 20px;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  will-change: transform, opacity;
-  transform: translate3d(0, 0, 0);
-  left: 50%;
-  top: 50%;
+.hero-right__image{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 34px rgba(0,0,0,0.28));
 }
 
-.hero-right__tag--top-left {
-  // Positioned via GSAP transform
+.hero-right__tags{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
 }
 
-.hero-right__tag--top-right {
-  // Positioned via GSAP transform
+.hero-right__tag{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  padding:6px 12px;
+  background:#fff;
+  border-radius:12px;
+  font-size:12px;
+  font-family:"Poppins",sans-serif;
+  font-weight:500;
+  color:#1a1a2e;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  white-space:nowrap;
+  will-change:transform,opacity;
 }
 
-.hero-right__tag--top {
-  // Positioned via GSAP transform
+.hero-right__title{
+  margin-top:12px;
+  color:rgba(255,255,255,0.9);
+  font-family:"Poppins",sans-serif;
+  font-size:clamp(16px,1.8vw,22px);
+  font-weight:700;
+  text-align:center;
 }
 
-.hero-right__tag--bottom {
-  // Positioned via GSAP transform
-}
-
-.hero-right__tag--bottom-left {
-  // Positioned via GSAP transform
-}
-
-.hero-right__tag--left {
-  // Positioned via GSAP transform
-}
-
-.hero-right__tag--right {
-  // Positioned via GSAP transform
-}
-
-.hero-right__image {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.28));
-  will-change: transform;
-}
-
-.hero-right__title {
-  margin-top: 48px;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: clamp(18px, 2vw, 24px);
-  text-align: center;
-  will-change: transform, opacity;
-  opacity: 0;
-}
-
-@media (max-width: 1200px) {
-  .hero-right__stage {
-    max-width: 420px;
-    height: 380px;
-  }
-
-  .hero-right__card {
-    width: clamp(180px, 44%, 360px);
-  }
-
-  .hero-right__card--large {
-    width: clamp(220px, 48%, 420px);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-right__stage {
-    max-width: 320px;
-    height: 300px;
-  }
-
-  .hero-right__card {
-    width: clamp(140px, 60%, 260px);
-  }
-
-  .hero-right__card--large {
-    width: clamp(160px, 64%, 300px);
-  }
-}
+/* debug toggle removed */
