@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import './Home.scss';
 import SectionsHero from './Sections/HeroSection/HeroSection';
 import CollegeSolutionsSection from './Sections/CollegeSolutionsSection/CollegeSolutionsSection';
@@ -13,11 +14,18 @@ import EmpowerSection from './Sections/EmpowerSection/EmpowerSection';
 import Footer from '../../components/Footer/Footer';
 import BookADemo from '../../components/BookADemo/BookADemo';
 
-const Home = () => {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+const Home = ({ initialOpenDemo = false }) => {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(Boolean(initialOpenDemo));
 
   const openDemoModal = () => setIsDemoModalOpen(true);
   const closeDemoModal = () => setIsDemoModalOpen(false);
+
+  // If the route passed initialOpenDemo prop, open modal on mount
+  useEffect(() => {
+    if (initialOpenDemo) openDemoModal();
+  }, [initialOpenDemo]);
+
+  // Deep-link support removed: modal can still be opened via prop `initialOpenDemo` or `onBookDemo` handler.
 
   return (
     <div className="home-page">

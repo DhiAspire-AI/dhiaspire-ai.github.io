@@ -17,7 +17,7 @@ export const submitDemoRequest = async (formData) => {
     // router.use("/website", websiteRouter) in index.ts
     // router.use("/demo", demoRouter) in websiteRoutes.ts
     // router.post("/bookAdemo", ...) in demoRoutes.ts
-    const response = await api.post('/website/demo/bookAdemo', formData);
+    const response = await api.post('/api/website/demo/bookAdemo', formData);
     return response.data;
   } catch (error) {
     console.error('Error submitting demo request:', error);

@@ -12,6 +12,7 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/bookademo" element={<Home initialOpenDemo={true} />} />
             <Route path="/solutions/student" element={<StudentSolution />} />
             <Route path="/solutions/college" element={<CollegeSolution />} />
             <Route path="/platform" element={<Page404 />} />
