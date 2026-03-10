@@ -5,7 +5,7 @@ import api from './api';
  */
 export const subscribeNewsletter = async (email) => {
   try {
-    const response = await api.post('/api/website/subscribe', { email });
+    const response = await api.post('/website/subscribe', { email });
     return response.data;
   } catch (error) {
     console.error('Error subscribing to newsletter:', error);
