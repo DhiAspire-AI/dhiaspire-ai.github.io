@@ -1,0 +1,153 @@
+
+.student-how-it-works {
+    padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
+    background: #040626;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+
+    .how-it-works-background {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+
+        .blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(35, 42, 134, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+
+        .blob-left {
+            top: 20%;
+            left: -300px;
+        }
+
+        .blob-right {
+            bottom: 20%;
+            right: -300px;
+            background: radial-gradient(circle, rgba(82, 183, 255, 0.1) 0%, transparent 70%);
+        }
+    }
+
+    .how-it-works-container {
+        max-width: 1440px; 
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 60px); 
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            padding: 0 24px;
+        }
+    }
+
+    .how-it-works-header {
+        margin-bottom: clamp(40px, 5vw, 60px); 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600; // Reference from hero-left
+            font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+            line-height: 1.4; // Reference from hero-left
+            color: #ffffff;
+            margin-bottom: 24px;
+            letter-spacing: 0.015em; // Reference from hero-left
+            width: fit-content;
+            max-width: 1000px;
+            opacity: 1;
+
+            .highlight-blue {
+                background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: inline-block;
+            }
+        }
+
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #FFFFFFCC;
+            width: 100%;
+            max-width: 700px; // Increased width to accommodate longer descriptions in 2 lines
+            margin: 0 auto;
+            text-align: center;
+            opacity: 1;
+        }
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 100px;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+    }
+
+    .step-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 4px; /* reduced vertical gap between number, title, description */
+    }
+
+    .step-number-wrapper {
+        margin-bottom: 4px;
+        
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(90deg, #232A86 0%, #52B7FF 100%);
+            border-radius: 50px;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            position: relative;
+            opacity: 1;
+        }
+    }
+
+    .step-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        color: #ffffff;
+    }
+
+    .step-description {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.35;
+        margin-top: 0;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 320px;
+    }
+}

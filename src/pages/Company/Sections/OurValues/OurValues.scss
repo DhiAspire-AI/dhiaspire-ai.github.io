@@ -1,0 +1,108 @@
+.our-values {
+    width: 100%;
+background: #080F1E;
+    padding: clamp(80px, 10vw, 140px) 0;
+    position: relative;
+
+    .values-container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 10vw, 150px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .values-title {
+        text-align: center;
+        margin-bottom: clamp(60px, 8vw, 100px);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: clamp(36px, 4.5vw, 64px);
+        line-height: 1.2;
+        color: #ffffff;
+        letter-spacing: -0.01em;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #4f7cff;
+        }
+    }
+
+    .values-list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 2.5vw, 32px);
+        width: fit-content;
+        margin: 0 auto; // Center the container even when content shifts
+    }
+
+    .value-item {
+        display: flex;
+        align-items: flex-start; // Better for multi-line text
+        gap: clamp(12px, 1.5vw, 20px);
+        width: 100%;
+        text-align: left;
+
+        .icon-wrapper {
+            flex-shrink: 0;
+            width: clamp(20px, 2vw, 28px);
+            height: clamp(20px, 2vw, 28px);
+            margin-top: 4px; // Align icon with first line of text
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .check-icon {
+                width: 100%;
+                height: 100%;
+                color: #ffffff;
+                stroke: #ffffff;
+                stroke-width: 3px;
+                opacity: 1;
+            }
+        }
+
+        .value-content {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(14px, 1.25vw, 24px);
+            line-height: 1.5;
+            display: flex;
+            flex-wrap: wrap; // Allow wrapping on small screens
+            column-gap: 8px;
+            row-gap: 2px;
+            white-space: normal; // Allow text to wrap
+
+            .value-title {
+                font-weight: 500;
+                color: #ffffff;
+            }
+
+            .value-description {
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.85);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .values-list {
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .value-item {
+            .value-content {
+                display: block; // Stack title and description on small mobile if needed
+                
+                .value-title::after {
+                    content: ""; // Remove separator or handle it via block display
+                }
+            }
+        }
+    }
+}

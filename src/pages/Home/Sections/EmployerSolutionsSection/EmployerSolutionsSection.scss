@@ -1,0 +1,244 @@
+.employer-solutions {
+
+  width: 100%;
+  background: #040525;
+
+  padding: clamp(40px, 5vw, 60px) 0; // Significantly reduced from 40px-100px
+
+  /* CONTAINER */
+  &__container {
+
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(20px, 5vw, 60px);
+    padding-right: clamp(20px, 5vw, 60px);
+
+  }
+
+
+  /* FRAME */
+  &__frame {
+
+    width: 100%;
+
+  }
+
+
+  /* HEADER */
+  &__header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: clamp(40px, 5vw, 80px);
+    /* Reduced gap to move content up */
+  }
+
+
+  &__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+    line-height: 1.4; // Reference from hero-left
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: 0.015em; // Reference from hero-left
+
+    @media (max-width: 1440px) {
+      font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+    }
+
+    @media (max-width: 768px) {
+      font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+    }
+  }
+
+
+  .highlight {
+    background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+  &__subtitle {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif; // Reference from hero-left
+    font-weight: 400; // Reference from hero-left
+    font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+    line-height: 1.5; // Reference from hero-left
+    color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+    letter-spacing: 0.01em; // Reference from hero-left
+  }
+
+
+  /* CONTENT GRID */
+  &__content {
+
+    width: 100%;
+
+  }
+
+
+  /* LEFT */
+  &__left {
+    width: 100%;
+    max-width: 720px;
+  }
+
+
+  /* LIST */
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 2.5vw, 32px);
+    padding: 0;
+    margin: 0;
+  }
+
+
+  &__item {
+    display: flex;
+    gap: clamp(16px, 2vw, 24px);
+    align-items: flex-start;
+  }
+
+
+  /* ICON */
+  &__icon {
+    border-radius: 14px;
+    background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+
+  &__icon-img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
+
+  /* TEXT */
+  &__text h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: clamp(20px, 1.6vw, 26px);
+    line-height: 1.4;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+
+  &__text p {
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(14px, 1.25vw, 18px);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+
+
+  /* RIGHT SIDE */
+  &__right {
+
+    width: 100%;
+
+  }
+
+
+  &__image {
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: none;
+    border-radius: 24px;
+    object-fit: contain;
+
+  }
+
+
+  /* FOOTER & CTA */
+  &__footer {
+
+    margin-top: clamp(20px, 4vw, 50px);
+
+    display: flex;
+
+    justify-content: center;
+
+  }
+
+
+  &__cta {
+    width: auto;
+    min-width: clamp(200px, 18vw, 320px); 
+    height: clamp(56px, 6vw, 72px); 
+    border-radius: 25px; 
+    padding: 0 40px; 
+    background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    /* Reference from hero-left button */
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: clamp(16px, 1.8vw, 24px) !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap;
+
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(50, 89, 206, 0.3);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(50, 89, 206, 0.4);
+      opacity: 1;
+
+      svg {
+        transform: translateX(5px);
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+
+    svg {
+      width: clamp(20px, 2vw, 28px);
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 1024px) {
+      width: auto;
+      max-width: 320px;
+      min-width: 240px;
+    }
+
+    @media (max-width: 640px) {
+      width: 100%;
+      height: 56px; // Unified mobile height
+      border-radius: 100px;
+      padding: 0 24px;
+
+      svg {
+        width: 22px;
+      }
+    }
+  }
+
+}

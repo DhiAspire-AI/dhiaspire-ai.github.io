@@ -1,0 +1,93 @@
+
+.student-challenges {
+    padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
+    background: #040626;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        max-width: 1440px; 
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 60px); 
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: clamp(40px, 5vw, 60px); 
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600; // Reference from hero-left
+            font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+            line-height: 1.4; // Reference from hero-left
+            color: #ffffff;
+            letter-spacing: 0.015em; // Reference from hero-left
+            margin-bottom: 24px;
+
+            .highlight {
+                background: linear-gradient(90deg, #232A86 0%, #52B7FF 46.63%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: inline-block;
+            }
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif; // Reference from hero-left
+            font-weight: 400; // Reference from hero-left
+            font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+            line-height: 1.5; // Reference from hero-left
+            color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+            max-width: 800px;
+            margin: 0 auto;
+            letter-spacing: 0.01em; // Reference from hero-left
+        }
+    }
+
+    .challenges-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .challenge-item {
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(82, 183, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .challenge-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+}

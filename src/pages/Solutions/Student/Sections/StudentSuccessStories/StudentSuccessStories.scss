@@ -1,0 +1,123 @@
+.student-success-stories {
+    padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
+    background: #060819;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        max-width: 1440px; 
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 60px); 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: clamp(40px, 5vw, 60px); 
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600; // Reference from hero-left
+            font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+            line-height: 1.4; // Reference from hero-left
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 0.015em; // Reference from hero-left
+        }
+    }
+
+    .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: clamp(24px, 3vw, 32px);
+        width: 100%;
+        max-width: 1200px;
+        margin-bottom: 60px;
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .story-card {
+       background: #FFFFFF33;
+
+        border-radius: 12px;
+        padding: clamp(24px, 4vw, 40px);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+
+        
+
+        .story-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(15px, 1.2vw, 18px);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .author-img {
+                width: 54px;
+                height: 54px;
+                border-radius: 50%;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+
+            .author-details {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+
+                h4 {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #ffffff;
+                    margin: 0;
+                }
+
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: rgba(255, 255, 255, 0.6);
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .pagination-dots {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active {
+                background: #ffffff;
+                width: 24px; // Horizontal stretch for active dot
+                border-radius: 10px;
+            }
+        }
+    }
+}

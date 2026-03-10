@@ -1,0 +1,175 @@
+.college-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--navbar-height) + 20px) 0 40px; // Reduced padding
+  overflow: hidden;
+  background: radial-gradient(circle at center top, #0a1d3a 0%, #071629 50%, #050a14 100%);
+  text-align: center;
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.4;
+    }
+
+    .blob-left {
+      width: 600px;
+      height: 600px;
+      background: rgba(42, 82, 152, 0.4);
+      top: -200px;
+      left: -200px;
+    }
+
+    .blob-right {
+      width: 500px;
+      height: 500px;
+      background: rgba(30, 58, 138, 0.3);
+      top: 20%;
+      right: -100px;
+    }
+
+    .blob-bottom-right {
+      width: 800px;
+      height: 800px;
+      background: rgba(14, 77, 95, 0.3);
+      right: -300px;
+      bottom: -300px;
+    }
+  }
+
+  .container-main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1778px; // Matching HeroLeft container logic
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (max-width: 768px) {
+      padding: 0 24px;
+    }
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+      font-weight: 600 !important; // Reference from hero-left
+      font-size: clamp(32px, 4.5vw, 54px) !important; // Reference from hero-left
+      line-height: 1.4 !important; // Reference from hero-left
+      color: #ffffff;
+      margin: 0 0 16px 0;
+      letter-spacing: 0.015em !important; // Reference from hero-left
+
+      .highlight-blue {
+        color: #52b7ff;
+      }
+    }
+
+    .hero-intro {
+      font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+      font-weight: 400 !important; // Reference from hero-left
+      font-size: clamp(14px, 1.1vw, 17px) !important; // Reference from hero-left
+      line-height: 1.5 !important; // Reference from hero-left
+      color: rgba(255, 255, 255, 0.7) !important; // Reference from hero-left
+      max-width: 700px; 
+      margin: 0 auto 32px; 
+      letter-spacing: 0.01em !important; // Reference from hero-left
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      margin-top: 12px; // Reduced from 40px to pull it up closer to the description
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .btn-get-started {
+        min-width: clamp(200px, 18vw, 320px) !important; // Reference from hero-left
+        height: clamp(56px, 6vw, 72px) !important; // Reference from hero-left
+        padding: 0 40px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: clamp(16px, 1.8vw, 24px) !important; // Reference from hero-left
+        font-weight: 500 !important; // Reference from hero-left
+        color: #ffffff;
+        background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        box-shadow: 0 10px 20px rgba(50, 89, 206, 0.25);
+
+        @media (max-width: 1440px) {
+          font-size: clamp(16px, 1.6vw, 22px) !important;
+          height: clamp(54px, 5.5vw, 68px) !important;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 30px rgba(50, 89, 206, 0.35);
+        }
+      }
+
+      .btn-book-demo {
+        min-width: clamp(200px, 18vw, 320px) !important; // Reference from hero-left
+        height: clamp(56px, 6vw, 72px) !important; // Reference from hero-left
+        padding: 0 40px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: clamp(16px, 1.8vw, 24px) !important; // Reference from hero-left
+        font-weight: 500 !important; // Reference from hero-left
+        color: #ffffff;
+        background: transparent;
+        position: relative;
+        border: 3px solid transparent; 
+        border-radius: 25px;
+
+        @media (max-width: 1440px) {
+          font-size: clamp(16px, 1.6vw, 22px) !important;
+          height: clamp(54px, 5.5vw, 68px) !important;
+        }
+
+        // Background-origin/clip used to ensure only border gets the gradient
+        background: 
+          linear-gradient(#0c0d16, #0c0d16) padding-box, // Background of total button
+          linear-gradient(90deg, #232a86 0%, #52b7ff 100%) border-box; // The border gradient
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+
+        &:hover {
+          transform: translateY(-2px);
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}

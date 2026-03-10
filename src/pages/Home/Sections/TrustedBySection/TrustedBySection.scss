@@ -1,0 +1,263 @@
+.trusted-by {
+
+  width: 100%;
+  position: relative; // Added to contain the glow relative to this section
+  overflow: hidden; // Added to hide any overflow from the large glow ellipse
+
+  background: #080f1e;
+
+  padding-top: clamp(40px, 5vw, 60px); // Significantly reduced from 80px-140px
+  padding-bottom: clamp(40px, 5vw, 60px); // Significantly reduced from 80px-140px
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: #283479;
+    opacity: 0.6;
+    filter: blur(280px);
+    pointer-events: none;
+    z-index: 0;
+    
+    // Top Left Position
+    top: -370px;
+    left: -376px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: #0E4D5F;
+    opacity: 0.6; // Slightly reduced for a more natural blend but keeping the color strong
+    filter: blur(280px); // Blurs the solid color into a soft ellipse
+    pointer-events: none;
+    z-index: 0;
+    
+    // Positioning it in the bottom right context
+    bottom: -300px;
+    right: -300px;
+  }
+
+}
+
+/* CENTER CONTAINER */
+
+.trusted-by__container {
+
+  width: 100%;
+  max-width: 1440px;
+
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; // Added to ensure content stays on top of the glow
+  z-index: 1;
+
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
+
+}
+
+
+/* HEADER */
+
+.trusted-by__header {
+
+  text-align: center;
+  width: 100%;
+  margin-bottom: clamp(30px, 5vw, 60px);
+  /* Reduced gap to move content up */
+
+}
+
+
+.trusted-by__title {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px) !important; // Reference from hero-left
+  line-height: 1.4 !important; // Reference from hero-left
+  color: #ffffff !important;
+  margin-bottom: 24px;
+  letter-spacing: 0.015em !important; // Reference from hero-left
+
+  @media (max-width: 1440px) {
+    font-size: clamp(30px, 4.2vw, 48px) !important; // Reference from hero-left
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(26px, 8vw, 34px) !important; // Reference from hero-left
+  }
+}
+
+
+.trusted-by__subtitle {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+  font-weight: 400 !important; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px) !important; // Reference from hero-left
+  line-height: 1.5 !important; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7) !important; // Reference from hero-left
+  letter-spacing: 0.01em !important; // Reference from hero-left
+
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  letter-spacing: 0.01em; // Reference from hero-left
+}
+
+
+/* STATS */
+
+.trusted-by__stats {
+
+  margin-bottom: clamp(40px, 6vw, 80px);
+
+}
+
+
+.trusted-by__stat {
+
+  text-align: center;
+
+}
+
+
+.trusted-by__stat-value {
+
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important; // Decreased from 700 to 600
+
+  font-size: clamp(28px, 2.5vw, 48px) !important;
+
+  color: white !important;
+
+}
+
+
+.trusted-by__stat-label {
+
+  margin-top: 8px;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: clamp(14px, 1.2vw, 20px);
+
+  color: rgba(255, 255, 255, 0.6);
+
+}
+
+
+/* TESTIMONIAL CARD */
+
+.trusted-by__card {
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 20px;
+  background: #FFFFFF33;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(220px, 15vw, 280px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* QUOTE */
+
+.trusted-by__quote {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(16px, 1.4vw, 22px) !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: clamp(24px, 3vw, 32px);
+  font-weight: 300 !important; // Applied 300 (Light) which is now loaded in index.html
+}
+
+
+/* AUTHOR */
+
+.trusted-by__author {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+.trusted-by__avatar {
+
+  width: clamp(48px, 4vw, 64px);
+  height: clamp(48px, 4vw, 64px);
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+}
+
+
+.trusted-by__name {
+
+  font-family: 'Poppins', sans-serif !important;
+
+  font-weight: 600 !important;
+
+  font-size: clamp(16px, 1.2vw, 20px) !important;
+
+  color: white !important;
+
+}
+
+
+.trusted-by__role {
+
+  font-family: 'Poppins', sans-serif !important;
+
+  font-size: clamp(14px, 1vw, 18px) !important;
+
+  color: rgba(255, 255, 255, 0.7) !important;
+
+}
+
+
+/* DOTS */
+
+.trusted-by__dots {
+
+  margin-top: 24px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+}
+
+
+.trusted-by__dot {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  cursor: pointer;
+
+}
+
+
+.trusted-by__dot.active {
+
+  background: #ffffff;
+
+}

@@ -1,0 +1,115 @@
+.how-it-works-section {
+  background: #040525;
+  color: #ffffff;
+  padding: clamp(40px, 5vw, 60px) 0; // Significantly reduced from 80px-150px
+  width: 100%;
+}
+
+/* container */
+.how-it-works-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
+}
+
+/* HEADER */
+
+.how-it-works-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: clamp(40px, 6vw, 80px);
+}
+
+.how-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+  line-height: 1.4; // Reference from hero-left
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.015em; // Reference from hero-left
+
+  @media (max-width: 1440px) {
+    font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+  }
+}
+
+.highlight {
+  background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.how-subtitle {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif; // Reference from hero-left
+  font-weight: 400; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  letter-spacing: 0.01em; // Reference from hero-left
+}
+
+/* STEPS */
+
+.how-steps {
+  width: 100%;
+  padding-top: 0;
+  /* Removed excessive top padding that pushed content down */
+}
+
+
+/* STEP CARD */
+
+.how-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 8px;
+}
+
+.step-number {
+  width: clamp(56px, 6vw, 72px);
+  height: clamp(56px, 6vw, 72px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 1.6vw, 24px);
+  background: linear-gradient(90deg, #232a86 0%, #52b7ff 100%);
+  box-shadow: 0 12px 28px rgba(35, 42, 134, 0.4);
+  margin-bottom: 24px;
+}
+
+.step-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 22px);
+  margin: 0;
+}
+
+.step-description {
+  margin-top: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 420px;
+}
+
+/* Keep steps stacked vertically within each column on all sizes
+   Parent uses flex-row at md to place columns side-by-side, while
+   each .how-step remains a vertical block with number above title. */

@@ -1,0 +1,97 @@
+.key-benefits {
+  width: 100%;
+  background: #080F1E;
+  padding: clamp(40px, 5vw, 60px) 0; // Reference from home sections
+
+  .benefits-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefits-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+    font-weight: 600 !important; // Reference from hero-left
+    font-size: clamp(32px, 4.5vw, 54px) !important; // Reference from hero-left
+    line-height: 1.4 !important; // Reference from hero-left
+    color: #ffffff;
+    margin-bottom: clamp(32px, 4vw, 48px); // Reduced margin
+    letter-spacing: 0.015em !important; // Reference from hero-left
+
+    .highlight-blue {
+      color: #3b82f6; // Specific blue from image
+    }
+  }
+
+  /* 2x2 GRID AS PER IMAGE */
+  .benefits-grid {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: clamp(32px, 4vw, 56px);
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: clamp(40px, 6vw, 120px);
+      row-gap: clamp(40px, 5vw, 64px);
+    }
+  }
+
+  /* ITEM LAYOUT - Horizontal Icon + Text */
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 24px);
+    text-align: left;
+    width: 100%;
+
+    .icon-wrapper {
+      width: clamp(54px, 5vw, 64px);
+      height: clamp(54px, 5vw, 64px);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+
+      .benefit-svg {
+        width: 65%;
+        height: 65%;
+        object-fit: contain;
+
+        path {
+          fill: #ffffff;
+        }
+      }
+    }
+
+    .benefit-content {
+      h3 {
+        font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+        font-weight: 600 !important; // Reference from hero-left
+        font-size: clamp(18px, 1.4vw, 22px);
+        color: #ffffff;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-family: 'Poppins', sans-serif !important; // Reference from hero-left
+        font-weight: 400 !important; // Reference from hero-left
+        font-size: clamp(14px, 1.1vw, 17px);
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+      }
+    }
+  }
+}

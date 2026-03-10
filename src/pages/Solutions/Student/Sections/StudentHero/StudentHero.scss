@@ -1,0 +1,191 @@
+
+.student-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--navbar-height) + 20px) 0 40px; // Reduced padding
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #0a1d3a 0%, #071629 52%, #050a14 100%);
+  text-align: center;
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(92px);
+      opacity: 0.34;
+    }
+
+    .blob-left {
+      width: min(560px, 42vw);
+      height: min(560px, 42vw);
+      background: #2a5298;
+      top: -120px;
+      left: -130px;
+    }
+
+    .blob-right {
+      width: min(420px, 28vw);
+      height: min(420px, 28vw);
+      background: #1e3a8a;
+      bottom: -100px;
+      right: 9%;
+      opacity: 0.22;
+    }
+
+    .blob-bottom-right {
+      width: min(780px, 56vw);
+      height: min(780px, 56vw);
+      background: #0e4d5f;
+      right: -240px;
+      bottom: -360px;
+      opacity: 0.54;
+      filter: blur(168px);
+    }
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+      padding: 0 40px;
+    }
+
+    @media (min-width: 1280px) {
+      padding: 0 60px;
+    }
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .hero-title {
+      margin: 0 0 16px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600; // Reference from hero-left
+      font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+      line-height: 1.4; // Reference from hero-left
+      color: #ffffff;
+      letter-spacing: 0.015em; // Reference from hero-left
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      @media (max-width: 1440px) {
+        font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+      }
+
+      @media (max-width: 768px) {
+        font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+      }
+
+      .title-line {
+        display: block;
+        width: 100%;
+      }
+
+      .highlight-blue {
+        color: #52b7ff;
+        background: none;
+        -webkit-text-fill-color: initial;
+      }
+    }
+
+    .hero-intro {
+      font-family: 'Poppins', sans-serif; // Reference from hero-left
+      font-weight: 400; // Reference from hero-left
+      font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+      line-height: 1.5; // Reference from hero-left
+      color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+      max-width: 680px; 
+      width: 100%;
+      margin: 0 auto clamp(24px, 3.5vw, 40px);
+      letter-spacing: 0.01em; // Reference from hero-left
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
+
+      .btn {
+        min-width: clamp(200px, 18vw, 320px); // Reference from hero-left
+        height: clamp(56px, 6vw, 72px); // Reference from hero-left
+        padding: 0 40px; 
+        border-radius: 25px; 
+        font-family: 'Poppins', sans-serif !important;
+        font-size: clamp(16px, 1.8vw, 24px) !important; // Reference from hero-left
+        font-weight: 500 !important; // Reference from hero-left
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+
+        @media (max-width: 1440px) {
+          font-size: clamp(16px, 1.6vw, 22px) !important;
+          height: clamp(54px, 5.5vw, 68px);
+        }
+
+        &.btn-primary {
+          background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+          color: #ffffff;
+          border: none;
+          box-shadow: 0 10px 20px rgba(50, 89, 206, 0.25);
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(50, 89, 206, 0.35);
+          }
+        }
+
+        &.btn-outline {
+          background: transparent;
+          color: #ffffff;
+          position: relative;
+          border: 3px solid transparent; 
+          border-radius: 25px;
+          background: 
+            linear-gradient(#0c0d16, #0c0d16) padding-box,
+            linear-gradient(90deg, #232a86 0%, #52ff00 0%) border-box; /* Adjusted to simple gradient border logic or keeping previous verified one */
+          background: 
+            linear-gradient(#0c0d16, #0c0d16) padding-box,
+            linear-gradient(90deg, #232a86 0%, #52b7ff 100%) border-box;
+
+          &:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}

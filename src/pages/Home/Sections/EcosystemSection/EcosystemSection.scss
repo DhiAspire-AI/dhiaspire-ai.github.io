@@ -1,0 +1,338 @@
+.ecosystem {
+  width: 100%;
+  padding-top: clamp(40px, 5vw, 60px); 
+  padding-bottom: clamp(10px, 2vw, 20px); // Decreased padding bottom as requested
+  background: #040626;
+}
+
+/* CONTAINER */
+
+.ecosystem__container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
+}
+
+/* HEADER */
+
+.ecosystem__header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: clamp(40px, 6vw, 80px); // Reduced from 60px-120px
+}
+
+.ecosystem__title {
+  font-family: 'Poppins';
+  font-weight: 600; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+  line-height: 1.4; // Reference from hero-left
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: 0.015em; // Reference from hero-left
+
+  @media (max-width: 1440px) {
+    font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+  }
+}
+
+.ecosystem__highlight {
+  background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ecosystem__subtitle {
+  margin: 0 auto;
+  font-family: 'Poppins'; // Reference from hero-left
+  font-weight: 400; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  letter-spacing: 0.01em; // Reference from hero-left
+}
+
+/* CARDS GRID */
+
+.ecosystem__cards {
+  width: 100%;
+  max-width: 1280px;
+  margin: clamp(100px, 12vw, 120px) auto clamp(60px, 8vw, 100px); // Significantly increased top margin
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* CARD */
+
+.ecosystem-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(60px, 6vw, 80px);
+  /* Reduced space above to move card body UP */
+}
+
+/* IMAGE */
+
+.ecosystem-card__image-container {
+  position: absolute;
+  top: -68px;
+  /* Moves images even HIGHER (Little bit more up) */
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(200px, 18vw, 280px);
+  z-index: 1;
+  /* Images are now BELOW the cards */
+  display: flex;
+  justify-content: center;
+}
+
+.ecosystem-card__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* BODY */
+
+.ecosystem-card__body {
+  width: 100%;
+  flex: 1;
+  background: rgba(13, 27, 60, 0.4);
+  border-radius: 24px;
+  border: 1px solid rgba(75, 182, 255, 0.2);
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 5;
+  /* Card body is now ON TOP of the images */
+  /* Reduced top padding even further to move content almost to the top */
+  padding: clamp(20px, 3vw, 36px) clamp(20px, 3vw, 32px) clamp(24px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* GRADIENTS (Updated to match your image style) */
+
+.ecosystem-card__body--students {
+  background: linear-gradient(180deg, rgba(27, 50, 90, 0.8) 0%, rgba(14, 24, 53, 0.9) 100%);
+  border: 1px solid rgba(79, 124, 255, 0.3);
+}
+
+.ecosystem-card__body--colleges {
+  background: linear-gradient(180deg, rgba(82, 58, 45, 0.8) 0%, rgba(35, 27, 33, 0.9) 100%);
+  border: 1px solid rgba(212, 122, 75, 0.3);
+}
+
+.ecosystem-card__body--employers {
+  background: linear-gradient(180deg, rgba(20, 58, 69, 0.8) 0%, rgba(10, 30, 42, 0.9) 100%);
+  border: 1px solid rgba(46, 212, 122, 0.3);
+}
+
+/* TITLE */
+
+.ecosystem-card__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 2vw, 32px);
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: clamp(10px, 1vw, 14px);
+  /* Tighter spacing to pull content up */
+}
+
+/* LIST */
+
+.ecosystem-card__list {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 0.8vw, 10px);
+  /* Tighter gap */
+}
+
+.ecosystem-card__list-item {
+  font-family: 'Poppins' !important;
+  font-weight: 400; // Decreased font weight from default to 400
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.5; // Reference from hero-left description
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left description
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+  letter-spacing: 0.01em; // Reference from hero-left description
+}
+
+.ecosystem-card__list-item::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232ed47a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* FOOTER */
+
+.ecosystem__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.ecosystem__button {
+  width: auto;
+  min-width: clamp(200px, 18vw, 320px); 
+  height: clamp(56px, 6vw, 72px); 
+  border-radius: 25px; 
+  padding: 0 40px; 
+  background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transform: translateY(-50px); // Increased to move it further up
+  transition: transform 0.3s ease;
+
+  
+
+  /* Reference from hero-left button */
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: clamp(16px, 1.8vw, 24px) !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap;
+
+  color: #ffffff !important;
+
+  @media (max-width: 1440px) {
+    font-size: clamp(16px, 1.6vw, 22px) !important;
+    height: clamp(54px, 5.5vw, 68px);
+  }
+
+ 
+
+ 
+}
+
+.ecosystem__button-icon {
+  width: clamp(20px, 2vw, 24px); // Slightly smaller width
+  height: auto;
+  opacity: 0.8; // Added slight transparency to make it look thinner/lighter
+  transition: transform 0.3s ease;
+  filter: brightness(1.2); // Keeps it sharp while light
+}
+
+@media (max-width: 1024px) {
+  .ecosystem__button {
+    width: auto;
+    max-width: 100%;
+    min-width: 280px;
+  }
+}
+
+/* ── MOBILE: Image flows in-document, overlaps DOWN into card body ── */
+@media (max-width: 768px) {
+  .ecosystem__cards {
+    gap: 60px !important;
+    /* Reduced vertical separation between cards */
+  }
+
+  .ecosystem-card {
+    max-width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    /* Remove margin hacks */
+  }
+
+  /* Image above card — overlaps DOWN into the card top */
+  .ecosystem-card__image-container {
+    position: relative;
+    width: 170px;
+    /* refined size */
+    z-index: 1;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: -10px auto -25px;
+    /* sit tighter on card */
+  }
+
+  /* Card body: tighter padding to fix "too long" size */
+  .ecosystem-card__body {
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    padding: 36px 20px 24px;
+    /* Reduced top padding from 64px to 36px */
+  }
+
+  /* Fix fonts to be perfect inside the card */
+  .ecosystem-card__title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .ecosystem-card__list {
+    gap: 12px;
+  }
+
+  .ecosystem-card__list-item {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .ecosystem__cards {
+    gap: 50px !important;
+    /* Reduced gap on smaller screens */
+  }
+
+  .ecosystem__button {
+    width: 100%;
+    height: 60px;
+    border-radius: 100px;
+    transform: translateY(20px); // Reset previous upward shift and move DOWN slightly for mobile
+  }
+
+  .ecosystem__button-icon {
+    width: 24px;
+  }
+
+  .ecosystem-card__image-container {
+    width: 150px;
+    margin: -10px auto -20px;
+  }
+
+  .ecosystem-card__body {
+    padding: 32px 18px 24px;
+  }
+
+  .ecosystem-card__title {
+    font-size: 22px;
+  }
+
+  .ecosystem-card__list-item {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,119 @@
+.company-hero {
+    width: 100%;
+    min-height: 75vh; /* Increased from 60vh to 75vh for a more balanced height */
+    background-color: #060819; 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+
+    @media (max-width: 768px) {
+        min-height: 60vh; /* Slightly shorter on mobile devices for better space usage */
+    }
+
+    /* Precise Figma Top-Left Ellipse */
+    &::before {
+        content: '';
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        top: -220px;
+        left: -204px;
+        background: #283479;
+        filter: blur(250px); /* 500px diameter blur used as 250px radius */
+        opacity: 0.8;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            top: -300px;
+            left: -300px;
+            width: 600px;
+            height: 600px;
+        }
+    }
+
+    /* Precise Figma Ellipse Styles */
+    &::after {
+        content: '';
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        top: 326px;
+        left: 1302px;
+        background: #0E4D5F;
+        filter: blur(250px); /* Using blur for the glow effect */
+        opacity: 0.6; /* Balanced for background contrast */
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1;
+
+        @media (max-width: 1600px) {
+            left: auto;
+            right: -200px;
+            top: 40%;
+        }
+    }
+
+    .company-hero-container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: clamp(20px, 10vw, 150px); /* Restored original left padding */
+        padding-right: clamp(20px, 5vw, 60px);
+        padding-top: clamp(100px, 12vw, 150px);
+        padding-bottom: clamp(60px, 8vw, 100px);
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content-wrapper {
+        max-width: 1000px; /* Restored original width */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Restored left alignment */
+        gap: 32px; /* Restored original gap */
+    }
+
+    &-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: clamp(36px, 3.5vw, 60px); /* Restored original font size */
+        line-height: 1.25; /* Restored original line-height */
+        color: #ffffff;
+        margin: 0;
+        letter-spacing: -0.01em;
+
+        .highlight-blue {
+            background: linear-gradient(90deg, #232A86, #52B7FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &-description {
+        font-family: 'DM Sans', sans-serif;
+        font-size: clamp(15px, 1.15vw, 18px); /* Restored original font size */
+        line-height: 1.75; /* Restored original line-height */
+        color: rgba(255, 255, 255, 0.7); /* Restored original color/opacity */
+        max-width: 850px; /* Restored original description width */
+        margin: 0;
+        letter-spacing: 0.015em;
+        font-weight: 500;
+    }
+}
+
+// Media query for tablets to adjust spacing
+@media (max-width: 1024px) {
+    .company-hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+}

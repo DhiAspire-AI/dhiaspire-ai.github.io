@@ -1,0 +1,163 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(800px, 100vh, 1080px); /* Adjusts automatically between values */
+  background: #080f1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  // Background Glow Effects
+  &__glow {
+    position: absolute;
+    pointer-events: none;
+    filter: blur(280px);
+    z-index: 0;
+
+    &--left {
+      width: 600px;
+      height: 600px;
+      background: #283479;
+      top: -200px;
+      left: -200px;
+    }
+
+    &--right {
+      width: 600px;
+      height: 600px;
+      background: #0e4d5f;
+      bottom: -200px;
+      right: -200px;
+    }
+  }
+
+  // Decorative Figma Icons
+  &__decor {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    &--top {
+      width: 96px;
+      height: 106px;
+      top: 90px;
+      right: 5%;
+      background-image: url('/assets/home-assets/HeroSectionAssets/icons/top-decor.svg');
+    }
+
+    &--bottom {
+      width: 108.5px;
+      height: 118px;
+      bottom: 50px;
+      right: 3%;
+      background-image: url('/assets/home-assets/HeroSectionAssets/icons/bottom-decor.svg');
+    }
+  }
+
+  // Main Content Frame
+  &__frame {
+    width: 100%;
+    max-width: 1440px;
+    padding: clamp(80px, 14vh, 180px) 40px 80px; 
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    /* Ensure immediate children can shrink/grow predictably when zooming */
+    & > * {
+      box-sizing: border-box;
+      flex: 1; /* Allow equal growth */
+      min-width: 0;
+    }
+  }
+}
+
+// Responsive Design Enhancements
+@media (min-width: 1201px) {
+  .hero {
+    &__frame {
+      display: flex;
+      align-items: center; /* Vertically centers both left and right */
+      justify-content: space-between; 
+      flex-wrap: nowrap;
+      padding-top: 0; /* Reset padding-top to rely on flex centering */
+      padding-bottom: 0;
+      gap: 60px; 
+      height: 100vh; /* Use full height for precise centering */
+      min-height: 800px;
+    }
+
+    .hero-left {
+      flex: 1;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      left: 7px;
+    }
+
+    .hero-right {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; 
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    min-height: auto;
+    
+    &__decor {
+      display: none;
+    }
+
+    &__frame {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 48px;
+      padding: 120px 24px 80px;
+      width: 100%;
+    }
+
+    .hero-left {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .hero-right {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      transform: none;
+      position: static;
+      left: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    &__frame {
+      gap: 40px;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

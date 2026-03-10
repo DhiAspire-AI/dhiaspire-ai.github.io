@@ -1,0 +1,222 @@
+.trust-security {
+
+  width: 100%;
+  background: #060819;
+
+  padding-top: clamp(40px, 5vw, 60px); // Significantly reduced from 60px-120px
+  padding-bottom: clamp(40px, 5vw, 60px); // Significantly reduced from 60px-120px
+
+}
+
+
+/* CONTAINER */
+.trust-security__container {
+
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+/* HEADER */
+.trust-security__header {
+
+  text-align: center;
+
+  max-width: 900px;
+
+}
+
+
+.trust-security__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Reference from hero-left
+  font-size: clamp(32px, 4.5vw, 54px); // Reference from hero-left
+  line-height: 1.4; // Reference from hero-left
+  color: #fff;
+  letter-spacing: 0.015em; // Reference from hero-left
+
+  @media (max-width: 1440px) {
+    font-size: clamp(30px, 4.2vw, 48px); // Reference from hero-left
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(26px, 8vw, 34px); // Reference from hero-left
+  }
+}
+
+.trust-security__title span {
+  background: linear-gradient(90deg, #4f7cff, #4bb6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trust-security__subtitle {
+  margin-top: 24px;
+  font-family: 'Poppins', sans-serif; // Reference from hero-left
+  font-weight: 400; // Reference from hero-left
+  font-size: clamp(14px, 1.1vw, 17px); // Reference from hero-left
+  line-height: 1.5; // Reference from hero-left
+  color: rgba(255, 255, 255, 0.7); // Reference from hero-left
+  letter-spacing: 0.01em; // Reference from hero-left
+}
+
+
+.trust-security__highlight {
+
+  margin-top: clamp(32px, 4vw, 48px);
+
+  font-family: Poppins;
+  font-weight: 400;
+
+  font-size: clamp(20px, 2.2vw, 30px);
+
+  color: #fff;
+
+}
+
+
+
+/* FEATURES ROW */
+.trust-security__features {
+  margin-top: clamp(48px, 6vw, 80px);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 40px;
+  }
+}
+
+
+
+/* SINGLE FEATURE */
+.trust-security__feature {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  width: 100%;
+
+}
+
+
+.trust-security__icon {
+  width: clamp(64px, 6vw, 84px);
+  height: clamp(64px, 6vw, 84px);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #232a86 0%, #2064d6 50%, #52b7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(16px, 2vw, 28px);
+  box-shadow: 0 10px 25px rgba(35, 42, 134, 0.3);
+}
+
+.trust-security__icon img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+
+
+.trust-security__feature h3 {
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+
+  font-size: clamp(18px, 1.4vw, 24px);
+  line-height: 1.4;
+
+  color: #fff;
+
+}
+
+
+
+/* CTA */
+.trust-security__footer {
+
+  margin-top: clamp(60px, 8vw, 100px);
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+.trust-security__button {
+  height: clamp(56px, 6vw, 72px); 
+  width: auto; // Remove fixed width to allow scaling with content
+  min-width: clamp(200px, 18vw, 300px); // Slightly larger min-width
+  padding: 0 clamp(24px, 3vw, 48px); // Increased padding for better fit
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important; // Increased from 500 to 600 for "little bold"
+  font-size: clamp(18px, 1.6vw, 24px) !important; // Increased from 16-20px
+  line-height: 1 !important; 
+  letter-spacing: 0.02em !important; // Matches Hero feel
+  color: #FFFFFF !important;
+  border: none;
+  background: linear-gradient(135deg, #3259ce 0%, #5ba7ea 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.5vw, 16px); // Responsive gap
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(50, 89, 206, 0.3);
+  white-space: nowrap;
+
+  @media (max-width: 1440px) {
+    font-size: clamp(16px, 1.4vw, 20px) !important; // Scaled up laptops
+    height: clamp(54px, 5.5vw, 68px);
+    padding: 0 32px;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%; // Better than 100% to keep some margin
+    max-width: 400px;
+    height: 60px;
+  }
+
+
+
+  svg {
+    width: clamp(20px, 2vw, 24px);
+    height: clamp(20px, 2vw, 24px);
+    transition: transform 0.3s ease;
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
+    height: 60px;
+    padding: 0 24px;
+    font-size: 16px !important;
+  }
+}
