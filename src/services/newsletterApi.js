@@ -1,14 +1,14 @@
 import api from './api';
+import ENDPOINTS from './endpoints';
 
 /**
  * Newsletter API service
  */
 export const subscribeNewsletter = async (email) => {
   try {
-    const response = await api.post('/website/subscribe', { email });
-    return response.data;
+    const { data } = await api.post(ENDPOINTS.WEBSITE.SUBSCRIBE, { email });
+    return data;
   } catch (error) {
-    console.error('Error subscribing to newsletter:', error);
-    throw error;
+    throw error.response?.data?.message || 'Subscription failed';
   }
 };
