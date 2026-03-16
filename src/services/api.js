@@ -8,30 +8,7 @@ const api = axios.create({
     'Content-Type': 'application/json',
     Accept: 'application/json',
   },
-  timeout: 10000, // 10 seconds
+  timeout: 10000,
 });
-
-// Response interceptor for consistent error handling
-api.interceptors.response.use(
-  (response) => {
-    // Return the response directly
-    // This allows services to access response.data or the whole response
-    return response;
-  },
-  (error) => {
-    // Standardize error reporting
-    // Extracts the detailed message or validation errors from the backend
-    const errorData = error.response?.data;
-
-    const normalizedError = {
-      message: errorData?.message || 'An unexpected error occurred',
-      errors: errorData?.errors || [], // Captures Joi validation error messages
-      status: error.response?.status || 500,
-      originalError: error,
-    };
-
-    return Promise.reject(normalizedError);
-  },
-);
 
 export default api;
